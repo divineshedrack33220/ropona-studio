@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#08080a",
-        coal: "#0c0c0f",
-        carbon: "#111114",
-        smoke: "#19191e",
-        line: "#26262c",
-        bone: "#f3efe6",
-        mist: "#a7a39a",
-        muted: "#8a867d",
-        gold: "#c9a96b",
-        goldsoft: "#e3c992",
+        ink: "#211a15",
+        coal: "#262019",
+        carbon: "#2c251d",
+        smoke: "#332b22",
+        line: "#43392e",
+        bone: "#f6efe3",
+        mist: "#bfb3a3",
+        muted: "#9c8f7e",
+        gold: "#c98f5a",
+        goldsoft: "#e2b184",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],

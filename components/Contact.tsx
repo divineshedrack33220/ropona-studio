@@ -18,7 +18,7 @@ export function Contact() {
       id="contact"
       className="section relative overflow-hidden border-t border-white/[0.08] bg-coal"
     >
-      <div className="pointer-events-none absolute -right-40 top-0 h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(201,169,107,0.1),transparent_62%)]" />
+      <div className="pointer-events-none absolute -right-40 top-0 h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(201,143,90,0.1),transparent_62%)]" />
 
       <div className="shell relative">
         <div className="flex items-center gap-3">

@@ -35,7 +35,7 @@ function Mark({ className }: { className?: string }) {
         stroke="currentColor"
         strokeWidth="1.4"
       />
-      <circle cx="24.5" cy="8.5" r="1.6" fill="#c9a96b" />
+      <circle cx="24.5" cy="8.5" r="1.6" fill="#c98f5a" />
     </svg>
   );
 }

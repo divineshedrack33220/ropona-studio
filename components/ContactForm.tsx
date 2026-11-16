@@ -221,7 +221,7 @@ export function ContactForm() {
           type="checkbox"
           name="consent"
           required
-          className="mt-0.5 h-3.5 w-3.5 shrink-0 appearance-none border border-white/30 bg-transparent checked:border-gold checked:bg-gold checked:bg-[length:70%] checked:bg-center checked:bg-no-repeat checked:[background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22><path d=%22M1 5l2.5 2.5L9 1.5%22 fill=%22none%22 stroke=%22%2308080a%22 stroke-width=%221.5%22/></svg>')]"
+          className="mt-0.5 h-3.5 w-3.5 shrink-0 appearance-none border border-white/30 bg-transparent checked:border-gold checked:bg-gold checked:bg-[length:70%] checked:bg-center checked:bg-no-repeat checked:[background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22><path d=%22M1 5l2.5 2.5L9 1.5%22 fill=%22none%22 stroke=%22%23211a15%22 stroke-width=%221.5%22/></svg>')]"
         />
         <span>
           I&apos;m happy for Ropona Benard to store this brief to respond to my enquiry.

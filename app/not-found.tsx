@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <section className="relative flex min-h-[80svh] items-center overflow-hidden pt-28">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_40%,rgba(201,169,107,0.08),transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_40%,rgba(201,143,90,0.08),transparent_70%)]" />
       <div className="shell relative">
         <p className="eyebrow eyebrow-gold">Error 404</p>
         <h1 className="serif mt-6 max-w-3xl text-[clamp(3rem,9vw,9rem)] leading-[0.85] tracking-[-0.04em]">

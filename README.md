@@ -221,6 +221,6 @@ public/media/         stills, preview loops, showreel, OG image
 public/favicon.svg    placeholder mark, easy to swap for the final identity
 ```
 
-Design system: deep ink palette (`#08080a`), bone text (`#f3efe6`), muted gold
-accent (`#c9a96b`); Instrument Serif for headlines, Inter for UI, IBM Plex Mono
+Design system: warm espresso palette (`#211a15`), bone text (`#f6efe3`), burnt
+amber accent (`#c98f5a`); Instrument Serif for headlines, Inter for UI, IBM Plex Mono
 for labels. Tokens live in `tailwind.config.ts` and `app/globals.css`.

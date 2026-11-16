@@ -26,7 +26,7 @@ export function Testimonials() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(201,169,107,0.09),transparent_65%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(201,143,90,0.09),transparent_65%)]" />
 
       <div className="shell relative">
         <Reveal className="flex flex-col items-start justify-between gap-4 border-b border-white/10 pb-8 sm:flex-row sm:items-center">

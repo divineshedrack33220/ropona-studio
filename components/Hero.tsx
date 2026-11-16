@@ -50,11 +50,11 @@ export function Hero() {
       <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-ink/80 via-ink/20 to-transparent lg:hidden" />
 
       {/* Desktop: solid ink on the left, portrait kept clear on the right */}
-      <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,#08080a_0%,#08080a_42%,rgba(8,8,10,0.9)_49%,rgba(8,8,10,0.5)_56%,rgba(8,8,10,0.08)_66%,transparent_76%)] lg:block" />
-      <div className="absolute inset-0 hidden bg-[linear-gradient(to_top,#08080a_0%,rgba(8,8,10,0.75)_8%,rgba(8,8,10,0.15)_24%,transparent_42%)] lg:block" />
-      <div className="absolute inset-0 hidden bg-[linear-gradient(to_bottom,rgba(8,8,10,0.6)_0%,rgba(8,8,10,0.08)_14%,transparent_28%)] lg:block" />
+      <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,#211a15_0%,#211a15_42%,rgba(33,26,21,0.9)_49%,rgba(33,26,21,0.5)_56%,rgba(33,26,21,0.08)_66%,transparent_76%)] lg:block" />
+      <div className="absolute inset-0 hidden bg-[linear-gradient(to_top,#211a15_0%,rgba(33,26,21,0.75)_8%,rgba(33,26,21,0.15)_24%,transparent_42%)] lg:block" />
+      <div className="absolute inset-0 hidden bg-[linear-gradient(to_bottom,rgba(33,26,21,0.6)_0%,rgba(33,26,21,0.08)_14%,transparent_28%)] lg:block" />
 
-      <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_70%_35%,transparent_0%,rgba(8,8,10,0.12)_60%,rgba(8,8,10,0.5)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_70%_35%,transparent_0%,rgba(33,26,21,0.12)_60%,rgba(33,26,21,0.5)_100%)]" />
 
       <div className="shell relative z-10 flex h-full flex-col">
         <div className="flex items-start justify-between gap-6 pt-6 md:pt-10">
