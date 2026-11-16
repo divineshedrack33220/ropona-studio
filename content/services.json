@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ai-film",
+    "title": "AI Film Production",
+    "summary": "End-to-end short films and brand narratives built with generative production — directed, not assembled.",
+    "body": "From the first logline to the final grade, I direct AI-generated films with the same discipline as a live-action set: motivated shots, continuity, performance, and a reason for every cut. The result is cinema, not a collection of impressive clips.",
+    "deliverables": ["Concept & screenplay", "Look development", "Shot list & previs", "AI generation & compositing", "Edit, sound & grade", "Delivery masters"],
+    "useCases": ["Brand films", "Short films", "Launch films", "Editorial films"]
+  },
+  {
+    "id": "ai-commercial",
+    "title": "AI Commercial Production",
+    "summary": "Scroll-stopping commercials produced at a fraction of traditional cost — without looking like it.",
+    "body": "Product worlds, impossible camera moves, and talent-safe scenes, built for paid social and broadcast. I handle the full pipeline, from concept and boards to platform-ready cutdowns in every ratio.",
+    "deliverables": ["Big idea & script", "Product world-building", "15s / 30s / 60s cutdowns", "9:16, 1:1, 16:9 masters", "Sound design & mix", "Campaign toolkit"],
+    "useCases": ["Product launches", "Paid social", "Performance creative", "Retail campaigns"]
+  },
+  {
+    "id": "cinematic-editing",
+    "title": "Cinematic Video Editing",
+    "summary": "Edit, colour, sound, and finish for footage that already exists — elevated into something worth watching.",
+    "body": "The edit is where the film is truly written. I bring pacing, structure, and emotional control to documentaries, interviews, commercials, and long-form content, then finish with a colour grade and sound pass that makes it feel theatrical.",
+    "deliverables": ["Story assembly & structure", "Colour grade", "Sound design & mix", "Motion graphics & titles", "Subtitles & captions", "Platform delivery"],
+    "useCases": ["Documentaries", "Brand content", "YouTube & long-form", "Event films"]
+  },
+  {
+    "id": "ai-storytelling",
+    "title": "AI Storytelling & Scene Creation",
+    "summary": "Worlds, performances, and moments that could not exist on a traditional budget.",
+    "body": "Historical reconstructions, speculative futures, impossible locations. I use AI to build scenes with narrative purpose — grounded in research and visual references so they feel real, not synthetic.",
+    "deliverables": ["Narrative development", "Scene design & previz", "Character & performance direction", "Environment generation", "Continuity management", "Final compositing"],
+    "useCases": ["History & documentary", "Sci-fi & fantasy", "Explainer films", "Music narratives"]
+  },
+  {
+    "id": "ai-worlds",
+    "title": "AI Character & Environment Creation",
+    "summary": "Consistent characters and believable environments, built as a reusable visual system.",
+    "body": "One-off generations are easy. Consistency is the craft. I build character bibles, environment libraries, and prompt systems that keep faces, wardrobe, and lighting coherent across an entire campaign or series.",
+    "deliverables": ["Character bible", "Environment library", "Prompt & template system", "Lighting & grade continuity", "Asset handover", "Team training"],
+    "useCases": ["Campaign mascots", "Series & episodic", "Virtual influencers", "Game cinematics"]
+  },
+  {
+    "id": "complete-production",
+    "title": "Complete AI Video Production",
+    "summary": "One partner from blank page to final upload — strategy, production, post, and delivery.",
+    "body": "The full service, without the agency layers. I lead the creative, build the pipeline, direct the production, and deliver finished work ready for every channel. You get a director, not a production line.",
+    "deliverables": ["Strategy & creative direction", "Script & storyboard", "Full AI production", "Post & finishing", "All platform masters", "Two revision rounds"],
+    "useCases": ["Startups & scale-ups", "Agencies", "SaaS & tech", "Global brands"]
+  },
+  {
+    "id": "creative-direction",
+    "title": "Creative Direction & Story Development",
+    "summary": "The thinking before the frames — concept, audience, narrative, and commercial intent.",
+    "body": "Sometimes you do not need a video. You need clarity. I help teams find the story worth telling, shape it for the audience that matters, and build a visual direction the whole campaign can live inside.",
+    "deliverables": ["Positioning & audience work", "Creative platform", "Narrative & script", "Visual direction deck", "Mood film", "Production roadmap"],
+    "useCases": ["Brand repositioning", "Campaign platforms", "Pitch & investor films", "Content strategy"]
+  }
+]

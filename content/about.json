@@ -1,0 +1,29 @@
+{
+  "headline": "Story first. Always.",
+  "portrait": "/media/portrait-ropona.jpg",
+  "portraitAlt": "Portrait of Ropona Benard",
+  "profile": "/media/ropona-profile.jpg",
+  "story": [
+    "I'm Ropona Benard — a creative director, AI filmmaker, and editor based in Lagos, working with brands and storytellers worldwide.",
+    "I started in the edit. Four years of cutting other people's footage taught me the thing no tool can teach: where the story actually lives. Not in the shot list. Not in the render. In the space between two cuts, and in what the audience feels before they can explain why.",
+    "Then the tools changed. Runway, Kling, Veo, Midjourney, ElevenLabs — suddenly a director could build worlds that used to require a crew, a location, and a budget. I leaned in early, and built a hybrid workflow that keeps the craft of traditional post-production while collapsing the distance between an idea and a finished frame.",
+    "That overlap is where I work: the taste of a director, the discipline of an editor, and the speed of a new production model. I still believe the same thing I believed in the edit suite — the technology is never the point. It only matters if it makes someone feel something."
+  ],
+  "philosophy": "A film is not a collection of beautiful frames. It is an argument, made in rhythm, that earns the next second of someone's attention. I direct toward that argument — and use every tool available to make it land.",
+  "expertise": [
+    "Creative direction & concept",
+    "Narrative & script development",
+    "AI film & commercial production",
+    "Cinematic editing & structure",
+    "Colour grading & finishing",
+    "Sound design & music supervision",
+    "Brand strategy & visual systems",
+    "Motion graphics & titling"
+  ],
+  "credentials": [
+    { "label": "Based in", "value": "Lagos, Nigeria — working worldwide" },
+    { "label": "Experience", "value": "4+ years across tech, marketing, education & entertainment" },
+    { "label": "Pipeline", "value": "Hybrid: traditional post + generative production" },
+    { "label": "Engagements", "value": "Project, retainer & embedded creative partner" }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Fixed Project",
+    "label": "Most popular",
+    "description": "A defined scope, a fixed investment, and a delivery date you can plan around. Best for brand films, commercials, and launches.",
+    "includes": ["Creative direction & script", "Full production & post", "Two structured revision rounds", "All platform masters"],
+    "detail": "Scoped individually",
+    "cta": "Request a quote"
+  },
+  {
+    "name": "Day Rate",
+    "label": "Flexible",
+    "description": "Bring me in for editing, colour, direction, or a focused sprint. Ideal for teams with footage already in the can.",
+    "includes": ["8-hour working day", "Edit, grade or direction", "Async reviews & notes", "Overtime available"],
+    "detail": "Half & full days",
+    "cta": "Check availability"
+  },
+  {
+    "name": "Per-Minute Production",
+    "label": "AI-native",
+    "description": "AI film production priced per finished minute. Transparent, scalable, and built for series and recurring content.",
+    "includes": ["Concept & visual direction", "Generation & compositing", "Edit, sound & grade", "Series continuity system"],
+    "detail": "From 1 finished minute",
+    "cta": "Estimate my project"
+  },
+  {
+    "name": "Monthly Retainer",
+    "label": "Embedded",
+    "description": "An ongoing creative partnership with priority access, predictable output, and a director in your corner every month.",
+    "includes": ["Priority project slots", "Monthly content pipeline", "Strategy & creative counsel", "Discounted production rates"],
+    "detail": "3-month minimum",
+    "cta": "Discuss a retainer"
+  }
+]

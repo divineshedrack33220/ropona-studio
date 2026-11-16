@@ -1,0 +1,66 @@
+{
+  "name": "Ropona Benard",
+  "role": "Creative Director · AI Filmmaker · Editor",
+  "tagline": "Cinematic AI filmmaking & professional video editing.",
+  "description": "Multidisciplinary creative blending traditional editing, AI-driven production, and strategic storytelling to create cinematic visuals, commercials, branded content, and digital experiences that bring ideas to life.",
+  "location": "Lagos, Nigeria",
+  "locationShort": "Lagos",
+  "timezone": "Africa/Lagos",
+  "availability": {
+    "status": "Booking Q1 2027",
+    "note": "Two project slots open",
+    "available": true
+  },
+  "email": "hello@ropona.studio",
+  "phone": "+234 812 000 0000",
+  "phoneHref": "+2348120000000",
+  "whatsapp": "https://wa.me/2348120000000",
+  "booking": "https://cal.com/ropona/intro",
+  "responseTime": "Replies within 24 hours, Monday–Friday.",
+  "socials": [
+    { "label": "YouTube", "handle": "@ropona", "href": "https://youtube.com/@ropona" },
+    { "label": "Vimeo", "handle": "ropona", "href": "https://vimeo.com/ropona" },
+    { "label": "Instagram", "handle": "@ropona", "href": "https://instagram.com/ropona" },
+    { "label": "LinkedIn", "handle": "in/ropona", "href": "https://linkedin.com/in/ropona" },
+    { "label": "X", "handle": "@ropona", "href": "https://x.com/ropona" }
+  ],
+  "showreel": {
+    "title": "Showreel 2026",
+    "duration": "00:24",
+    "poster": "/media/hero.jpg",
+    "src": "/media/showreel.mp4",
+    "tagline": "Four years. Nine countries. One through-line: story.",
+    "note": "Best watched with sound."
+  },
+  "stats": [
+    { "value": "4+", "label": "Years directing & editing" },
+    { "value": "40+", "label": "Films & campaigns delivered" },
+    { "value": "12M+", "label": "Organic views generated" },
+    { "value": "9", "label": "Countries worked with" }
+  ],
+  "clients": [
+    { "name": "TaskGo", "href": "https://taskgo.africa" },
+    { "name": "Optimaviz", "href": "https://optimaviz.com" },
+    { "name": "Cre8hive", "href": "#" },
+    { "name": "WayBackHistory", "href": "#" },
+    { "name": "PathForge", "href": "#" }
+  ],
+  "tools": [
+    "CapCut",
+    "DaVinci Resolve",
+    "Premiere Pro",
+    "After Effects",
+    "Runway",
+    "Kling",
+    "Veo",
+    "Midjourney",
+    "ElevenLabs",
+    "Topaz",
+    "Frame.io",
+    "Figma"
+  ],
+  "cv": "/ropona-cv.pdf",
+  "analytics": {
+    "gaId": ""
+  }
+}

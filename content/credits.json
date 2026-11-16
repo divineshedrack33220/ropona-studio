@@ -1,0 +1,38 @@
+[
+  {
+    "slot": "Key art & film stills",
+    "title": "Cinematic light studies",
+    "creator": "Ropona Studio — original procedural artwork",
+    "license": "© Ropona Studio",
+    "licenseUrl": "/privacy",
+    "source": "In-house",
+    "href": "/work"
+  },
+  {
+    "slot": "Typefaces",
+    "title": "Instrument Serif, Inter, IBM Plex Mono",
+    "creator": "Instrument, Rasmus Andersson, IBM",
+    "license": "SIL Open Font License 1.1",
+    "licenseUrl": "https://openfontlicense.org",
+    "source": "Google Fonts",
+    "href": "https://fonts.google.com"
+  },
+  {
+    "slot": "Framework",
+    "title": "Next.js & React",
+    "creator": "Vercel & Meta",
+    "license": "MIT",
+    "licenseUrl": "https://opensource.org/license/mit",
+    "source": "Open source",
+    "href": "https://nextjs.org"
+  },
+  {
+    "slot": "Tooling",
+    "title": "Tailwind CSS, Sharp, FFmpeg",
+    "creator": "Tailwind Labs, Lovell Fuller, FFmpeg team",
+    "license": "MIT / LGPL",
+    "licenseUrl": "https://opensource.org/license/mit",
+    "source": "Open source",
+    "href": "https://tailwindcss.com"
+  }
+]
