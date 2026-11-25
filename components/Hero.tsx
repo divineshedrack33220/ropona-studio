@@ -22,7 +22,7 @@ function PlayIcon({ className = "" }: { className?: string }) {
 function FullscreenIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <path d="M6 1H1V6M12 1H17V6M17 12V17H12M1 12V17H6" stroke="currentColor" strokeWidth="1.1" />
+      <path d="M6 1H1V6M12 1H17V6M17 12V17H12M1 12V17H6" stroke="currentColor" strokeWidth="1.2" />
     </svg>
   );
 }
@@ -30,175 +30,174 @@ function FullscreenIcon() {
 export function Hero() {
   const { open } = useShowreel();
 
+  const playShowreel = (location: string, label: string) => {
+    open();
+    track("showreel_play", { location });
+  };
+
   return (
-    <section className="relative flex min-h-[680px] flex-col justify-end overflow-hidden pb-0 pt-24 h-[100svh]">
-      <div className="absolute inset-0 lg:left-auto lg:right-0 lg:w-[44%] xl:w-[45%]">
-        <Image
-          src={about.portrait}
-          alt={about.portraitAlt}
-          fill
-          priority
-          fetchPriority="high"
-          sizes="(min-width: 1024px) 45vw, 100vw"
-          className="object-cover object-center lg:object-[center_28%]"
-        />
-      </div>
-
-      {/* Cinematic grade: keeps the portrait readable without flattening it */}
-      {/* Mobile: bottom-weighted so the headline sits on ink */}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/10 lg:hidden" />
-      <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-ink/80 via-ink/20 to-transparent lg:hidden" />
-
-      {/* Desktop: solid ink on the left, portrait kept clear on the right */}
-      <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,#211a15_0%,#211a15_42%,rgba(33,26,21,0.9)_49%,rgba(33,26,21,0.5)_56%,rgba(33,26,21,0.08)_66%,transparent_76%)] lg:block" />
-      <div className="absolute inset-0 hidden bg-[linear-gradient(to_top,#211a15_0%,rgba(33,26,21,0.75)_8%,rgba(33,26,21,0.15)_24%,transparent_42%)] lg:block" />
-      <div className="absolute inset-0 hidden bg-[linear-gradient(to_bottom,rgba(33,26,21,0.6)_0%,rgba(33,26,21,0.08)_14%,transparent_28%)] lg:block" />
-
-      <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_70%_35%,transparent_0%,rgba(33,26,21,0.12)_60%,rgba(33,26,21,0.5)_100%)]" />
-
-      <div className="shell relative z-10 flex h-full flex-col">
-        <div className="flex items-start justify-between gap-6 pt-6 md:pt-10">
-          <p className="eyebrow max-w-[15rem] leading-relaxed">
-            Independent creative director
-            <span className="mx-2 text-gold">/</span>
-            AI filmmaker
-          </p>
-          <p className="hidden font-mono text-[0.58rem] uppercase tracking-[0.18em] text-mist lg:block">
-            {site.location} — worldwide
-          </p>
-        </div>
-
-        <div className="mt-auto pb-8 md:pb-10">
-          <h1 className="serif max-w-[15ch] text-[clamp(2.85rem,7.1vw,7.3rem)] leading-[0.92] tracking-[-0.025em] text-bone">
-            <span className="mask-line">
-              <span style={{ "--line-delay": "120ms" } as React.CSSProperties}>
-                Cinematic AI
-              </span>
-            </span>
-            <span className="mask-line">
-              <span style={{ "--line-delay": "260ms" } as React.CSSProperties}>
-                filmmaking <em className="text-goldsoft">&amp;</em>
-              </span>
-            </span>
-            <span className="mask-line">
-              <span
-                className="italic text-goldsoft"
-                style={{ "--line-delay": "400ms" } as React.CSSProperties}
-              >
-                professional editing.
-              </span>
-            </span>
-          </h1>
-
-          <div className="mt-8 grid gap-8 md:mt-10 md:grid-cols-12 md:items-end">
-            <div
-              className="md:col-span-6 lg:col-span-7"
-              style={{ animation: "floatIn 1s cubic-bezier(0.16,1,0.3,1) 650ms both" }}
-            >
-              <p className="max-w-md text-[0.98rem] leading-relaxed text-mist md:text-lg">
-                I turn ideas into visually compelling stories — from concept to
-                final cut, with the taste of a director and the discipline of an
-                editor.
-              </p>
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    open();
-                    track("showreel_play", { location: "hero_cta" });
-                  }}
-                  className="btn btn-gold"
-                  data-track="showreel_play"
-                  data-track-label="hero_view_showreel"
-                >
-                  <PlayIcon className="h-2.5 w-2.5" />
-                  View showreel
-                </button>
-                <Link
-                  href="/#contact"
-                  className="btn btn-outline"
-                  data-track="cta_click"
-                  data-track-label="hero_start_project"
-                >
-                  Start a project
-                  <span aria-hidden="true">↗</span>
-                </Link>
+    <section
+      id="top"
+      className="relative overflow-hidden pb-10 pt-28 md:pb-16 md:pt-36"
+    >
+      <div className="shell">
+        <div className="grid items-stretch gap-7 lg:grid-cols-12 lg:gap-8">
+          <div className="relative z-10 lg:col-span-7">
+            <div className="surface-card h-full rounded-feature p-7 md:p-11 lg:p-12">
+              <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
+                <p className="eyebrow max-w-[18rem] leading-relaxed">
+                  Independent creative director
+                  <span className="mx-2 text-burgundySoft">/</span>
+                  AI filmmaker
+                </p>
+                <p className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
+                  {site.location} — worldwide
+                </p>
               </div>
 
-              <div className="mt-8 hidden lg:block">
-                <p className="eyebrow mb-3">Selected clients</p>
-                <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
-                  {site.clients.slice(0, 4).map((client) => (
-                    <li key={client.name} className="text-sm text-mist/90">
-                      {client.name}
-                    </li>
-                  ))}
-                </ul>
+              <h1 className="serif mt-10 max-w-[16ch] text-[clamp(2.7rem,6.2vw,6.4rem)] leading-[0.95] tracking-[-0.03em] text-dark md:mt-12">
+                <span className="mask-line">
+                  <span style={{ "--line-delay": "100ms" } as React.CSSProperties}>
+                    Cinematic AI
+                  </span>
+                </span>
+                <span className="mask-line">
+                  <span style={{ "--line-delay": "220ms" } as React.CSSProperties}>
+                    filmmaking <em className="text-burgundy">&amp;</em>
+                  </span>
+                </span>
+                <span className="mask-line">
+                  <span
+                    className="italic text-burgundy"
+                    style={{ "--line-delay": "340ms" } as React.CSSProperties}
+                  >
+                    professional editing.
+                  </span>
+                </span>
+              </h1>
+
+              <div
+                className="mt-9"
+                style={{
+                  animation: "floatIn 0.9s cubic-bezier(0.16,1,0.3,1) 560ms both",
+                }}
+              >
+                <p className="max-w-lg text-[0.98rem] leading-[1.8] text-cocoa md:text-lg">
+                  I turn ideas into visually compelling stories — from concept to
+                  final cut, with the taste of a director and the discipline of an
+                  editor.
+                </p>
+
+                <div className="mt-7 flex flex-wrap items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => playShowreel("hero_cta", "hero_view_showreel")}
+                    className="btn btn-gold"
+                    data-track="showreel_play"
+                    data-track-label="hero_view_showreel"
+                  >
+                    <PlayIcon className="h-2.5 w-2.5" />
+                    View showreel
+                  </button>
+                  <Link
+                    href="/#contact"
+                    className="btn btn-outline"
+                    data-track="cta_click"
+                    data-track-label="hero_start_project"
+                  >
+                    Start a project
+                    <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+
+                <div className="mt-9 border-t border-burgundy/15 pt-6">
+                  <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
+                    Selected clients
+                  </p>
+                  <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                    {site.clients.slice(0, 4).map((client) => (
+                      <li key={client.name} className="text-sm text-cocoa">
+                        {client.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div
-              className="hidden md:col-span-4 md:col-start-9 md:block lg:hidden"
-              style={{ animation: "floatIn 1s cubic-bezier(0.16,1,0.3,1) 800ms both" }}
-            >
-              <p className="font-mono text-[0.56rem] uppercase tracking-[0.2em] text-muted">
-                Selected clients
+          <div className="relative lg:col-span-5">
+            <div className="media-frame h-full min-h-[360px] md:min-h-[480px] lg:min-h-[620px]">
+              <Image
+                src={about.portrait}
+                alt={about.portraitAlt}
+                fill
+                priority
+                fetchPriority="high"
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="object-cover object-center lg:object-[center_25%]"
+              />
+            </div>
+
+            <div className="absolute -top-4 right-4 rounded-full border border-burgundy/20 bg-champagneLight px-4 py-2 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy md:right-6">
+              Ropona Benard
+            </div>
+
+            <div className="absolute -bottom-5 left-4 right-4 rounded-[1.5rem] border border-champagne/25 bg-burgundy p-5 text-ivory md:-left-6 md:right-auto md:max-w-[19rem] md:p-6">
+              <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
+                {site.role}
+              </span>
+              <p className="serif mt-3 text-2xl italic leading-tight text-ivory md:text-3xl">
+                Story first. Always.
               </p>
-              <ul className="mt-3 flex flex-col gap-1.5">
-                {site.clients.slice(0, 4).map((client) => (
-                  <li key={client.name} className="text-sm text-mist/90">
-                    {client.name}
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-4 h-px w-full bg-champagne/25" />
+              <p className="mt-3 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-champagne/80">
+                {site.availability.status} · {site.availability.note}
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="relative flex flex-wrap items-center justify-between gap-4 border-t border-white/15 py-4 md:py-5">
+        <div className="mt-12 flex flex-col gap-5 rounded-full border border-burgundy/15 bg-champagne/55 px-5 py-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between md:mt-14 md:px-7">
           <div className="flex items-center gap-4">
-            <span className="hidden h-10 w-px overflow-hidden bg-white/20 sm:block">
-              <span className="scroll-cue-line block h-full w-px bg-gold" />
+            <span className="hidden h-9 w-px overflow-hidden sm:block">
+              <span className="scroll-cue-line block h-full w-px" />
             </span>
-            <span className="font-mono text-[0.56rem] uppercase tracking-[0.2em] text-mist">
+            <span className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
               Scroll to explore
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <button
               type="button"
-              onClick={() => {
-                open();
-                track("showreel_play", { location: "hero_bar" });
-              }}
+              onClick={() => playShowreel("hero_bar", "hero_bar_showreel")}
               className="group flex items-center gap-3 text-left"
               data-track="showreel_play"
               data-track-label="hero_bar_showreel"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-bone transition-colors duration-500 group-hover:border-gold group-hover:text-gold">
-                <PlayIcon className="h-2 w-2" />
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-burgundy/30 bg-champagne text-burgundy transition-colors duration-300 group-hover:bg-burgundy group-hover:text-ivory">
+                <PlayIcon className="h-2.5 w-2.5" />
               </span>
               <span className="flex flex-col">
-                <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-bone">
+                <span className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-dark">
                   {site.showreel.title}
                 </span>
-                <span className="font-mono text-[0.52rem] tracking-[0.12em] text-muted">
+                <span className="font-sans text-[0.52rem] font-medium uppercase tracking-[0.12em] text-espresso">
                   {site.showreel.duration} · {site.showreel.note}
                 </span>
               </span>
             </button>
 
-            <span className="hidden h-4 w-px bg-white/15 sm:block" />
+            <span className="hidden h-5 w-px bg-burgundy/20 sm:block" />
 
             <button
               type="button"
-              onClick={() => {
-                open();
-                track("showreel_play", { location: "hero_fullscreen" });
-              }}
+              onClick={() =>
+                playShowreel("hero_fullscreen", "hero_fullscreen")
+              }
               aria-label="Watch showreel full screen"
-              className="flex items-center gap-2 font-mono text-[0.56rem] uppercase tracking-[0.16em] text-mist transition-colors hover:text-bone"
+              className="flex items-center gap-2 font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-burgundy transition-colors hover:text-burgundySoft"
             >
               <FullscreenIcon />
               <span className="hidden sm:inline">Full screen</span>

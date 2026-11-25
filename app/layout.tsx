@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -18,13 +18,6 @@ const display = Instrument_Serif({
 const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -98,10 +91,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#211a15",
+  themeColor: "#A08C71",
   width: "device-width",
   initialScale: 1,
-  colorScheme: "dark",
+  colorScheme: "light",
 };
 
 const jsonLd = {
@@ -166,7 +159,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      className={`${display.variable} ${sans.variable}`}
     >
       <head>
         <script
@@ -180,7 +173,7 @@ export default function RootLayout({
       <body className="font-sans">
         <a
           href="#main"
-          className="fixed left-4 top-4 z-[120] -translate-y-24 bg-bone px-4 py-3 font-mono text-2xs uppercase tracking-label text-ink transition-transform focus:translate-y-0"
+          className="fixed left-4 top-4 z-[120] -translate-y-24 rounded-full border border-burgundy/20 bg-champagne px-5 py-3 font-sans text-2xs font-semibold uppercase tracking-label text-burgundy transition-transform focus:translate-y-0"
         >
           Skip to content
         </a>

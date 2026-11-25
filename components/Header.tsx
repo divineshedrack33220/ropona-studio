@@ -7,10 +7,10 @@ import { site } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 const nav = [
-  { label: "Work", href: "/#work", index: "01" },
-  { label: "About", href: "/#about", index: "02" },
-  { label: "Services", href: "/#services", index: "03" },
-  { label: "Process", href: "/#process", index: "04" },
+  { label: "Home", href: "/#top", index: "01" },
+  { label: "Projects", href: "/#work", index: "02" },
+  { label: "About", href: "/#about", index: "03" },
+  { label: "Experience", href: "/#experience", index: "04" },
   { label: "Contact", href: "/#contact", index: "05" },
 ];
 
@@ -23,33 +23,34 @@ function Mark({ className }: { className?: string }) {
       className={className}
     >
       <rect
-        x="1"
-        y="1"
-        width="30"
-        height="30"
+        x="1.5"
+        y="1.5"
+        width="29"
+        height="29"
+        rx="8"
         stroke="currentColor"
-        strokeOpacity="0.45"
+        strokeOpacity="0.55"
       />
       <path
         d="M9 24V8h6.8c3.2 0 5.2 1.8 5.2 4.6 0 2.2-1.3 3.8-3.4 4.3L23 24"
         stroke="currentColor"
-        strokeWidth="1.4"
+        strokeWidth="1.5"
       />
-      <circle cx="24.5" cy="8.5" r="1.6" fill="#c98f5a" />
+      <circle cx="24.5" cy="8.5" r="1.8" fill="currentColor" />
     </svg>
   );
 }
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [hash, setHash] = useState("");
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const update = () => setHash(window.location.hash);
+    update();
+    window.addEventListener("hashchange", update);
+    return () => window.removeEventListener("hashchange", update);
   }, []);
 
   useEffect(() => {
@@ -68,83 +69,103 @@ export function Header() {
     };
   }, [open]);
 
+  const isActive = (href: string) => {
+    const target = href.split("#")[1] ?? "";
+    if (pathname.startsWith("/work")) return href === "/#work";
+    if (pathname !== "/") return false;
+    if (!target || target === "top") {
+      return hash === "" || hash === "#top";
+    }
+    return hash === `#${target}`;
+  };
+
   return (
     <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-[70] transition-[background-color,border-color,backdrop-filter] duration-700",
-          scrolled || open
-            ? "border-b border-white/[0.08] bg-ink/85 backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
-        )}
-      >
-        <div className="shell flex h-[76px] items-center justify-between gap-6 md:h-[88px]">
-          <Link href="/" className="group flex items-center gap-3">
-            <Mark className="h-8 w-8 text-bone transition-colors duration-500 group-hover:text-gold" />
-            <span className="flex flex-col leading-none">
-              <span className="font-mono text-[0.82rem] tracking-[0.32em] text-bone">
-                ROPONA
-              </span>
-              <span className="mt-1.5 hidden font-mono text-[0.52rem] uppercase tracking-[0.2em] text-muted sm:block">
-                Creative Director · Filmmaker
-              </span>
-            </span>
-          </Link>
-
-          <nav
-            aria-label="Primary"
-            className="hidden items-center gap-8 lg:flex"
-          >
-            {nav.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="group relative font-mono text-[0.62rem] uppercase tracking-[0.22em] text-mist transition-colors duration-300 hover:text-bone"
-              >
-                {item.label}
-                <span className="absolute -bottom-2 left-0 h-px w-0 bg-gold transition-all duration-500 ease-cinema group-hover:w-full" />
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <div className="hidden items-center gap-2.5 border border-white/10 px-3.5 py-2 xl:flex">
-              <span className="availability-dot h-1.5 w-1.5 rounded-full bg-gold" />
-              <span className="font-mono text-[0.56rem] uppercase tracking-[0.18em] text-mist">
-                {site.availability.status}
-              </span>
-            </div>
+      <header className="fixed inset-x-0 top-0 z-[70] pt-3 md:pt-5">
+        <div className="shell">
+          <div className="flex h-16 items-center justify-between gap-3 rounded-full border border-burgundy/30 bg-burgundy px-3 md:h-[72px] md:px-4">
             <Link
-              href="/#contact"
-              data-track="cta_click"
-              data-track-label="header_start_project"
-              className="btn btn-gold hidden !py-3 sm:inline-flex"
+              href="/#top"
+              className="group flex min-w-0 items-center gap-2.5 rounded-full px-2 py-1"
             >
-              Start a project
-            </Link>
-            <button
-              type="button"
-              onClick={() => setOpen((value) => !value)}
-              aria-expanded={open}
-              aria-controls="mobile-menu"
-              aria-label={open ? "Close menu" : "Open menu"}
-              className="relative flex h-11 w-11 items-center justify-center lg:hidden"
-            >
-              <span className="relative block h-3 w-6">
-                <span
-                  className={cn(
-                    "absolute left-0 top-0 h-px w-6 bg-bone transition-transform duration-500 ease-cinema",
-                    open && "translate-y-[5px] rotate-45"
-                  )}
-                />
-                <span
-                  className={cn(
-                    "absolute bottom-0 left-0 h-px w-6 bg-bone transition-transform duration-500 ease-cinema",
-                    open && "-translate-y-[6px] -rotate-45"
-                  )}
-                />
+              <Mark className="h-8 w-8 shrink-0 text-champagne transition-colors duration-300 group-hover:text-ivory" />
+              <span className="flex min-w-0 flex-col leading-none">
+                <span className="truncate font-sans text-[0.78rem] font-semibold uppercase tracking-[0.26em] text-ivory">
+                  Ropona
+                </span>
+                <span className="mt-1.5 hidden truncate font-sans text-[0.5rem] font-medium uppercase tracking-[0.16em] text-champagne/75 sm:block">
+                  Creative Director · Filmmaker
+                </span>
               </span>
-            </button>
+            </Link>
+
+            <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+              {nav.map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "flex items-center gap-2 rounded-full px-3.5 py-2 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-300",
+                      active
+                        ? "bg-champagne text-burgundy"
+                        : "text-ivory/80 hover:bg-champagne/10 hover:text-ivory"
+                    )}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        "h-1.5 w-1.5 rounded-full",
+                        active ? "bg-burgundy" : "bg-champagne/60"
+                      )}
+                    />
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            <div className="flex shrink-0 items-center gap-2 md:gap-3">
+              <div className="hidden items-center gap-2.5 rounded-full border border-champagne/25 px-3.5 py-2 xl:flex">
+                <span className="availability-dot h-1.5 w-1.5 rounded-full bg-champagne" />
+                <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-champagne">
+                  {site.availability.status}
+                </span>
+              </div>
+              <Link
+                href="/#contact"
+                data-track="cta_click"
+                data-track-label="header_start_project"
+                className="btn btn-outline hidden !px-4 !py-2.5 !text-[0.58rem] sm:inline-flex"
+              >
+                Start a project
+              </Link>
+              <button
+                type="button"
+                onClick={() => setOpen((value) => !value)}
+                aria-expanded={open}
+                aria-controls="mobile-menu"
+                aria-label={open ? "Close menu" : "Open menu"}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-champagne/30 text-champagne transition-colors hover:bg-champagne/10 lg:hidden"
+              >
+                <span className="relative block h-3 w-6">
+                  <span
+                    className={cn(
+                      "absolute left-0 top-0 h-px w-6 bg-current transition-transform duration-500 ease-cinema",
+                      open && "translate-y-[5px] rotate-45"
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "absolute bottom-0 left-0 h-px w-6 bg-current transition-transform duration-500 ease-cinema",
+                      open && "-translate-y-[6px] -rotate-45"
+                    )}
+                  />
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -153,48 +174,65 @@ export function Header() {
         id="mobile-menu"
         aria-hidden={!open}
         className={cn(
-          "fixed inset-0 z-[65] flex flex-col bg-ink transition-[opacity,visibility] duration-500 lg:hidden",
+          "fixed inset-0 z-[65] overflow-y-auto bg-burgundy transition-[opacity,visibility] duration-300 lg:hidden",
           open ? "visible opacity-100" : "invisible opacity-0"
         )}
       >
-        <div className="shell flex flex-1 flex-col justify-center pb-10 pt-28">
-          <nav aria-label="Mobile" className="flex flex-col">
-            {nav.map((item, index) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                tabIndex={open ? 0 : -1}
-                className="group flex items-baseline gap-5 border-b border-white/[0.07] py-4"
-                style={{
-                  animation: open
-                    ? `floatIn 0.7s cubic-bezier(0.16,1,0.3,1) ${120 + index * 60}ms both`
-                    : undefined,
-                }}
-              >
-                <span className="font-mono text-[0.6rem] text-gold">
-                  {item.index}
-                </span>
-                <span className="serif text-[clamp(2.4rem,9vw,3.6rem)] leading-none text-bone transition-colors duration-300 group-hover:text-goldsoft">
-                  {item.label}
-                </span>
-              </Link>
-            ))}
+        <div className="shell flex min-h-full flex-col pb-10 pt-28 md:pt-32">
+          <nav aria-label="Mobile" className="flex flex-col gap-1">
+            {nav.map((item, index) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  tabIndex={open ? 0 : -1}
+                  aria-current={active ? "page" : undefined}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "flex items-center gap-4 rounded-2xl px-4 py-3 transition-colors duration-300",
+                    active
+                      ? "bg-champagne text-burgundy"
+                      : "text-ivory hover:bg-champagne/10"
+                  )}
+                  style={{
+                    animation: open
+                      ? `floatIn 0.6s cubic-bezier(0.16,1,0.3,1) ${100 + index * 55}ms both`
+                      : undefined,
+                  }}
+                >
+                  <span
+                    className={cn(
+                      "font-sans text-[0.58rem] font-semibold tracking-[0.16em]",
+                      active ? "text-burgundy/60" : "text-champagne/75"
+                    )}
+                  >
+                    {item.index}
+                  </span>
+                  <span className="font-sans text-[clamp(1.8rem,8vw,3rem)] font-medium leading-none tracking-[-0.03em]">
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            })}
           </nav>
 
           <div
-            className="mt-10 flex flex-col gap-6"
+            className="mt-10 flex flex-col gap-6 rounded-[2rem] border border-champagne/20 bg-espresso/35 p-6"
             style={{
               animation: open
-                ? "floatIn 0.7s cubic-bezier(0.16,1,0.3,1) 450ms both"
+                ? "floatIn 0.6s cubic-bezier(0.16,1,0.3,1) 390ms both"
                 : undefined,
             }}
           >
             <div className="flex flex-col gap-2">
-              <span className="eyebrow eyebrow-gold">Start a conversation</span>
+              <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.2em] text-champagne/75">
+                Start a conversation
+              </span>
               <a
                 href={`mailto:${site.email}`}
                 tabIndex={open ? 0 : -1}
-                className="link-line w-fit text-lg text-bone"
+                className="link-line w-fit text-lg text-ivory"
               >
                 {site.email}
               </a>
@@ -203,7 +241,7 @@ export function Header() {
                 target="_blank"
                 rel="noreferrer"
                 tabIndex={open ? 0 : -1}
-                className="link-line w-fit text-sm text-mist"
+                className="link-line w-fit text-sm text-champagne"
               >
                 WhatsApp
               </a>
@@ -216,15 +254,15 @@ export function Header() {
                   target="_blank"
                   rel="noreferrer"
                   tabIndex={open ? 0 : -1}
-                  className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-mist hover:text-bone"
+                  className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-champagne/75 hover:text-ivory"
                 >
                   {social.label}
                 </a>
               ))}
             </div>
             <div className="flex items-center gap-2.5">
-              <span className="availability-dot h-1.5 w-1.5 rounded-full bg-gold" />
-              <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-mist">
+              <span className="availability-dot h-1.5 w-1.5 rounded-full bg-champagne" />
+              <span className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-champagne">
                 {site.availability.status} — {site.availability.note}
               </span>
             </div>

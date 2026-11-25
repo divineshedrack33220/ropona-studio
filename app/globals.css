@@ -4,12 +4,22 @@
 
 @layer base {
   :root {
-    --ink: #211a15;
-    --bone: #f6efe3;
-    --gold: #c98f5a;
-    --line: rgba(246, 239, 227, 0.1);
+    /* Palette channels — Tailwind colors consume these directly. */
+    --taupe: 160 140 113;        /* #A08C71 */
+    --burgundy: 96 30 33;        /* #601E21 */
+    --champagne: 217 201 173;    /* #D9C9AD */
+    --champagne-light: 229 215 189; /* #E5D7BD */
+    --espresso: 54 19 15;        /* #36130F */
+    --cocoa: 107 79 59;          /* #6B4F3B */
+    --ivory: 242 232 213;        /* #F2E8D5 */
+    --taupe-deep: 142 117 92;    /* #8E755C */
+    --burgundy-soft: 120 41 45;  /* #78292D */
+    --brown: 148 119 92;         /* #94775C */
+    --dark: 36 25 20;            /* #241914 */
+
+    --line: rgb(var(--cocoa) / 0.22);
     --shell-pad: clamp(1.25rem, 4vw, 4rem);
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   * {
@@ -18,54 +28,54 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+    scroll-padding-top: 7rem;
   }
 
   body {
-    background-color: var(--ink);
-    color: var(--bone);
+    background-color: rgb(var(--taupe));
+    color: rgb(var(--dark));
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
 
-  /* Cinematic film grain across the whole experience */
+  /* A very light paper tooth keeps the flat palette from feeling sterile. */
   body::after {
     content: "";
     position: fixed;
     inset: -50%;
     z-index: 90;
     pointer-events: none;
-    opacity: 0.045;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 180px 180px;
-    mix-blend-mode: overlay;
+    mix-blend-mode: multiply;
   }
 
   ::selection {
-    background: var(--gold);
-    color: var(--ink);
+    background: rgb(var(--burgundy));
+    color: rgb(var(--ivory));
   }
 
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #211a15;
+    background: rgb(var(--taupe));
   }
   ::-webkit-scrollbar-thumb {
-    background: #443a2f;
-    border: 3px solid #211a15;
+    background: rgb(var(--burgundy) / 0.7);
+    border: 3px solid rgb(var(--taupe));
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #5c4f40;
+    background: rgb(var(--burgundy));
   }
 
   :focus-visible {
-    outline: 1px solid var(--gold);
-    outline-offset: 4px;
+    outline: 2px solid rgb(var(--burgundy));
+    outline-offset: 3px;
   }
 
   h1,
@@ -98,16 +108,18 @@
   }
 
   .eyebrow {
-    font-family: var(--font-mono), monospace;
-    font-size: 0.65rem;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
     line-height: 1.4;
-    letter-spacing: 0.26em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #bfb3a3;
+    /* Espresso holds 5.16:1 on the taupe canvas and 10.27:1 on champagne. */
+    color: rgb(var(--espresso));
   }
 
   .eyebrow-gold {
-    color: var(--gold);
+    color: rgb(var(--espresso));
   }
 
   .hairline {
@@ -120,6 +132,32 @@
     letter-spacing: -0.02em;
   }
 
+  /* Reusable editorial surfaces. */
+  .surface-card {
+    border-radius: 1.5rem;
+    border: 1px solid rgb(var(--burgundy) / 0.16);
+    background-color: rgb(var(--champagne));
+  }
+
+  .surface-light {
+    border-radius: 1.5rem;
+    border: 1px solid rgb(var(--cocoa) / 0.18);
+    background-color: rgb(var(--champagne-light));
+  }
+
+  .surface-dark {
+    border-radius: 2rem;
+    border: 1px solid rgb(var(--champagne) / 0.2);
+    background-color: rgb(var(--espresso));
+  }
+
+  .media-frame {
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid rgb(var(--burgundy) / 0.2);
+    background-color: rgb(var(--champagne-light));
+  }
+
   .btn {
     position: relative;
     display: inline-flex;
@@ -127,21 +165,21 @@
     justify-content: center;
     gap: 0.7rem;
     border: 1px solid transparent;
-    padding: 0.95rem 1.6rem;
-    font-family: var(--font-mono), monospace;
-    font-size: 0.68rem;
+    padding: 0.85rem 1.55rem;
+    border-radius: 999px;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 0.66rem;
+    font-weight: 600;
     line-height: 1;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     white-space: nowrap;
-    transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-      color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: background-color 0.35s ease, color 0.35s ease,
+      border-color 0.35s ease, transform 0.35s ease;
   }
 
   .btn svg {
-    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.35s ease;
   }
 
   .btn:hover svg {
@@ -149,32 +187,36 @@
   }
 
   .btn-gold {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: #211a15;
+    background-color: rgb(var(--burgundy));
+    border-color: rgb(var(--burgundy));
+    color: rgb(var(--ivory));
   }
 
   .btn-gold:hover {
-    background: #e2b184;
-    border-color: #e2b184;
+    background-color: rgb(var(--burgundy-soft));
+    border-color: rgb(var(--burgundy-soft));
   }
 
   .btn-outline {
-    border-color: rgba(246, 239, 227, 0.22);
-    color: var(--bone);
-    background: rgba(33, 26, 21, 0.1);
-    backdrop-filter: blur(6px);
+    background-color: rgb(var(--champagne));
+    border-color: rgb(var(--burgundy) / 0.28);
+    color: rgb(var(--burgundy));
   }
 
   .btn-outline:hover {
-    border-color: var(--gold);
-    color: #e2b184;
+    background-color: rgb(var(--champagne-light));
+    border-color: rgb(var(--burgundy));
   }
 
   .btn-ghost {
     padding-inline: 0;
     border: 0;
-    color: var(--bone);
+    border-radius: 0;
+    color: rgb(var(--burgundy));
+  }
+
+  .btn-ghost:hover {
+    color: rgb(var(--burgundy-soft));
   }
 
   .link-line {
@@ -193,7 +235,7 @@
     background: currentColor;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .link-line:hover::after,
@@ -204,9 +246,9 @@
 
   .reveal {
     opacity: 0;
-    transform: translate3d(0, 28px, 0);
-    transition: opacity 1.05s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translate3d(0, 22px, 0);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     transition-delay: var(--reveal-delay, 0ms);
     will-change: opacity, transform;
   }
@@ -231,38 +273,44 @@
   }
 
   .filter-chip {
-    position: relative;
-    padding: 0.55rem 0.95rem;
-    border: 1px solid rgba(246, 239, 227, 0.14);
-    font-family: var(--font-mono), monospace;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.55rem 1rem;
+    border: 1px solid rgb(var(--burgundy) / 0.22);
+    border-radius: 999px;
+    background-color: rgb(var(--champagne) / 0.7);
+    font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 0.62rem;
-    letter-spacing: 0.18em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #bfb3a3;
-    transition: color 0.35s ease, border-color 0.35s ease,
-      background-color 0.35s ease;
+    color: rgb(var(--espresso));
+    transition: color 0.3s ease, border-color 0.3s ease,
+      background-color 0.3s ease;
   }
 
   .filter-chip:hover {
-    color: var(--bone);
-    border-color: rgba(246, 239, 227, 0.35);
+    color: rgb(var(--burgundy));
+    border-color: rgb(var(--burgundy) / 0.6);
+    background-color: rgb(var(--champagne-light));
   }
 
   .filter-chip[data-active="true"] {
-    color: #211a15;
-    background: var(--bone);
-    border-color: var(--bone);
+    color: rgb(var(--ivory));
+    background-color: rgb(var(--burgundy));
+    border-color: rgb(var(--burgundy));
   }
 
   .project-card .project-media img,
   .project-card .project-media video {
-    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1),
-      opacity 0.7s ease;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.6s ease;
   }
 
   .project-card:hover .project-media img,
   .project-card:focus-visible .project-media img {
-    transform: scale(1.045);
+    transform: scale(1.04);
   }
 
   .project-card:hover .project-arrow {
@@ -270,7 +318,7 @@
   }
 
   .project-arrow {
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .marquee {
@@ -295,50 +343,52 @@
 
   .field {
     width: 100%;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid rgba(246, 239, 227, 0.18);
-    padding: 0.85rem 0;
-    font-size: 0.95rem;
-    color: var(--bone);
-    transition: border-color 0.35s ease;
-    border-radius: 0;
+    background-color: rgb(var(--champagne-light));
+    border: 1px solid rgb(var(--cocoa) / 0.25);
+    border-radius: 0.85rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.92rem;
+    color: rgb(var(--espresso));
+    transition: border-color 0.25s ease, background-color 0.25s ease;
   }
 
   .field::placeholder {
-    color: #9c8f7e;
+    color: rgb(var(--cocoa) / 0.85);
   }
 
   .field:hover {
-    border-color: rgba(246, 239, 227, 0.35);
+    border-color: rgb(var(--burgundy) / 0.5);
   }
 
   .field:focus {
-    outline: none;
-    border-color: var(--gold);
+    outline: 2px solid rgb(var(--burgundy));
+    outline-offset: 2px;
+    border-color: rgb(var(--burgundy));
+    background-color: rgb(var(--ivory));
   }
 
   .field-label {
     display: block;
-    font-family: var(--font-mono), monospace;
+    font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 0.6rem;
-    letter-spacing: 0.22em;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #bfb3a3;
-    margin-bottom: 0.25rem;
+    color: rgb(var(--burgundy));
+    margin-bottom: 0.45rem;
   }
 
   select.field {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23bfb3a3'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23601E21'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 0 center;
-    padding-right: 1.25rem;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
   }
 
   select.field option {
-    background: #2c251d;
-    color: #f6efe3;
+    background-color: rgb(var(--champagne-light));
+    color: rgb(var(--espresso));
   }
 
   .before-after input[type="range"] {
@@ -368,18 +418,19 @@
   }
 
   .before-after input[type="range"]:focus-visible ~ .ba-handle {
-    box-shadow: 0 0 0 3px rgba(33, 26, 21, 0.9), 0 0 0 4px var(--gold);
+    outline: 2px solid rgb(var(--ivory));
+    outline-offset: 3px;
   }
 
   .text-outline {
-    -webkit-text-stroke: 1px rgba(246, 239, 227, 0.18);
+    -webkit-text-stroke: 1px rgb(var(--champagne) / 0.18);
     color: transparent;
-    transition: color 0.6s ease, -webkit-text-stroke-color 0.6s ease;
+    transition: color 0.5s ease, -webkit-text-stroke-color 0.5s ease;
   }
 
   .text-outline:hover {
-    color: rgba(246, 239, 227, 0.04);
-    -webkit-text-stroke-color: rgba(201, 143, 90, 0.6);
+    color: rgb(var(--champagne) / 0.04);
+    -webkit-text-stroke-color: rgb(var(--champagne) / 0.35);
   }
 
   .no-scrollbar {
@@ -439,6 +490,7 @@
 }
 
 .scroll-cue-line {
+  background-color: rgb(var(--burgundy));
   animation: scrollCue 2.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
@@ -449,12 +501,13 @@
     transform: scale(1);
   }
   50% {
-    opacity: 0.35;
-    transform: scale(0.7);
+    opacity: 0.4;
+    transform: scale(0.8);
   }
 }
 
 .availability-dot {
+  background-color: rgb(var(--burgundy));
   animation: pulseDot 3s ease-in-out infinite;
 }
 

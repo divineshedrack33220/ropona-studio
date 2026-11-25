@@ -73,11 +73,11 @@ export function WorkGrid({
                 className="filter-chip"
               >
                 {category}
-                <span className="ml-2 text-[0.52rem] opacity-50">{count}</span>
+                <span className="ml-2 text-[0.52rem] opacity-75">{count}</span>
               </button>
             );
           })}
-          <span className="ml-auto hidden font-mono text-[0.55rem] uppercase tracking-[0.16em] text-muted md:inline">
+          <span className="ml-auto hidden font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-espresso md:inline">
             {String(filtered.length).padStart(2, "0")} projects
           </span>
         </div>
@@ -117,12 +117,12 @@ export function WorkGrid({
       </div>
 
       {filtered.length === 0 && (
-        <p className="mt-16 border-t border-white/10 pt-10 text-sm text-mist">
+        <p className="mt-16 border-t border-burgundy/15 pt-10 text-sm text-espresso">
           No projects in this category yet.{" "}
           <button
             type="button"
             onClick={() => setActive("All")}
-            className="link-line text-bone"
+            className="link-line text-espresso"
           >
             View all work
           </button>
@@ -131,13 +131,13 @@ export function WorkGrid({
       )}
 
       {variant === "home" && (
-        <div className="mt-16 flex items-center justify-between border-t border-white/10 pt-6 md:mt-20">
-          <p className="font-mono text-[0.56rem] uppercase tracking-[0.16em] text-muted">
+        <div className="mt-16 flex flex-col gap-3 border-t border-burgundy/15 pt-6 sm:flex-row sm:items-center sm:justify-between md:mt-20">
+          <p className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-espresso">
             Selected from 40+ delivered projects
           </p>
           <Link
             href="/work"
-            className="link-line font-mono text-[0.6rem] uppercase tracking-[0.2em] text-bone"
+            className="link-line font-sans text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-espresso"
             data-track="cta_click"
             data-track-label="view_all_work"
           >

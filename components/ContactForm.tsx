@@ -86,19 +86,19 @@ export function ContactForm() {
 
   if (state === "success") {
     return (
-      <div className="mt-8 border border-gold/30 bg-gold/[0.04] p-6">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/50 text-gold">
+      <div className="mt-8 rounded-[1.5rem] border border-burgundy/20 bg-champagneLight p-6">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-burgundy/40 text-burgundy">
           ✓
         </span>
-        <h3 className="serif mt-5 text-2xl text-bone">Brief received.</h3>
-        <p className="mt-2 text-sm leading-relaxed text-mist">
+        <h3 className="serif mt-5 text-2xl text-dark">Brief received.</h3>
+        <p className="mt-2 text-sm leading-relaxed text-cocoa">
           Thank you — I&apos;ll read it properly and reply within one working day.
           If it is urgent, WhatsApp is the fastest route.
         </p>
         <button
           type="button"
           onClick={() => setState("idle")}
-          className="mt-5 font-mono text-[0.58rem] uppercase tracking-[0.18em] text-goldsoft"
+          className="mt-5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-burgundy"
         >
           Send another brief
         </button>
@@ -107,8 +107,8 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-8 flex flex-col gap-7" noValidate>
-      <div className="grid gap-7 sm:grid-cols-2">
+    <form onSubmit={onSubmit} className="mt-8 flex flex-col gap-6" noValidate>
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="field-label">
             Name *
@@ -139,7 +139,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid gap-7 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="company" className="field-label">
             Company / project
@@ -168,7 +168,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid gap-7 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="budget" className="field-label">
             Budget range
@@ -216,12 +216,12 @@ export function ContactForm() {
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <label className="flex cursor-pointer items-start gap-3 text-[0.68rem] leading-relaxed text-mist">
+      <label className="flex cursor-pointer items-start gap-3 font-sans text-[0.68rem] leading-relaxed text-cocoa">
         <input
           type="checkbox"
           name="consent"
           required
-          className="mt-0.5 h-3.5 w-3.5 shrink-0 appearance-none border border-white/30 bg-transparent checked:border-gold checked:bg-gold checked:bg-[length:70%] checked:bg-center checked:bg-no-repeat checked:[background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22><path d=%22M1 5l2.5 2.5L9 1.5%22 fill=%22none%22 stroke=%22%23211a15%22 stroke-width=%221.5%22/></svg>')]"
+          className="mt-0.5 h-4 w-4 shrink-0 appearance-none rounded border border-cocoa/40 bg-champagneLight checked:border-burgundy checked:bg-burgundy checked:bg-[length:70%] checked:bg-center checked:bg-no-repeat checked:[background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22><path d=%22M1 5l2.5 2.5L9 1.5%22 fill=%22none%22 stroke=%22%23F2E8D5%22 stroke-width=%221.5%22/></svg>')]"
         />
         <span>
           I&apos;m happy for Ropona Benard to store this brief to respond to my enquiry.
@@ -229,13 +229,13 @@ export function ContactForm() {
       </label>
 
       {error && (
-        <p role="alert" className="border-l border-red-400/60 pl-3 text-xs text-red-300">
+        <p role="alert" className="border-l-2 border-burgundy pl-3 font-sans text-xs text-burgundy">
           {error}
         </p>
       )}
 
-      <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6">
-        <p className="font-mono text-[0.52rem] uppercase tracking-[0.14em] text-muted">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-t border-burgundy/15 pt-6">
+        <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-cocoa">
           Replies within 24 hours
         </p>
         <button

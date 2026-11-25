@@ -147,15 +147,15 @@ export function ShowreelProvider({ children }: { children: ReactNode }) {
           role="dialog"
           aria-modal="true"
           aria-label={film ? `${film.title} — film player` : "Film player"}
-          className="flex h-full w-full flex-col bg-ink/97 backdrop-blur-xl"
+          className="flex h-full w-full flex-col bg-espresso"
         >
-          <div className="flex items-center justify-between gap-4 border-b border-white/10 px-5 py-4 md:px-8">
+          <div className="flex items-center justify-between gap-4 border-b border-champagne/20 px-5 py-4 md:px-8">
             <div className="flex min-w-0 flex-wrap items-baseline gap-x-4 gap-y-1">
-              <span className="truncate font-mono text-[0.62rem] uppercase tracking-[0.24em] text-bone">
+              <span className="truncate font-sans text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-ivory">
                 {film?.title}
               </span>
               {film?.subtitle && (
-                <span className="hidden truncate font-mono text-[0.58rem] uppercase tracking-[0.18em] text-muted sm:inline">
+                <span className="hidden truncate font-sans text-[0.58rem] font-medium uppercase tracking-[0.14em] text-champagne/75 sm:inline">
                   {film.subtitle}
                 </span>
               )}
@@ -165,14 +165,14 @@ export function ShowreelProvider({ children }: { children: ReactNode }) {
               type="button"
               onClick={close}
               aria-label="Close film"
-              className="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 text-bone transition-colors hover:border-gold hover:text-gold"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-champagne/30 text-champagne transition-colors hover:bg-champagne hover:text-burgundy"
             >
               <CloseIcon />
             </button>
           </div>
 
           <div className="flex flex-1 items-center justify-center overflow-hidden p-3 md:p-8">
-            <div className="relative w-full max-w-6xl bg-black shadow-[0_40px_120px_rgba(0,0,0,0.7)]">
+            <div className="relative w-full max-w-6xl overflow-hidden rounded-[1.5rem] border border-champagne/20 bg-burgundy">
               <video
                 ref={videoRef}
                 key={film?.src ?? "empty"}
@@ -190,7 +190,7 @@ export function ShowreelProvider({ children }: { children: ReactNode }) {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 px-5 py-4 md:px-8">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-champagne/20 px-5 py-4 md:px-8">
             <div className="flex items-center gap-3">
               <button
                 type="button"
@@ -208,7 +208,7 @@ export function ShowreelProvider({ children }: { children: ReactNode }) {
                 Fullscreen
               </button>
             </div>
-            <p className="font-mono text-[0.56rem] uppercase tracking-[0.16em] text-muted">
+            <p className="font-sans text-[0.56rem] font-medium uppercase tracking-[0.14em] text-champagne/75">
               {film?.note}
             </p>
           </div>

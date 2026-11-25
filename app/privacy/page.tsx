@@ -58,43 +58,51 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <header className="shell pb-12 pt-32 md:pt-40">
-        <div className="flex items-center gap-3">
-          <span className="eyebrow eyebrow-gold">Legal</span>
-          <span className="h-px w-10 bg-gold/50" />
-          <span className="font-mono text-[0.55rem] uppercase tracking-[0.16em] text-muted">
-            Updated November 2026
-          </span>
+      <header className="shell pb-10 pt-28 md:pb-12 md:pt-36">
+        <div className="surface-card rounded-feature p-6 md:p-10 lg:p-12">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="eyebrow">Legal</span>
+            <span className="h-px w-10 bg-burgundy/50" />
+            <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
+              Updated November 2026
+            </span>
+          </div>
+
+          <h1 className="serif mt-6 max-w-4xl text-[clamp(2.8rem,6.6vw,6.6rem)] leading-[0.94] tracking-[-0.035em] text-dark">
+            Privacy &amp; <em className="text-burgundy">cookies.</em>
+          </h1>
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-cocoa">
+            Short version: your brief is used to reply to you, analytics only runs
+            with your permission, and nothing is sold. The details are below.
+          </p>
         </div>
-        <h1 className="serif mt-6 max-w-4xl text-[clamp(2.8rem,6.6vw,6.6rem)] leading-[0.92] tracking-[-0.035em]">
-          Privacy &amp; <em className="text-goldsoft">cookies.</em>
-        </h1>
-        <p className="mt-6 max-w-xl text-sm leading-relaxed text-mist">
-          Short version: your brief is used to reply to you, analytics only runs
-          with your permission, and nothing is sold. The details are below.
-        </p>
       </header>
 
       <div className="shell grid gap-12 pb-24 md:grid-cols-12 md:gap-8">
         <aside className="md:col-span-3">
           <div className="md:sticky md:top-32">
-            <p className="eyebrow mb-4">On this page</p>
-            <ul className="flex flex-col gap-2">
-              {sections.map((section, index) => (
-                <li key={section.title}>
-                  <a
-                    href={`#section-${index + 1}`}
-                    className="link-line font-mono text-[0.58rem] uppercase leading-relaxed tracking-[0.12em] text-mist hover:text-bone"
-                  >
-                    {String(index + 1).padStart(2, "0")} · {section.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 border-t border-white/10 pt-5">
-              <p className="text-xs leading-relaxed text-muted">
+            <div className="surface-light rounded-[1.5rem] p-6">
+              <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
+                On this page
+              </p>
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {sections.map((section, index) => (
+                  <li key={section.title}>
+                    <a
+                      href={`#section-${index + 1}`}
+                      className="link-line font-sans text-[0.58rem] font-semibold uppercase leading-relaxed tracking-[0.1em] text-cocoa hover:text-burgundy"
+                    >
+                      {String(index + 1).padStart(2, "0")} · {section.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-6 border-t border-burgundy/15 pt-5">
+              <p className="text-xs leading-relaxed text-espresso">
                 Questions about this policy?{" "}
-                <a href={`mailto:${site.email}`} className="link-line text-bone">
+                <a href={`mailto:${site.email}`} className="link-line text-espresso">
                   {site.email}
                 </a>
               </p>
@@ -103,34 +111,38 @@ export default function PrivacyPage() {
         </aside>
 
         <div className="md:col-span-8 md:col-start-5">
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-6">
             {sections.map((section, index) => (
               <section key={section.title} id={`section-${index + 1}`}>
-                <div className="flex items-baseline gap-4 border-b border-white/10 pb-4">
-                  <span className="font-mono text-[0.55rem] tracking-[0.14em] text-gold">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h2 className="serif text-2xl leading-tight text-bone md:text-3xl">
-                    {section.title}
-                  </h2>
+                <div className="surface-card rounded-[1.5rem] p-6 md:p-8">
+                  <div className="flex items-baseline gap-4 border-b border-burgundy/15 pb-4">
+                    <span className="font-sans text-[0.55rem] font-semibold tracking-[0.14em] text-burgundy">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h2 className="serif text-2xl leading-tight text-dark md:text-3xl">
+                      {section.title}
+                    </h2>
+                  </div>
+                  {section.body.map((paragraph) => (
+                    <p
+                      key={paragraph.slice(0, 40)}
+                      className="mt-5 max-w-2xl text-sm leading-[1.9] text-cocoa"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
-                {section.body.map((paragraph) => (
-                  <p
-                    key={paragraph.slice(0, 40)}
-                    className="mt-5 max-w-2xl text-sm leading-[1.9] text-mist"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
               </section>
             ))}
           </div>
 
-          <div className="mt-16 border border-white/10 bg-coal p-6 md:p-8">
-            <p className="eyebrow eyebrow-gold">Contact</p>
-            <p className="mt-3 max-w-lg text-sm leading-relaxed text-mist">
+          <div className="mt-12 rounded-feature border border-champagne/20 bg-burgundy p-6 text-ivory md:p-8">
+            <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
+              Contact
+            </p>
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-champagne/90">
               Ropona Benard · Ropona Studio · {site.location}. For any privacy request, email{" "}
-              <a href={`mailto:${site.email}`} className="link-line text-bone">
+              <a href={`mailto:${site.email}`} className="link-line text-ivory">
                 {site.email}
               </a>
               . Replies within one working day.

@@ -221,6 +221,8 @@ public/media/         stills, preview loops, showreel, OG image
 public/favicon.svg    placeholder mark, easy to swap for the final identity
 ```
 
-Design system: warm espresso palette (`#211a15`), bone text (`#f6efe3`), burnt
-amber accent (`#c98f5a`); Instrument Serif for headlines, Inter for UI, IBM Plex Mono
-for labels. Tokens live in `tailwind.config.ts` and `app/globals.css`.
+Design system: burgundy & champagne editorial palette — taupe canvas (`#A08C71`),
+burgundy (`#601E21`), champagne surfaces (`#D9C9AD` / `#E5D7BD`), espresso
+(`#36130F`) and ivory text (`#F2E8D5`), with cocoa (`#6B4F3B`) for secondary copy
+on champagne. Instrument Serif for headlines, Inter for body and labels. Tokens
+live in `tailwind.config.ts` and `app/globals.css`.

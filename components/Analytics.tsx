@@ -72,14 +72,16 @@ export function Analytics() {
           role="dialog"
           aria-label="Cookie preferences"
           aria-live="polite"
-          className="fixed bottom-4 left-4 z-[95] w-[calc(100%-2rem)] max-w-sm border border-white/12 bg-coal/95 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+          className="fixed bottom-4 left-4 z-[95] w-[calc(100%-2rem)] max-w-sm rounded-[1.5rem] border border-burgundy/20 bg-champagne p-5"
           style={{ animation: "floatIn 0.8s cubic-bezier(0.16,1,0.3,1) both" }}
         >
           <div className="flex items-center gap-2">
-            <span className="h-1 w-1 rounded-full bg-gold" />
-            <p className="eyebrow !text-[0.55rem]">A note on cookies</p>
+            <span className="h-1.5 w-1.5 rounded-full bg-burgundy" />
+            <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
+              A note on cookies
+            </p>
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-mist">
+          <p className="mt-3 text-xs leading-relaxed text-cocoa">
             This site uses privacy-first analytics to understand which films and
             pages resonate. Nothing loads until you choose.
           </p>
@@ -100,7 +102,7 @@ export function Analytics() {
             </button>
             <Link
               href="/privacy"
-              className="ml-auto font-mono text-[0.52rem] uppercase tracking-[0.12em] text-muted underline-offset-4 hover:text-bone hover:underline"
+              className="ml-auto font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-cocoa underline-offset-4 hover:text-burgundy hover:underline"
             >
               Details
             </Link>

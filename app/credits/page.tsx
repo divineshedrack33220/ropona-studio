@@ -11,54 +11,57 @@ export const metadata: Metadata = {
 export default function CreditsPage() {
   return (
     <>
-      <header className="shell pb-12 pt-32 md:pt-40">
-        <div className="flex items-center gap-3">
-          <span className="eyebrow eyebrow-gold">Colophon</span>
-          <span className="h-px w-10 bg-gold/50" />
-          <span className="font-mono text-[0.55rem] uppercase tracking-[0.16em] text-muted">
-            Built in Lagos
-          </span>
+      <header className="shell pb-10 pt-28 md:pb-12 md:pt-36">
+        <div className="surface-card rounded-feature p-6 md:p-10 lg:p-12">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="eyebrow">Colophon</span>
+            <span className="h-px w-10 bg-burgundy/50" />
+            <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
+              Built in Lagos
+            </span>
+          </div>
+
+          <h1 className="serif mt-6 max-w-4xl text-[clamp(2.8rem,6.6vw,6.6rem)] leading-[0.94] tracking-[-0.035em] text-dark">
+            Credits &amp; <em className="text-burgundy">craft.</em>
+          </h1>
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-cocoa">
+            Every still on this site is original key art, art-directed as a light
+            study and designed to be swapped for real film frames as projects are
+            published. Typefaces and tools are credited below.
+          </p>
         </div>
-        <h1 className="serif mt-6 max-w-4xl text-[clamp(2.8rem,6.6vw,6.6rem)] leading-[0.92] tracking-[-0.035em]">
-          Credits &amp; <em className="text-goldsoft">craft.</em>
-        </h1>
-        <p className="mt-6 max-w-xl text-sm leading-relaxed text-mist">
-          Every still on this site is original key art, art-directed as a light
-          study and designed to be swapped for real film frames as projects are
-          published. Typefaces and tools are credited below.
-        </p>
       </header>
 
       <div className="shell pb-24">
-        <div className="border-t border-white/10">
+        <div className="rounded-feature border border-burgundy/15 bg-champagne p-5 md:p-8">
           {credits.map((item, index) => (
             <div
               key={`${item.slot}-${item.title}`}
-              className="grid gap-4 border-b border-white/10 py-7 md:grid-cols-12 md:items-baseline md:gap-8"
+              className="grid gap-4 border-b border-burgundy/15 py-7 last:border-b-0 md:grid-cols-12 md:items-baseline md:gap-8"
             >
-              <span className="font-mono text-[0.55rem] tracking-[0.14em] text-gold md:col-span-1">
+              <span className="font-sans text-[0.55rem] font-semibold tracking-[0.12em] text-burgundy md:col-span-1">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <div className="md:col-span-3">
-                <p className="font-mono text-[0.52rem] uppercase tracking-[0.14em] text-muted">
+                <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
                   {item.slot}
                 </p>
-                <h2 className="serif mt-2 text-xl leading-tight text-bone md:text-2xl">
+                <h2 className="serif mt-2 text-xl leading-tight text-burgundy md:text-2xl">
                   {item.title}
                 </h2>
               </div>
               <div className="md:col-span-4">
-                <p className="text-sm leading-relaxed text-mist">{item.creator}</p>
+                <p className="text-sm leading-relaxed text-cocoa">{item.creator}</p>
               </div>
               <div className="md:col-span-2">
-                <p className="font-mono text-[0.52rem] uppercase tracking-[0.1em] text-muted">
+                <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.1em] text-cocoa">
                   {item.license}
                 </p>
               </div>
-              <div className="flex gap-4 md:col-span-2 md:justify-end">
+              <div className="flex flex-wrap gap-x-5 gap-y-2 md:col-span-2 md:justify-end">
                 <a
                   href={item.licenseUrl}
-                  className="link-line font-mono text-[0.52rem] uppercase tracking-[0.12em] text-mist hover:text-bone"
+                  className="link-line font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-burgundy hover:text-burgundySoft"
                   {...(item.licenseUrl.startsWith("http")
                     ? { target: "_blank", rel: "noreferrer" }
                     : {})}
@@ -67,7 +70,7 @@ export default function CreditsPage() {
                 </a>
                 <a
                   href={item.href}
-                  className="link-line font-mono text-[0.52rem] uppercase tracking-[0.12em] text-mist hover:text-bone"
+                  className="link-line font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-burgundy hover:text-burgundySoft"
                   {...(item.href.startsWith("http")
                     ? { target: "_blank", rel: "noreferrer" }
                     : {})}
@@ -79,10 +82,10 @@ export default function CreditsPage() {
           ))}
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-12">
+        <div className="mt-14 grid gap-8 md:grid-cols-12">
           <div className="md:col-span-5">
             <p className="eyebrow mb-4">A note on the imagery</p>
-            <p className="text-sm leading-[1.9] text-mist">
+            <p className="text-sm leading-[1.9] text-espresso">
               The film stills on this site are procedural light studies generated
               in-house: volumetric light, brutalist geometry, haze and 35mm grain.
               They exist so the site feels finished before final project assets
@@ -91,13 +94,13 @@ export default function CreditsPage() {
           </div>
           <div className="md:col-span-5 md:col-start-8">
             <p className="eyebrow mb-4">Replace with real work</p>
-            <p className="text-sm leading-[1.9] text-mist">
+            <p className="text-sm leading-[1.9] text-espresso">
               Project thumbnails, stills and preview loops are referenced from{" "}
-              <code className="border border-white/10 bg-carbon px-1.5 py-0.5 font-mono text-[0.7rem] text-bone">
+              <code className="rounded-md border border-burgundy/20 bg-champagne px-1.5 py-0.5 font-sans text-[0.7rem] text-burgundy">
                 content/projects.json
               </code>
               . Drop new files into{" "}
-              <code className="border border-white/10 bg-carbon px-1.5 py-0.5 font-mono text-[0.7rem] text-bone">
+              <code className="rounded-md border border-burgundy/20 bg-champagne px-1.5 py-0.5 font-sans text-[0.7rem] text-burgundy">
                 public/media
               </code>{" "}
               and update the paths — no component changes required.

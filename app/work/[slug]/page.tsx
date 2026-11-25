@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = `${project.title} — ${project.filmTitle}`;
   return {
     title,
-    description: `${project.description} ${project.role}. A ${project.category.toLowerCase()} project by Ropona Benard.`,
+    description: `${project.description} ${project.role}. A ${project.category.toLowerCase()} by Ropona Benard.`,
     alternates: { canonical: `/work/${project.slug}` },
     openGraph: {
       title: `${title} — Ropona Benard`,
@@ -98,55 +98,60 @@ export default async function ProjectPage({ params }: PageProps) {
       />
 
       <article>
-        <header className="shell pb-12 pt-32 md:pt-40">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-3 font-mono text-[0.56rem] uppercase tracking-[0.16em] text-muted">
-            <Link href="/work" className="link-line hover:text-bone">
-              Work
-            </Link>
-            <span className="text-white/20">/</span>
-            <span className="text-mist">{project.title}</span>
-          </nav>
+        <header className="shell pb-12 pt-28 md:pt-36">
+          <div className="surface-card rounded-feature p-6 md:p-10 lg:p-12">
+            <nav
+              aria-label="Breadcrumb"
+              className="flex flex-wrap items-center gap-3 font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-cocoa"
+            >
+              <Link href="/work" className="link-line text-burgundy hover:text-burgundySoft">
+                Work
+              </Link>
+              <span aria-hidden="true" className="text-burgundy/30">/</span>
+              <span className="text-cocoa">{project.title}</span>
+            </nav>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span className="border border-gold/30 px-2.5 py-1.5 font-mono text-[0.52rem] uppercase tracking-[0.16em] text-goldsoft">
-              {project.category}
-            </span>
-            <span className="font-mono text-[0.55rem] uppercase tracking-[0.16em] text-muted">
-              {project.year}
-            </span>
-            <span className="hidden h-px w-8 bg-white/20 sm:block" />
-            <span className="font-mono text-[0.52rem] uppercase tracking-[0.16em] text-muted">
-              {project.outcome}
-            </span>
+            <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2">
+              <span className="rounded-full border border-burgundy/25 bg-champagneLight px-3 py-1.5 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
+                {project.category}
+              </span>
+              <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
+                {project.year}
+              </span>
+              <span aria-hidden="true" className="hidden h-px w-8 bg-burgundy/25 sm:block" />
+              <span className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
+                {project.outcome}
+              </span>
+            </div>
+
+            <h1 className="serif mt-7 max-w-6xl text-[clamp(3rem,7.4vw,7.6rem)] leading-[0.92] tracking-[-0.035em] text-dark">
+              {project.title}
+              <span className="block italic text-burgundy">{project.filmTitle}</span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-cocoa md:text-xl">
+              {project.description}
+            </p>
+
+            <dl className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+              {meta.map((item) => (
+                <div key={item.label} className="surface-light p-4 md:p-5">
+                  <dt className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
+                    {item.label}
+                  </dt>
+                  <dd className="mt-2 text-xs leading-relaxed text-cocoa md:text-sm">
+                    {item.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
-
-          <h1 className="serif mt-7 max-w-6xl text-[clamp(3rem,7.4vw,7.6rem)] leading-[0.9] tracking-[-0.035em]">
-            {project.title}
-            <span className="block italic text-goldsoft">{project.filmTitle}</span>
-          </h1>
-
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-mist md:text-xl">
-            {project.description}
-          </p>
-
-          <dl className="mt-12 grid grid-cols-2 gap-px border-y border-white/10 bg-white/10 md:grid-cols-4">
-            {meta.map((item) => (
-              <div key={item.label} className="bg-ink px-4 py-5 md:px-5 md:py-6">
-                <dt className="font-mono text-[0.52rem] uppercase tracking-[0.16em] text-muted">
-                  {item.label}
-                </dt>
-                <dd className="mt-2 text-xs leading-relaxed text-bone md:text-sm">
-                  {item.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </header>
 
         <div className="shell">
           <Reveal>
             <figure>
-              <div className="relative aspect-[16/10] w-full overflow-hidden border border-white/10 md:aspect-[21/9]">
+              <div className="media-frame relative aspect-[16/10] w-full md:aspect-[21/9]">
                 <Image
                   src={project.thumbnail}
                   alt={`${project.title} — ${project.filmTitle}. A ${project.category.toLowerCase()} film by Ropona Benard.`}
@@ -155,12 +160,11 @@ export default async function ProjectPage({ params }: PageProps) {
                   sizes="100vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-ink/20" />
-                <span className="absolute bottom-4 left-4 font-mono text-[0.52rem] uppercase tracking-[0.16em] text-bone/70">
+                <span className="absolute bottom-4 left-4 rounded-full bg-espresso/85 px-3 py-2 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-champagne">
                   {project.filmTitle} / {project.year}
                 </span>
               </div>
-              <figcaption className="mt-3 flex flex-wrap items-center justify-between gap-3 font-mono text-[0.52rem] uppercase tracking-[0.14em] text-muted">
+              <figcaption className="mt-3 flex flex-wrap items-center justify-between gap-3 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-espresso">
                 <span>{project.role}</span>
                 <span>{project.location}</span>
               </figcaption>
@@ -172,32 +176,38 @@ export default async function ProjectPage({ params }: PageProps) {
           <div className="shell grid gap-10 md:grid-cols-12 md:gap-8">
             <div className="md:col-span-3">
               <Reveal className="flex items-center gap-3">
-                <span className="font-mono text-[0.58rem] tracking-[0.16em] text-gold">01</span>
-                <span className="h-px w-6 bg-gold/60" />
+                <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
+                  01
+                </span>
+                <span className="h-px w-6 bg-burgundy/50" />
                 <span className="eyebrow">Overview</span>
               </Reveal>
             </div>
             <Reveal delay={80} className="md:col-span-8">
-              <p className="serif max-w-3xl text-[clamp(1.5rem,2.6vw,2.6rem)] leading-[1.3] text-bone">
-                {project.overview}
-              </p>
+              <div className="surface-card rounded-feature p-7 md:p-9">
+                <p className="serif max-w-3xl text-[clamp(1.5rem,2.6vw,2.6rem)] leading-[1.3] text-dark">
+                  {project.overview}
+                </p>
+              </div>
             </Reveal>
           </div>
         </section>
 
-        <section className="border-t border-white/10 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 py-16 md:py-24">
           <div className="shell grid gap-10 md:grid-cols-12 md:gap-8">
             <div className="md:col-span-3">
               <Reveal className="flex items-center gap-3">
-                <span className="font-mono text-[0.58rem] tracking-[0.16em] text-gold">02</span>
-                <span className="h-px w-6 bg-gold/60" />
+                <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
+                  02
+                </span>
+                <span className="h-px w-6 bg-burgundy/50" />
                 <span className="eyebrow">The challenge</span>
               </Reveal>
             </div>
             <div className="md:col-span-8">
               {paragraphs(project.challenge).map((paragraph, index) => (
                 <Reveal key={index} delay={index * 60}>
-                  <p className="mb-5 max-w-2xl text-[1.02rem] leading-[1.9] text-mist last:mb-0">
+                  <p className="mb-5 max-w-2xl text-[1.02rem] leading-[1.9] text-espresso last:mb-0">
                     {paragraph}
                   </p>
                 </Reveal>
@@ -206,11 +216,13 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-t border-white/10 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 bg-champagne/35 py-16 md:py-24">
           <div className="shell">
             <div className="flex items-center gap-3">
-              <span className="font-mono text-[0.58rem] tracking-[0.16em] text-gold">03</span>
-              <span className="h-px w-6 bg-gold/60" />
+              <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
+                03
+              </span>
+              <span className="h-px w-6 bg-burgundy/50" />
               <span className="eyebrow">The film</span>
             </div>
             <div className="mt-8 md:mt-10">
@@ -227,20 +239,22 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-t border-white/10 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 py-16 md:py-24">
           <div className="shell">
             <div className="grid gap-10 md:grid-cols-12 md:gap-8">
               <div className="md:col-span-3">
                 <Reveal className="flex items-center gap-3">
-                  <span className="font-mono text-[0.58rem] tracking-[0.16em] text-gold">04</span>
-                  <span className="h-px w-6 bg-gold/60" />
+                  <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
+                    04
+                  </span>
+                  <span className="h-px w-6 bg-burgundy/50" />
                   <span className="eyebrow">The direction</span>
                 </Reveal>
               </div>
               <div className="md:col-span-8">
                 {paragraphs(project.approach).map((paragraph, index) => (
                   <Reveal key={index} delay={index * 60}>
-                    <p className="mb-5 max-w-2xl text-[1.02rem] leading-[1.9] text-mist last:mb-0">
+                    <p className="mb-5 max-w-2xl text-[1.02rem] leading-[1.9] text-espresso last:mb-0">
                       {paragraph}
                     </p>
                   </Reveal>
@@ -249,20 +263,16 @@ export default async function ProjectPage({ params }: PageProps) {
             </div>
 
             <h2 className="sr-only">The direction</h2>
-            <div className="mt-14 grid gap-px bg-white/10 md:mt-20 md:grid-cols-3">
+            <div className="mt-14 grid gap-5 md:mt-20 md:grid-cols-3">
               {project.pillars.map((pillar, index) => (
-                <Reveal
-                  key={pillar.title}
-                  delay={index * 70}
-                  className="bg-ink p-6 md:p-8"
-                >
-                  <span className="font-mono text-[0.55rem] tracking-[0.14em] text-gold">
+                <Reveal key={pillar.title} delay={index * 70} className="surface-card p-6 md:p-8">
+                  <span className="font-sans text-[0.55rem] font-semibold tracking-[0.12em] text-espresso">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="serif mt-4 text-2xl leading-tight text-bone">
+                  <h3 className="serif mt-4 text-2xl leading-tight text-burgundy">
                     {pillar.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-mist">
+                  <p className="mt-3 text-sm leading-relaxed text-cocoa">
                     {pillar.body}
                   </p>
                 </Reveal>
@@ -272,20 +282,23 @@ export default async function ProjectPage({ params }: PageProps) {
         </section>
 
         {project.beforeAfter && (
-          <section className="border-t border-white/10 py-16 md:py-24">
+          <section className="border-t border-burgundy/15 py-16 md:py-24">
             <div className="shell">
               <div className="flex flex-wrap items-end justify-between gap-6">
                 <div>
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-[0.58rem] tracking-[0.16em] text-gold">05</span>
-                    <span className="h-px w-6 bg-gold/60" />
+                    <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
+                      05
+                    </span>
+                    <span className="h-px w-6 bg-burgundy/50" />
                     <span className="eyebrow">The grade</span>
                   </div>
-                  <h2 className="serif mt-5 max-w-xl text-[clamp(1.9rem,3.4vw,3.4rem)] leading-tight">
-                    From flat plate to <em className="text-goldsoft">final frame.</em>
+                  <h2 className="serif mt-5 max-w-xl text-[clamp(1.9rem,3.4vw,3.4rem)] leading-tight text-dark">
+                    From flat plate to{" "}
+                    <em className="text-burgundy">final frame.</em>
                   </h2>
                 </div>
-                <p className="max-w-xs font-mono text-[0.52rem] uppercase leading-[1.8] tracking-[0.14em] text-muted">
+                <p className="max-w-xs font-sans text-[0.52rem] font-semibold uppercase leading-[1.8] tracking-[0.12em] text-espresso">
                   Drag the handle to compare the ungraded plate with the final
                   cinematic grade.
                 </p>
@@ -303,14 +316,16 @@ export default async function ProjectPage({ params }: PageProps) {
           </section>
         )}
 
-        <section className="border-t border-white/10 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 py-16 md:py-24">
           <div className="shell">
             <div className="flex items-center gap-3">
-              <span className="font-mono text-[0.58rem] tracking-[0.16em] text-gold">06</span>
-              <span className="h-px w-6 bg-gold/60" />
+              <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
+                06
+              </span>
+              <span className="h-px w-6 bg-burgundy/50" />
               <span className="eyebrow">The process</span>
             </div>
-            <h2 className="serif mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,3.4rem)] leading-tight">
+            <h2 className="serif mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,3.4rem)] leading-tight text-dark">
               How the film was made.
             </h2>
 
@@ -319,15 +334,17 @@ export default async function ProjectPage({ params }: PageProps) {
                 <Reveal
                   key={step.step}
                   delay={index * 50}
-                  className="border-t border-white/10 py-6 md:py-8"
+                  className="border-t border-burgundy/15 py-6 md:py-8"
                 >
                   <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-[0.55rem] tracking-[0.14em] text-gold">
+                    <span className="font-sans text-[0.55rem] font-semibold tracking-[0.12em] text-espresso">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="serif text-xl text-bone md:text-2xl">{step.step}</h3>
+                    <h3 className="serif text-xl text-burgundy md:text-2xl">
+                      {step.step}
+                    </h3>
                   </div>
-                  <p className="mt-3 max-w-lg pl-8 text-sm leading-[1.8] text-mist">
+                  <p className="mt-3 max-w-lg pl-8 text-sm leading-[1.8] text-espresso">
                     {step.body}
                   </p>
                 </Reveal>
@@ -336,18 +353,20 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-t border-white/10 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 py-16 md:py-24">
           <div className="shell">
             <div className="flex items-center gap-3">
-              <span className="font-mono text-[0.58rem] tracking-[0.16em] text-gold">07</span>
-              <span className="h-px w-6 bg-gold/60" />
+              <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
+                07
+              </span>
+              <span className="h-px w-6 bg-burgundy/50" />
               <span className="eyebrow">Frames & process</span>
             </div>
 
             <div className="mt-8 grid gap-4 md:mt-10">
               <Reveal>
                 <figure>
-                  <div className="relative aspect-[21/10] overflow-hidden border border-white/10">
+                  <div className="media-frame relative aspect-[21/10]">
                     <Image
                       src={project.gallery[0]?.src ?? project.thumbnail}
                       alt={project.gallery[0]?.caption ?? project.title}
@@ -356,7 +375,7 @@ export default async function ProjectPage({ params }: PageProps) {
                       className="object-cover"
                     />
                   </div>
-                  <figcaption className="mt-3 font-mono text-[0.52rem] uppercase tracking-[0.14em] text-muted">
+                  <figcaption className="mt-3 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-espresso">
                     {project.gallery[0]?.caption}
                   </figcaption>
                 </figure>
@@ -366,7 +385,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 {project.gallery.slice(1).map((item, index) => (
                   <Reveal key={item.src} delay={index * 70}>
                     <figure>
-                      <div className="relative aspect-[4/3] overflow-hidden border border-white/10">
+                      <div className="media-frame relative aspect-[4/3]">
                         <Image
                           src={item.src}
                           alt={item.caption}
@@ -375,7 +394,7 @@ export default async function ProjectPage({ params }: PageProps) {
                           className="object-cover"
                         />
                       </div>
-                      <figcaption className="mt-3 font-mono text-[0.52rem] uppercase tracking-[0.14em] text-muted">
+                      <figcaption className="mt-3 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-espresso">
                         {item.caption}
                       </figcaption>
                     </figure>
@@ -386,25 +405,23 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-coal py-16 md:py-24">
+        <section className="border-y border-burgundy/15 bg-champagne/55 py-16 md:py-24">
           <div className="shell">
             <div className="flex items-center gap-3">
-              <span className="font-mono text-[0.58rem] tracking-[0.16em] text-gold">08</span>
-              <span className="h-px w-6 bg-gold/60" />
+              <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
+                08
+              </span>
+              <span className="h-px w-6 bg-burgundy/50" />
               <span className="eyebrow">The outcome</span>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-px bg-white/10 md:grid-cols-4">
+            <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
               {project.results.map((result, index) => (
-                <Reveal
-                  key={result.label}
-                  delay={index * 60}
-                  className="bg-coal p-5 md:p-7"
-                >
-                  <p className="serif text-[clamp(2.2rem,3.8vw,3.8rem)] leading-none text-goldsoft">
+                <Reveal key={result.label} delay={index * 60} className="surface-light p-5 md:p-7">
+                  <p className="serif text-[clamp(2.2rem,3.8vw,3.8rem)] leading-none text-burgundy">
                     {result.value}
                   </p>
-                  <p className="mt-3 text-[0.68rem] leading-relaxed text-mist">
+                  <p className="mt-3 font-sans text-[0.68rem] font-medium leading-relaxed text-espresso">
                     {result.label}
                   </p>
                 </Reveal>
@@ -412,15 +429,15 @@ export default async function ProjectPage({ params }: PageProps) {
             </div>
 
             {project.testimonial && (
-              <Reveal className="mt-14 max-w-4xl">
-                <blockquote className="serif text-[clamp(1.5rem,2.8vw,2.8rem)] leading-[1.25] text-bone">
+              <Reveal className="mt-14 max-w-4xl rounded-feature bg-burgundy p-7 text-ivory md:p-9">
+                <blockquote className="serif text-[clamp(1.5rem,2.8vw,2.8rem)] leading-[1.25] text-ivory">
                   “{project.testimonial.quote}”
                 </blockquote>
                 <div className="mt-6 flex items-center gap-4">
-                  <span className="h-px w-10 bg-gold" />
+                  <span aria-hidden="true" className="h-px w-10 bg-champagne" />
                   <div>
-                    <p className="text-sm text-bone">{project.testimonial.name}</p>
-                    <p className="font-mono text-[0.52rem] uppercase tracking-[0.14em] text-muted">
+                    <p className="text-sm text-ivory">{project.testimonial.name}</p>
+                    <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-champagne/75">
                       {project.testimonial.role}
                     </p>
                   </div>
@@ -428,32 +445,38 @@ export default async function ProjectPage({ params }: PageProps) {
               </Reveal>
             )}
 
-            <div className="mt-14 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-12">
+            <div className="mt-14 grid gap-10 border-t border-burgundy/15 pt-10 md:grid-cols-12">
               <div className="md:col-span-4">
-                <p className="eyebrow mb-4">Credits</p>
-                <ul className="flex flex-col gap-2">
+                <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
+                  Credits
+                </p>
+                <ul className="mt-4 flex flex-col gap-2">
                   {project.credits.map((credit) => (
-                    <li key={credit} className="text-xs leading-relaxed text-mist">
+                    <li key={credit} className="text-xs leading-relaxed text-espresso">
                       {credit}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="md:col-span-4">
-                <p className="eyebrow mb-4">Status</p>
-                <p className="text-xs leading-relaxed text-mist">
+                <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
+                  Status
+                </p>
+                <p className="mt-4 text-xs leading-relaxed text-espresso">
                   Delivered {project.year}. Selected metrics are reported by the
                   client or measured across public platforms. Full case study deck
                   available on request.
                 </p>
               </div>
               <div className="md:col-span-4">
-                <p className="eyebrow mb-4">Pipeline</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
+                  Pipeline
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
                   {site.tools.slice(0, 8).map((tool) => (
                     <span
                       key={tool}
-                      className="border border-white/10 px-2 py-1 font-mono text-[0.5rem] uppercase tracking-[0.08em] text-muted"
+                      className="rounded-full border border-burgundy/20 bg-champagne px-2 py-1 font-sans text-[0.5rem] font-semibold uppercase tracking-[0.08em] text-espresso"
                     >
                       {tool}
                     </span>
@@ -467,27 +490,29 @@ export default async function ProjectPage({ params }: PageProps) {
         <section className="shell py-16 md:py-24">
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
             <div>
-              <p className="eyebrow">Next project</p>
+              <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-espresso">
+                Next project
+              </p>
               <Link
                 href={`/work/${next.slug}`}
                 className="group mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-2"
                 data-track="project_next"
                 data-track-label={next.slug}
               >
-                <span className="serif text-[clamp(2.2rem,4.6vw,4.6rem)] leading-none text-bone transition-colors duration-500 group-hover:text-goldsoft">
+                <span className="serif text-[clamp(2.2rem,4.6vw,4.6rem)] leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft">
                   {next.title}
                 </span>
-                <span className="serif text-[clamp(1.4rem,2.6vw,2.6rem)] italic leading-none text-muted">
+                <span className="serif text-[clamp(1.4rem,2.6vw,2.6rem)] italic leading-none text-espresso">
                   {next.filmTitle}
                 </span>
-                <span className="ml-2 text-xl text-gold transition-transform duration-500 group-hover:translate-x-1" aria-hidden="true">
+                <span aria-hidden="true" className="project-arrow ml-2 text-xl text-burgundy">
                   ↗
                 </span>
               </Link>
             </div>
             <Link
               href="/#contact"
-              className="btn btn-gold"
+              className="btn btn-gold shrink-0"
               data-track="cta_click"
               data-track-label="project_footer_start"
             >
@@ -497,7 +522,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
           <Link
             href={`/work/${next.slug}`}
-            className="group mt-10 block overflow-hidden border border-white/10"
+            className="group mt-10 block overflow-hidden rounded-[1.5rem] border border-burgundy/20"
             aria-label={`Next project: ${next.title}`}
             tabIndex={-1}
           >
@@ -509,7 +534,6 @@ export default async function ProjectPage({ params }: PageProps) {
                 sizes="(max-width: 1680px) 100vw, 1600px"
                 className="object-cover transition-transform duration-[1400ms] ease-cinema group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
             </div>
           </Link>
         </section>

@@ -4,33 +4,52 @@ const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{ts,tsx,js,jsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        ink: "#211a15",
-        coal: "#262019",
-        carbon: "#2c251d",
-        smoke: "#332b22",
-        line: "#43392e",
-        bone: "#f6efe3",
-        mist: "#bfb3a3",
-        muted: "#9c8f7e",
-        gold: "#c98f5a",
-        goldsoft: "#e2b184",
+        /* Semantic tokens — the single source of truth for the redesign. */
+        taupe: "rgb(var(--taupe) / <alpha-value>)",
+        burgundy: "rgb(var(--burgundy) / <alpha-value>)",
+        champagne: "rgb(var(--champagne) / <alpha-value>)",
+        champagneLight: "rgb(var(--champagne-light) / <alpha-value>)",
+        espresso: "rgb(var(--espresso) / <alpha-value>)",
+        cocoa: "rgb(var(--cocoa) / <alpha-value>)",
+        ivory: "rgb(var(--ivory) / <alpha-value>)",
+        taupeDeep: "rgb(var(--taupe-deep) / <alpha-value>)",
+        burgundySoft: "rgb(var(--burgundy-soft) / <alpha-value>)",
+        brown: "rgb(var(--brown) / <alpha-value>)",
+        dark: "rgb(var(--dark) / <alpha-value>)",
+
+        /* Existing aliases retained so every component shares the palette. */
+        ink: "rgb(var(--taupe) / <alpha-value>)",
+        coal: "rgb(var(--champagne) / <alpha-value>)",
+        carbon: "rgb(var(--champagne-light) / <alpha-value>)",
+        smoke: "rgb(var(--taupe-deep) / <alpha-value>)",
+        line: "rgb(var(--cocoa) / <alpha-value>)",
+        bone: "rgb(var(--dark) / <alpha-value>)",
+        mist: "rgb(var(--cocoa) / <alpha-value>)",
+        muted: "rgb(var(--espresso) / <alpha-value>)",
+        gold: "rgb(var(--burgundy) / <alpha-value>)",
+        goldsoft: "rgb(var(--burgundy-soft) / <alpha-value>)",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        mono: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
         "2xs": ["0.625rem", { lineHeight: "1.2" }],
       },
       letterSpacing: {
-        label: "0.26em",
+        label: "0.22em",
         widest: "0.35em",
+      },
+      borderRadius: {
+        card: "1.5rem",
+        panel: "2rem",
+        feature: "2.5rem",
       },
       maxWidth: {
         shell: "1680px",
@@ -40,11 +59,11 @@ const config: Config = {
         swift: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
       animation: {
-        marquee: "marquee 38s linear infinite",
+        marquee: "marquee 42s linear infinite",
         "marquee-slow": "marquee 60s linear infinite",
-        "fade-up": "fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both",
-        "fade-in": "fadeIn 1.2s cubic-bezier(0.16,1,0.3,1) both",
-        "line-grow": "lineGrow 1.1s cubic-bezier(0.16,1,0.3,1) both",
+        "fade-up": "fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "fade-in": "fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "line-grow": "lineGrow 1.1s cubic-bezier(0.16, 1, 0.3, 1) both",
         "pulse-dot": "pulseDot 2.8s ease-in-out infinite",
       },
       keyframes: {
@@ -66,7 +85,7 @@ const config: Config = {
         },
         pulseDot: {
           "0%, 100%": { opacity: "1", transform: "scale(1)" },
-          "50%": { opacity: "0.4", transform: "scale(0.72)" },
+          "50%": { opacity: "0.45", transform: "scale(0.8)" },
         },
       },
     },

@@ -15,7 +15,7 @@ export function BeforeAfter({ image, flat, note, title }: BeforeAfterProps) {
 
   return (
     <div>
-      <div className="before-after relative aspect-[16/9] w-full select-none overflow-hidden border border-white/10 bg-carbon">
+      <div className="before-after media-frame relative aspect-[16/9] w-full select-none">
         <Image
           src={image}
           alt={`${title} — final graded frame`}
@@ -36,18 +36,19 @@ export function BeforeAfter({ image, flat, note, title }: BeforeAfterProps) {
           />
         </div>
 
-        <span className="pointer-events-none absolute left-4 top-4 border border-white/15 bg-ink/50 px-2.5 py-1.5 font-mono text-[0.5rem] uppercase tracking-[0.16em] text-bone backdrop-blur-md">
+        <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-espresso/85 px-3 py-2 font-sans text-[0.5rem] font-semibold uppercase tracking-[0.14em] text-champagne">
           Ungraded
         </span>
-        <span className="pointer-events-none absolute right-4 top-4 border border-gold/30 bg-ink/50 px-2.5 py-1.5 font-mono text-[0.5rem] uppercase tracking-[0.16em] text-goldsoft backdrop-blur-md">
+        <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-burgundy px-3 py-2 font-sans text-[0.5rem] font-semibold uppercase tracking-[0.14em] text-champagne">
           Final grade
         </span>
 
         <div
-          className="pointer-events-none absolute inset-y-0 z-10 w-px bg-bone/80"
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 z-10 w-px bg-ivory/85"
           style={{ left: `${value}%` }}
         >
-          <div className="ba-handle absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-bone/50 bg-ink/70 text-bone backdrop-blur-md">
+          <div className="ba-handle absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-champagne/50 bg-burgundy text-ivory">
             <svg viewBox="0 0 20 12" fill="none" className="h-2.5 w-4" aria-hidden="true">
               <path d="M7 1L2 6L7 11M13 1L18 6L13 11" stroke="currentColor" strokeWidth="1" />
             </svg>
@@ -66,13 +67,14 @@ export function BeforeAfter({ image, flat, note, title }: BeforeAfterProps) {
           className="absolute inset-0 z-20 h-full w-full"
         />
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink/70 to-transparent" />
-        <p className="pointer-events-none absolute bottom-4 left-4 font-mono text-[0.5rem] uppercase tracking-[0.14em] text-bone/60">
+        <span className="pointer-events-none absolute bottom-4 left-4 rounded-full bg-espresso/80 px-3 py-2 font-sans text-[0.5rem] font-semibold uppercase tracking-[0.12em] text-champagne">
           Drag to compare
-        </p>
+        </span>
       </div>
       {note && (
-        <p className="mt-4 max-w-2xl text-xs leading-relaxed text-muted">{note}</p>
+        <p className="mt-4 max-w-2xl font-sans text-xs leading-relaxed text-espresso">
+          {note}
+        </p>
       )}
     </div>
   );

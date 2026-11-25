@@ -17,7 +17,7 @@ export function FilmPlayer({ src, poster, title, caption, note }: FilmPlayerProp
 
   return (
     <figure>
-      <div className="relative aspect-video w-full overflow-hidden border border-white/10 bg-black">
+      <div className="media-frame relative aspect-video w-full">
         {!playing ? (
           <>
             <Image
@@ -27,7 +27,7 @@ export function FilmPlayer({ src, poster, title, caption, note }: FilmPlayerProp
               sizes="(max-width: 1680px) 100vw, 1600px"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-ink/30" />
+            <div aria-hidden="true" className="absolute inset-0 bg-espresso/35" />
             {src && (
               <button
                 type="button"
@@ -38,21 +38,21 @@ export function FilmPlayer({ src, poster, title, caption, note }: FilmPlayerProp
                 className="group absolute inset-0 flex flex-col items-center justify-center gap-5"
                 aria-label={`Play ${title}`}
               >
-                <span className="flex h-20 w-20 items-center justify-center rounded-full border border-bone/30 bg-ink/20 text-bone backdrop-blur-md transition-all duration-500 ease-cinema group-hover:scale-105 group-hover:border-gold group-hover:text-gold md:h-24 md:w-24">
+                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-burgundy text-ivory transition-colors duration-300 group-hover:bg-burgundySoft md:h-24 md:w-24">
                   <svg viewBox="0 0 14 14" className="ml-1 h-5 w-5" fill="none" aria-hidden="true">
                     <path d="M2 1L13 7L2 13V1Z" fill="currentColor" />
                   </svg>
                 </span>
-                <span className="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-bone/80">
+                <span className="rounded-full bg-champagne px-4 py-2 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
                   Play film
                 </span>
               </button>
             )}
             <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 p-5">
-              <span className="font-mono text-[0.52rem] uppercase tracking-[0.14em] text-bone/60">
+              <span className="rounded-full bg-espresso/80 px-3 py-2 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-champagne">
                 {note ?? (src ? "Silent preview · director's cut" : "Stills preview · full film available on request")}
               </span>
-              <span className="font-mono text-[0.52rem] uppercase tracking-[0.14em] text-goldsoft">
+              <span className="rounded-full bg-burgundy px-3 py-2 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-champagne">
                 {title}
               </span>
             </div>
@@ -72,7 +72,7 @@ export function FilmPlayer({ src, poster, title, caption, note }: FilmPlayerProp
         ) : null}
       </div>
       {caption && (
-        <figcaption className="mt-3 font-mono text-[0.54rem] uppercase tracking-[0.14em] text-muted">
+        <figcaption className="mt-3 font-sans text-[0.54rem] font-medium uppercase tracking-[0.12em] text-espresso">
           {caption}
         </figcaption>
       )}

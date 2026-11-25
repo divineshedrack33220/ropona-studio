@@ -26,7 +26,7 @@ export function PageProgress() {
       className="fixed left-0 top-0 z-[80] h-px w-full bg-transparent"
     >
       <div
-        className="h-px bg-gold transition-[width] duration-150 ease-out"
+        className="h-px bg-burgundy transition-[width] duration-150 ease-out"
         style={{ width: `${progress * 100}%` }}
       />
     </div>
