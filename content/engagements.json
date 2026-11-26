@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Full-time & remote roles",
+    "label": "Roles",
+    "description": "AI video editing, generative production and creative content roles with international teams.",
+    "includes": ["AI video editing", "Generative production", "Creative content"],
+    "detail": "International teams",
+    "cta": "Discuss an opportunity"
+  },
+  {
+    "name": "Agency & studio collaborations",
+    "label": "Partnerships",
+    "description": "Creative production and post-production support within established workflows.",
+    "includes": ["Creative production", "Post-production", "Editorial support"],
+    "detail": "Established workflows",
+    "cta": "Discuss a collaboration"
+  },
+  {
+    "name": "Project-based opportunities",
+    "label": "Projects",
+    "description": "Defined commercial, documentary or digital video productions.",
+    "includes": ["Commercial video", "Documentary editing", "Digital video production"],
+    "detail": "Defined scope",
+    "cta": "Discuss a project"
+  }
+]

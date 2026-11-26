@@ -51,26 +51,18 @@ export function Process() {
               </Reveal>
               <Reveal delay={80}>
                 <h2 className="serif mt-6 text-[clamp(2.2rem,4vw,4rem)] leading-[1.02] text-dark">
-                  From first brief to{" "}
-                  <em className="text-burgundy">final frame.</em>
+                  A structured workflow.{" "}
+                  <em className="text-burgundy">A purposeful final frame.</em>
                 </h2>
               </Reveal>
               <Reveal delay={140}>
                 <p className="mt-6 text-sm leading-[1.85] text-cocoa">
-                  A clear, seven-step process built for creative trust. You always
-                  know what is happening, what is next, and what is expected of you.
+                  Every production starts with a clear objective and moves through
+                  creative development, generation, editing and quality control. I
+                  adapt the workflow to the brief, team and delivery requirements.
                 </p>
               </Reveal>
-              <Reveal delay={180} className="mt-8 flex flex-col gap-4">
-                <div className="flex items-center gap-2.5 rounded-full border border-burgundy/20 bg-champagneLight/70 px-4 py-3">
-                  <span
-                    aria-hidden="true"
-                    className="h-1.5 w-1.5 rounded-full bg-burgundy"
-                  />
-                  <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.12em] text-cocoa">
-                    Typical timeline: 3–6 weeks
-                  </span>
-                </div>
+              <Reveal delay={180} className="mt-8">
                 <Link
                   href="/#contact"
                   className="link-line w-fit font-sans text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-burgundy"
@@ -111,13 +103,10 @@ export function Process() {
                     {step.number}
                   </span>
                   <Reveal delay={40} className="surface-light rounded-[1.5rem] p-5 md:p-6">
-                    <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-burgundy/15 pb-3">
+                    <div className="border-b border-burgundy/15 pb-3">
                       <h3 className="serif text-[clamp(1.5rem,2.2vw,2.2rem)] leading-none text-dark">
                         {step.title}
                       </h3>
-                      <span className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-burgundy">
-                        {step.duration}
-                      </span>
                     </div>
                     <p className="mt-4 max-w-xl text-sm leading-[1.85] text-cocoa">
                       {step.body}

@@ -7,10 +7,9 @@ type Payload = {
   name?: string;
   email?: string;
   company?: string;
-  projectType?: string;
-  budget?: string;
+  opportunityType?: string;
   timeline?: string;
-  brief?: string;
+  message?: string;
   consent?: boolean;
 };
 
@@ -37,24 +36,23 @@ function escapeHtml(value: string) {
     .replaceAll(">", "&gt;");
 }
 
-async function sendWithResend(payload: Required<Pick<Payload, "name" | "email" | "brief">> & Payload) {
+async function sendWithResend(payload: Required<Pick<Payload, "name" | "email" | "message">> & Payload) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO ?? site.email;
-  const from = process.env.CONTACT_FROM ?? "Ropona Studio <onboarding@resend.dev>";
+  const from = process.env.CONTACT_FROM ?? `Ropona Bernard <onboarding@resend.dev>`;
   if (!apiKey) return false;
 
   const rows: Array<[string, string]> = [
     ["Name", payload.name],
     ["Email", payload.email],
     ["Company", payload.company || "—"],
-    ["Service", payload.projectType || "—"],
-    ["Budget", payload.budget || "—"],
+    ["Opportunity type", payload.opportunityType || "—"],
     ["Timeline", payload.timeline || "—"],
   ];
 
   const html = `
     <div style="font-family:Helvetica,Arial,sans-serif;color:#111;line-height:1.6">
-      <h2 style="margin:0 0 16px">New project brief</h2>
+      <h2 style="margin:0 0 16px">New website enquiry</h2>
       <table cellpadding="6" cellspacing="0" style="border-collapse:collapse">
         ${rows
           .map(
@@ -65,8 +63,8 @@ async function sendWithResend(payload: Required<Pick<Payload, "name" | "email" |
           )
           .join("")}
       </table>
-      <h3 style="margin:24px 0 8px">Brief</h3>
-      <p style="white-space:pre-wrap;font-size:14px">${escapeHtml(payload.brief)}</p>
+      <h3 style="margin:24px 0 8px">Message</h3>
+      <p style="white-space:pre-wrap;font-size:14px">${escapeHtml(payload.message)}</p>
     </div>
   `;
 
@@ -80,7 +78,7 @@ async function sendWithResend(payload: Required<Pick<Payload, "name" | "email" |
       from,
       to: [to],
       reply_to: payload.email,
-      subject: `Project brief — ${payload.name}${
+      subject: `Website enquiry — ${payload.name}${
         payload.company ? ` (${payload.company})` : ""
       }`,
       html,
@@ -98,7 +96,7 @@ export async function POST(request: Request) {
 
   if (throttled(ip)) {
     return NextResponse.json(
-      { ok: false, error: "Too many requests. Please email directly." },
+      { ok: false, error: `Too many requests. Please email ${site.email} directly.` },
       { status: 429 }
     );
   }
@@ -115,11 +113,12 @@ export async function POST(request: Request) {
 
   const name = String(payload.name ?? "").trim();
   const email = String(payload.email ?? "").trim();
-  const brief = String(payload.brief ?? "").trim();
+  const opportunityType = String(payload.opportunityType ?? "").trim();
+  const message = String(payload.message ?? "").trim();
 
-  if (!name || !email || !brief) {
+  if (!name || !email || !opportunityType || !message) {
     return NextResponse.json(
-      { ok: false, error: "Name, email and brief are required." },
+      { ok: false, error: "Name, email, opportunity type and message are required." },
       { status: 422 }
     );
   }
@@ -129,9 +128,9 @@ export async function POST(request: Request) {
       { status: 422 }
     );
   }
-  if (brief.length > 6000) {
+  if (message.length > 6000) {
     return NextResponse.json(
-      { ok: false, error: "Brief is too long. Please keep it under 6000 characters." },
+      { ok: false, error: "Message is too long. Please keep it under 6000 characters." },
       { status: 422 }
     );
   }
@@ -139,10 +138,9 @@ export async function POST(request: Request) {
   const clean = {
     name,
     email,
-    brief,
+    opportunityType,
+    message,
     company: String(payload.company ?? "").slice(0, 160),
-    projectType: String(payload.projectType ?? "").slice(0, 80),
-    budget: String(payload.budget ?? "").slice(0, 80),
     timeline: String(payload.timeline ?? "").slice(0, 80),
     consent: Boolean(payload.consent),
   };
@@ -150,8 +148,8 @@ export async function POST(request: Request) {
   try {
     const delivered = await sendWithResend(clean);
     if (!delivered) {
-      // No mail provider configured yet — keep the lead and make it visible in logs.
-      console.info("[contact] brief received (no provider configured)", {
+      // No mail provider configured yet — keep the enquiry visible in logs.
+      console.info("[contact] enquiry received (no provider configured)", {
         ...clean,
         email: "[redacted]",
         ip,
@@ -162,12 +160,12 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("[contact] delivery failed", error);
     return NextResponse.json(
-      { ok: false, error: "Delivery failed. Please email hello@ropona.studio." },
+      { ok: false, error: `Delivery failed. Please email ${site.email}.` },
       { status: 502 }
     );
   }
 }
 
 export async function GET() {
-  return NextResponse.json({ ok: true, message: "POST a project brief." });
+  return NextResponse.json({ ok: true, message: "POST a website enquiry." });
 }

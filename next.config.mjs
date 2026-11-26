@@ -6,6 +6,11 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 768, 1024, 1280, 1600, 1920, 2560],
   },
+  async redirects() {
+    return [
+      { source: "/work/aura-liquid-gold", destination: "/work", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

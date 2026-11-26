@@ -49,8 +49,15 @@ export function Header() {
   useEffect(() => {
     const update = () => setHash(window.location.hash);
     update();
+    // Next.js can apply the hash after hydration without firing hashchange.
+    const frame = window.requestAnimationFrame(update);
     window.addEventListener("hashchange", update);
-    return () => window.removeEventListener("hashchange", update);
+    window.addEventListener("popstate", update);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", update);
+      window.removeEventListener("popstate", update);
+    };
   }, []);
 
   useEffect(() => {
@@ -94,7 +101,7 @@ export function Header() {
                   Ropona
                 </span>
                 <span className="mt-1.5 hidden truncate font-sans text-[0.5rem] font-medium uppercase tracking-[0.16em] text-champagne/75 sm:block">
-                  Creative Director · Filmmaker
+                  AI Video Editor · Generative Filmmaker
                 </span>
               </span>
             </Link>
@@ -106,6 +113,7 @@ export function Header() {
                   <Link
                     key={item.label}
                     href={item.href}
+                    onClick={() => setHash(`#${item.href.split("#")[1] ?? ""}`)}
                     aria-current={active ? "page" : undefined}
                     className={cn(
                       "flex items-center gap-2 rounded-full px-3.5 py-2 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-300",
@@ -137,10 +145,10 @@ export function Header() {
               <Link
                 href="/#contact"
                 data-track="cta_click"
-                data-track-label="header_start_project"
+                data-track-label="header_get_in_touch"
                 className="btn btn-outline hidden !px-4 !py-2.5 !text-[0.58rem] sm:inline-flex"
               >
-                Start a project
+                Get in touch
               </Link>
               <button
                 type="button"
@@ -188,7 +196,10 @@ export function Header() {
                   href={item.href}
                   tabIndex={open ? 0 : -1}
                   aria-current={active ? "page" : undefined}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setHash(`#${item.href.split("#")[1] ?? ""}`);
+                    setOpen(false);
+                  }}
                   className={cn(
                     "flex items-center gap-4 rounded-2xl px-4 py-3 transition-colors duration-300",
                     active
@@ -235,15 +246,6 @@ export function Header() {
                 className="link-line w-fit text-lg text-ivory"
               >
                 {site.email}
-              </a>
-              <a
-                href={site.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                tabIndex={open ? 0 : -1}
-                className="link-line w-fit text-sm text-champagne"
-              >
-                WhatsApp
               </a>
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2">

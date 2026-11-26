@@ -1,0 +1,32 @@
+[
+  {
+    "title": "AI film production",
+    "body": "Research the story, period, world and emotional arc; develop a script and scene breakdown; establish a visual bible with character references, locations, lighting and palette; storyboard the shots; generate consistent keyframes; direct image-to-video motion with camera and action prompts; assemble sequences, voice, music and sound; review continuity, pacing and artefacts; finish and export.",
+    "deliverables": "Treatment, script, storyboard, character/environment references, shot list, generated sequences, final film and agreed cutdowns."
+  },
+  {
+    "title": "AI commercial production",
+    "body": "Research the product, audience, competitors, offer and placement; identify the selling proposition and hook; develop a concept and script; plan product hero shots, benefit demonstrations and CTA; generate controlled product visuals using references; animate with deliberate camera movement; edit for clarity, brand identity and platform specifications; create variants for testing.",
+    "deliverables": "Creative brief, script, visual direction, commercial master, platform-specific versions and hook/CTA variants as agreed."
+  },
+  {
+    "title": "AI product UGC",
+    "body": "Study customer language, objections and product use cases; choose a creator persona and relatable scenario; script a natural hook, demonstration, benefit and CTA; use approved product references to preserve packaging, scale and appearance; generate believable human interactions and environments; edit with conversational pacing, captions and sound; check claims, visual accuracy and disclosure requirements.",
+    "deliverables": "UGC-style product demo, authentic customer-voice concept without fabricated customer claims, lifestyle ad, vertical master and test variations."
+  },
+  {
+    "title": "Cinematic editing & post-production",
+    "body": "Review footage and brief; organise assets and select takes; build a rough cut around narrative beats; refine rhythm, continuity, transitions and shot hierarchy; integrate motion graphics, voiceover, sound effects and music; balance audio and colour; review captions, safe areas and technical specifications; export the master and derivatives.",
+    "deliverables": "Rough cut, refined edit, sound and colour finish, captioned versions and final exports."
+  },
+  {
+    "title": "YouTube documentary production",
+    "body": "Research the subject and verify source material; structure the narrative around a clear opening and sustained viewer interest; develop voiceover and visual beats; generate historically informed scenes with appropriate caveats; edit B-roll, maps, titles and audio; review factual accuracy and retention opportunities; support title, description, thumbnail direction and SEO.",
+    "deliverables": "Documentary edit, visual assets, chapter suggestions, thumbnail direction and metadata recommendations. Client identity remains confidential."
+  },
+  {
+    "title": "Paid campaigns & creative optimisation",
+    "body": "Define campaign objective, audience, offer and measurement plan; research competitors and audience language; develop creative hypotheses; produce differentiated hooks and visual variants; configure campaigns and placements; monitor delivery and relevant performance metrics; identify creative fatigue or weak conversion signals; iterate based on evidence rather than assuming every view equals a sale.",
+    "deliverables": "Campaign plan, creative matrix, ad assets, performance summary and next-test recommendations."
+  }
+]

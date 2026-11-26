@@ -4,6 +4,11 @@ export type Social = {
   href: string;
 };
 
+export type ToolGroup = {
+  label: string;
+  items: string[];
+};
+
 export type SiteContent = {
   name: string;
   role: string;
@@ -14,11 +19,6 @@ export type SiteContent = {
   timezone: string;
   availability: { status: string; note: string; available: boolean };
   email: string;
-  phone: string;
-  phoneHref: string;
-  whatsapp: string;
-  booking: string;
-  responseTime: string;
   socials: Social[];
   showreel: {
     title: string;
@@ -29,24 +29,20 @@ export type SiteContent = {
     note: string;
   };
   stats: { value: string; label: string }[];
-  clients: { name: string; href: string }[];
-  tools: string[];
-  cv: string;
+  toolGroups: ToolGroup[];
   analytics: { gaId: string };
 };
 
 export type Project = {
   slug: string;
   title: string;
-  filmTitle: string;
   client: string;
-  category: "AI Film" | "Commercial" | "Editing" | "Storytelling";
+  category: "AI Film" | "Commercial" | "Editing" | "Storytelling" | "Explainer" | "Documentary";
   tags: string[];
   year: string;
   location: string;
   role: string;
   description: string;
-  outcome: string;
   thumbnail: string;
   flat: string;
   preview?: string;
@@ -58,8 +54,6 @@ export type Project = {
   pillars: { title: string; body: string }[];
   process: { step: string; body: string }[];
   beforeAfter: { image: string; flat: string; note: string };
-  results: { value: string; label: string }[];
-  testimonial?: { quote: string; name: string; role: string };
   gallery: { src: string; caption: string }[];
   credits: string[];
 };
@@ -91,14 +85,29 @@ export type About = {
   credentials: { label: string; value: string }[];
 };
 
-export type Testimonial = {
-  quote: string;
-  name: string;
+export type ExperienceEntry = {
+  organization: string;
   role: string;
-  project: string;
+  meta: string;
+  description: string;
 };
 
-export type PricingModel = {
+export type DirectorMode = {
+  title: string;
+  body: string;
+  deliverables: string;
+};
+
+export type PromptContent = {
+  headline: string;
+  intro: string;
+  process: string;
+  exampleLabel: string;
+  example: string;
+  deliverables: string[];
+};
+
+export type Engagement = {
   name: string;
   label: string;
   description: string;

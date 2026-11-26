@@ -1,29 +1,33 @@
 {
-  "headline": "Story first. Always.",
+  "headline": "A filmmaker’s eye. A marketer’s understanding. An editor’s discipline.",
   "portrait": "/media/portrait-ropona.jpg",
-  "portraitAlt": "Portrait of Ropona Benard",
+  "portraitAlt": "Ropona Bernard — AI Video Editor & Generative AI Filmmaker",
   "profile": "/media/ropona-profile.jpg",
   "story": [
-    "I'm Ropona Benard — a creative director, AI filmmaker, and editor based in Lagos, working with brands and storytellers worldwide.",
-    "I started in the edit. Four years of cutting other people's footage taught me the thing no tool can teach: where the story actually lives. Not in the shot list. Not in the render. In the space between two cuts, and in what the audience feels before they can explain why.",
-    "Then the tools changed. Runway, Kling, Veo, Midjourney, ElevenLabs — suddenly a director could build worlds that used to require a crew, a location, and a budget. I leaned in early, and built a hybrid workflow that keeps the craft of traditional post-production while collapsing the distance between an idea and a finished frame.",
-    "That overlap is where I work: the taste of a director, the discipline of an editor, and the speed of a new production model. I still believe the same thing I believed in the edit suite — the technology is never the point. It only matters if it makes someone feel something."
+    "I am Ropona Bernard, an AI video editor, generative filmmaker and creative production specialist. My approach to filmmaking is rooted in a journey that began long before I started generating images or editing films: learning how people respond to ideas, brands and stories.",
+    "In 2022, as a 300-level student at Gregory University in Abia State, I served as Student Union General Secretary. Although my official title was administrative, I took on the practical responsibilities of social media and publicity through an internal exchange of duties. I helped rethink the university’s Instagram content and grow its audience from 605 to more than 2,000 followers. During Students’ Week, I helped coordinate entertainment and secured the participation of Victony and his team. That experience showed me how creative communication could mobilise an audience beyond the screen.",
+    "During my agricultural industrial training at Just Food & Beverages, I noticed opportunities in branding, marketing and sales. Alongside my field responsibilities, I volunteered to manage social media, helping grow the account from approximately 105 to 1,000 followers. The company retained me remotely after my internship. It taught me to identify business problems rather than wait for a brief to arrive.",
+    "After graduation, I deliberately pursued customer service and customer experience at Autogirl.ng. I wanted to understand the people behind the audience metrics: their objections, expectations, purchasing decisions and frustrations. I later returned to automotive marketing with that perspective. At Career Castle, I combined social media management, video editing and administrative support, developing the ability to take a message from strategy into execution while managing competing priorities.",
+    "I expanded into travel, fashion and e-commerce, including WakaPrime and Profix Synergy, before moving into international work with SyncSkills. Managing its company presence and the personal brands of its two CEOs gave me experience adapting creative direction to different voices and audiences. I also contributed to AI-assisted website development, which deepened my interest in generative technology.",
+    "In 2025, I began exploring AI as a creative production medium: generating visual assets, directing motion, developing characters and environments, and integrating these outputs into traditional editing workflows. My current work spans commercial and technical video production for TaskGo, Optimaviz, AIJSA and NestWise Property, alongside historical documentary editing and YouTube production for a confidential channel.",
+    "Today, I bring two years of AI video production experience to a wider foundation in marketing and creative communication. I understand how to research an audience, identify a product’s value, develop an advertising angle, generate the visuals, edit the story and evaluate campaign performance. I do not treat these as separate jobs; they are connected decisions that shape the final film.",
+    "My creative philosophy is to make every visual decision accountable to the story. My marketing philosophy is to start with the audience, not the format. Together, they allow me to create work that is visually considered, technically coherent and commercially relevant."
   ],
-  "philosophy": "A film is not a collection of beautiful frames. It is an argument, made in rhythm, that earns the next second of someone's attention. I direct toward that argument — and use every tool available to make it land.",
+  "philosophy": "I start with what the audience needs to understand or feel, then build the film around that intention.",
   "expertise": [
-    "Creative direction & concept",
-    "Narrative & script development",
-    "AI film & commercial production",
-    "Cinematic editing & structure",
-    "Colour grading & finishing",
-    "Sound design & music supervision",
-    "Brand strategy & visual systems",
-    "Motion graphics & titling"
+    "AI filmmaking & cinematic storytelling",
+    "AI commercials, product & brand films",
+    "AI product UGC & direct-response creative",
+    "Paid advertising & performance creative",
+    "Corporate & SaaS explainers",
+    "Video editing & post-production",
+    "AI character & environment creation",
+    "YouTube documentary & channel production"
   ],
   "credentials": [
-    { "label": "Based in", "value": "Lagos, Nigeria — working worldwide" },
-    { "label": "Experience", "value": "4+ years across tech, marketing, education & entertainment" },
-    { "label": "Pipeline", "value": "Hybrid: traditional post + generative production" },
-    { "label": "Engagements", "value": "Project, retainer & embedded creative partner" }
+    { "label": "Based in", "value": "Lagos, Nigeria — open to international remote work" },
+    { "label": "Experience", "value": "2 years of AI video production, within a creative journey that began in 2022" },
+    { "label": "Pipeline", "value": "Generative production, cinematic editing and audience-led strategy" },
+    { "label": "Engagements", "value": "Open to creative opportunities" }
   ]
 }

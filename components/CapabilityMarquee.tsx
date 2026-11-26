@@ -1,12 +1,12 @@
 const items = [
-  "AI film",
-  "Commercials",
-  "Cinematic editing",
-  "Storytelling",
-  "Creative direction",
-  "Colour & finish",
-  "Sound design",
-  "Brand worlds",
+  "AI video editing",
+  "Generative filmmaking",
+  "Creative production",
+  "Product UGC",
+  "Performance creative",
+  "Documentary editing",
+  "Brand films",
+  "Cinematic finishing",
 ];
 
 export function CapabilityMarquee() {

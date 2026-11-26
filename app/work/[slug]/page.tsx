@@ -11,7 +11,7 @@ import { paragraphs } from "@/lib/utils";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ropona.studio";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ropona-studio-bldm.onrender.com";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -22,20 +22,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const project = getProject(slug);
   if (!project) return { title: "Project not found" };
 
-  const title = `${project.title} — ${project.filmTitle}`;
+  const title = project.title;
   return {
     title,
-    description: `${project.description} ${project.role}. A ${project.category.toLowerCase()} by Ropona Benard.`,
+    description: `${project.description} A ${project.category.toLowerCase()} project by Ropona Bernard.`,
     alternates: { canonical: `/work/${project.slug}` },
     openGraph: {
-      title: `${title} — Ropona Benard`,
+      title: `${title} — Ropona Bernard`,
       description: project.description,
       images: [{ url: project.thumbnail, width: 1800, height: 1125, alt: title }],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} — Ropona Benard`,
+      title: `${title} — Ropona Bernard`,
       description: project.description,
       images: [project.thumbnail],
     },
@@ -48,6 +48,8 @@ export default async function ProjectPage({ params }: PageProps) {
   if (!project) notFound();
 
   const next = getNextProject(slug);
+  const clientLabel =
+    project.client === "Confidential" ? "Anonymised sample" : project.client;
 
   const meta = [
     { label: "Client", value: project.client },
@@ -59,7 +61,7 @@ export default async function ProjectPage({ params }: PageProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: `${project.title} — ${project.filmTitle}`,
+    name: project.title,
     description: project.description,
     creator: { "@type": "Person", name: site.name, url: siteUrl },
     datePublished: project.year,
@@ -120,13 +122,15 @@ export default async function ProjectPage({ params }: PageProps) {
               </span>
               <span aria-hidden="true" className="hidden h-px w-8 bg-burgundy/25 sm:block" />
               <span className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
-                {project.outcome}
+                {clientLabel}
               </span>
             </div>
 
             <h1 className="serif mt-7 max-w-6xl text-[clamp(3rem,7.4vw,7.6rem)] leading-[0.92] tracking-[-0.035em] text-dark">
               {project.title}
-              <span className="block italic text-burgundy">{project.filmTitle}</span>
+              <span className="mt-3 block font-sans text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
+                {clientLabel}
+              </span>
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-cocoa md:text-xl">
@@ -154,14 +158,14 @@ export default async function ProjectPage({ params }: PageProps) {
               <div className="media-frame relative aspect-[16/10] w-full md:aspect-[21/9]">
                 <Image
                   src={project.thumbnail}
-                  alt={`${project.title} — ${project.filmTitle}. A ${project.category.toLowerCase()} film by Ropona Benard.`}
+                  alt={`${project.title} — ${project.category.toLowerCase()} still by Ropona Bernard.`}
                   fill
                   priority
                   sizes="100vw"
                   className="object-cover"
                 />
                 <span className="absolute bottom-4 left-4 rounded-full bg-espresso/85 px-3 py-2 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-champagne">
-                  {project.filmTitle} / {project.year}
+                  {clientLabel} / {project.year}
                 </span>
               </div>
               <figcaption className="mt-3 flex flex-wrap items-center justify-between gap-3 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-espresso">
@@ -230,9 +234,9 @@ export default async function ProjectPage({ params }: PageProps) {
                 <FilmPlayer
                   src={project.preview}
                   poster={project.thumbnail}
-                  title={`${project.title} — ${project.filmTitle}`}
-                  caption={`${project.title} / ${project.filmTitle} / ${project.year} / Directed & edited by Ropona Benard`}
-                  note={project.preview ? "Preview cut · full film available on request" : "Selected stills · full film available on request"}
+                  title={project.title}
+                  caption={`${project.title} / ${clientLabel} / ${project.year} / Production & edit by Ropona Bernard`}
+                  note="Approved work sample"
                 />
               </Reveal>
             </div>
@@ -309,7 +313,7 @@ export default async function ProjectPage({ params }: PageProps) {
                   image={project.beforeAfter.image}
                   flat={project.beforeAfter.flat}
                   note={project.beforeAfter.note}
-                  title={`${project.title} — ${project.filmTitle}`}
+                  title={project.title}
                 />
               </Reveal>
             </div>
@@ -412,40 +416,10 @@ export default async function ProjectPage({ params }: PageProps) {
                 08
               </span>
               <span className="h-px w-6 bg-burgundy/50" />
-              <span className="eyebrow">The outcome</span>
+              <span className="eyebrow">Credits & delivery</span>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-              {project.results.map((result, index) => (
-                <Reveal key={result.label} delay={index * 60} className="surface-light p-5 md:p-7">
-                  <p className="serif text-[clamp(2.2rem,3.8vw,3.8rem)] leading-none text-burgundy">
-                    {result.value}
-                  </p>
-                  <p className="mt-3 font-sans text-[0.68rem] font-medium leading-relaxed text-espresso">
-                    {result.label}
-                  </p>
-                </Reveal>
-              ))}
-            </div>
-
-            {project.testimonial && (
-              <Reveal className="mt-14 max-w-4xl rounded-feature bg-burgundy p-7 text-ivory md:p-9">
-                <blockquote className="serif text-[clamp(1.5rem,2.8vw,2.8rem)] leading-[1.25] text-ivory">
-                  “{project.testimonial.quote}”
-                </blockquote>
-                <div className="mt-6 flex items-center gap-4">
-                  <span aria-hidden="true" className="h-px w-10 bg-champagne" />
-                  <div>
-                    <p className="text-sm text-ivory">{project.testimonial.name}</p>
-                    <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-champagne/75">
-                      {project.testimonial.role}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            )}
-
-            <div className="mt-14 grid gap-10 border-t border-burgundy/15 pt-10 md:grid-cols-12">
+            <div className="mt-10 grid gap-10 border-t border-burgundy/15 pt-10 md:grid-cols-12">
               <div className="md:col-span-4">
                 <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
                   Credits
@@ -463,9 +437,7 @@ export default async function ProjectPage({ params }: PageProps) {
                   Status
                 </p>
                 <p className="mt-4 text-xs leading-relaxed text-espresso">
-                  Delivered {project.year}. Selected metrics are reported by the
-                  client or measured across public platforms. Full case study deck
-                  available on request.
+                  {project.year} · {clientLabel}
                 </p>
               </div>
               <div className="md:col-span-4">
@@ -473,12 +445,19 @@ export default async function ProjectPage({ params }: PageProps) {
                   Pipeline
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {site.tools.slice(0, 8).map((tool) => (
+                  {[
+                    "Research",
+                    "Prompt direction",
+                    "Generative production",
+                    "Editing",
+                    "Sound",
+                    "Finishing",
+                  ].map((stage) => (
                     <span
-                      key={tool}
+                      key={stage}
                       className="rounded-full border border-burgundy/20 bg-champagne px-2 py-1 font-sans text-[0.5rem] font-semibold uppercase tracking-[0.08em] text-espresso"
                     >
-                      {tool}
+                      {stage}
                     </span>
                   ))}
                 </div>
@@ -502,8 +481,8 @@ export default async function ProjectPage({ params }: PageProps) {
                 <span className="serif text-[clamp(2.2rem,4.6vw,4.6rem)] leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft">
                   {next.title}
                 </span>
-                <span className="serif text-[clamp(1.4rem,2.6vw,2.6rem)] italic leading-none text-espresso">
-                  {next.filmTitle}
+                <span className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
+                  {next.category}
                 </span>
                 <span aria-hidden="true" className="project-arrow ml-2 text-xl text-burgundy">
                   ↗
@@ -514,9 +493,9 @@ export default async function ProjectPage({ params }: PageProps) {
               href="/#contact"
               className="btn btn-gold shrink-0"
               data-track="cta_click"
-              data-track-label="project_footer_start"
+              data-track-label="project_footer_contact"
             >
-              Start a project <span aria-hidden="true">↗</span>
+              Get in touch <span aria-hidden="true">↗</span>
             </Link>
           </div>
 

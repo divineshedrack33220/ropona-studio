@@ -25,9 +25,9 @@ export default function CreditsPage() {
             Credits &amp; <em className="text-burgundy">craft.</em>
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-cocoa">
-            Every still on this site is original key art, art-directed as a light
-            study and designed to be swapped for real film frames as projects are
-            published. Typefaces and tools are credited below.
+            The imagery and films shown here are Ropona Bernard's own work or
+            approved work samples. Typefaces, tools and licensing details are
+            credited below.
           </p>
         </div>
       </header>
@@ -84,26 +84,19 @@ export default function CreditsPage() {
 
         <div className="mt-14 grid gap-8 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="eyebrow mb-4">A note on the imagery</p>
+            <p className="eyebrow mb-4">Imagery & samples</p>
             <p className="text-sm leading-[1.9] text-espresso">
-              The film stills on this site are procedural light studies generated
-              in-house: volumetric light, brutalist geometry, haze and 35mm grain.
-              They exist so the site feels finished before final project assets
-              arrive, and they carry no third-party licensing obligations.
+              Project stills and preview clips are presented as approved work
+              samples. Client identity remains confidential where requested, and
+              individual contributions are listed on each case study.
             </p>
           </div>
           <div className="md:col-span-5 md:col-start-8">
-            <p className="eyebrow mb-4">Replace with real work</p>
+            <p className="eyebrow mb-4">Film credits</p>
             <p className="text-sm leading-[1.9] text-espresso">
-              Project thumbnails, stills and preview loops are referenced from{" "}
-              <code className="rounded-md border border-burgundy/20 bg-champagne px-1.5 py-0.5 font-sans text-[0.7rem] text-burgundy">
-                content/projects.json
-              </code>
-              . Drop new files into{" "}
-              <code className="rounded-md border border-burgundy/20 bg-champagne px-1.5 py-0.5 font-sans text-[0.7rem] text-burgundy">
-                public/media
-              </code>{" "}
-              and update the paths — no component changes required.
+              Each case study lists the role, year and specific contribution for
+              that project. For questions about image rights or credits, use the
+              contact form.
             </p>
           </div>
         </div>

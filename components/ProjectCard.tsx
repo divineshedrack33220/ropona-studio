@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import type { Project } from "@/lib/types";
 import { useShowreel } from "@/components/ShowreelProvider";
@@ -35,6 +36,8 @@ export function ProjectCard({
   const [hovered, setHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const hasPreview = Boolean(project.preview);
+  const clientLabel =
+    project.client === "Confidential" ? "Anonymised sample" : project.client;
 
   const playFilm = () => {
     if (!project.preview) return;
@@ -42,8 +45,8 @@ export function ProjectCard({
       src: project.preview,
       poster: project.thumbnail,
       title: project.title,
-      subtitle: project.filmTitle,
-      note: `${project.year} · ${project.category} · Directed & edited by Ropona Benard`,
+      subtitle: project.role,
+      note: `${project.year} · ${project.category} · Production & edit by Ropona Bernard`,
     });
   };
 
@@ -54,18 +57,18 @@ export function ProjectCard({
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
-      data-track="film_play"
-      data-track-label={project.slug}
     >
       <div className="relative aspect-[16/10] overflow-hidden rounded-[1.4rem] border border-burgundy/15 bg-champagneLight">
         <Image
           src={project.thumbnail}
-          alt={`${project.title} — ${project.filmTitle}, ${project.category.toLowerCase()} project still`}
+          alt={`${project.title} — ${project.category.toLowerCase()} still by Ropona Bernard`}
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 55vw"
           className={`object-cover ${
-            hasPreview ? "" : "transition-transform duration-700 ease-cinema group-hover:scale-[1.03]"
+            hasPreview
+              ? ""
+              : "transition-transform duration-700 ease-cinema group-hover:scale-[1.03]"
           }`}
         />
         {hovered && project.preview && (
@@ -92,7 +95,7 @@ export function ProjectCard({
           className="pointer-events-none absolute inset-0 bg-espresso/30 transition-opacity duration-500 group-hover:bg-espresso/20"
         />
 
-        <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-4 md:p-5">
+        <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-4 md:p-5">
           <span className="rounded-full bg-champagne px-3 py-1.5 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
             {project.category}
           </span>
@@ -101,20 +104,22 @@ export function ProjectCard({
           </span>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 md:p-5">
-          <span className="flex translate-y-2 items-center gap-2 rounded-full bg-burgundy px-3 py-2 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-ivory opacity-0 transition-all duration-500 ease-cinema group-hover:translate-y-0 group-hover:opacity-100">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-champagne text-burgundy">
-              <PlayGlyph className="h-2 w-2" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 md:p-5">
+          {hasPreview && (
+            <span className="flex translate-y-2 items-center gap-2 rounded-full bg-burgundy px-3 py-2 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-ivory opacity-0 transition-all duration-500 ease-cinema group-hover:translate-y-0 group-hover:opacity-100">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-champagne text-burgundy">
+                <PlayGlyph className="h-2 w-2" />
+              </span>
+              Play film
             </span>
-            Play film
-          </span>
+          )}
           <span className="flex items-center gap-2 rounded-full bg-espresso/85 px-3 py-2 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-champagne">
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-champagne" />
-            {project.outcome}
+            {clientLabel}
           </span>
         </div>
 
-        {hovered && project.preview && (
+        {hovered && hasPreview && (
           <span
             aria-hidden="true"
             className="pointer-events-none absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-champagne/60 bg-espresso/60 text-ivory"
@@ -122,13 +127,29 @@ export function ProjectCard({
             <PlayGlyph className="h-3 w-3" />
           </span>
         )}
+
+        {hasPreview && (
+          <button
+            type="button"
+            onClick={playFilm}
+            aria-label={`Play film: ${project.title}`}
+            data-track="film_play"
+            data-track-label={project.slug}
+            className="absolute inset-0 z-20 cursor-pointer rounded-[1.4rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
+          />
+        )}
       </div>
 
       <div className="mt-5 grid grid-cols-12 items-start gap-4 px-1 pb-1 md:px-2 md:pb-2">
         <div className="col-span-9">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <h3 className="serif text-[clamp(1.65rem,2.3vw,2.4rem)] leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft">
-              {project.title}
+              <Link
+                href={`/work/${project.slug}`}
+                className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
+              >
+                {project.title}
+              </Link>
             </h3>
             <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
               {project.year}
@@ -153,23 +174,15 @@ export function ProjectCard({
         </div>
 
         <div className="col-span-3 flex justify-end pt-1">
-          <span className="flex items-center gap-1.5 text-right font-sans text-[0.55rem] font-semibold uppercase tracking-[0.12em] text-cocoa transition-colors duration-500 group-hover:text-burgundy">
-            <span className="hidden sm:inline">{project.filmTitle}</span>
+          <Link
+            href={`/work/${project.slug}`}
+            className="flex items-center gap-1.5 text-right font-sans text-[0.55rem] font-semibold uppercase tracking-[0.12em] text-cocoa transition-colors duration-500 group-hover:text-burgundy"
+          >
+            <span className="hidden sm:inline">Case study</span>
             <PlayGlyph className="project-arrow h-2.5 w-2.5 text-burgundy" />
-          </span>
+          </Link>
         </div>
       </div>
-
-      <button
-        type="button"
-        onClick={playFilm}
-        aria-label={
-          hasPreview
-            ? `Play ${project.title} — ${project.filmTitle}`
-            : `${project.title} — ${project.filmTitle}`
-        }
-        className="absolute inset-0 z-20 cursor-pointer rounded-feature focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
-      />
     </div>
   );
 }

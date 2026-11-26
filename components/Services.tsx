@@ -38,20 +38,22 @@ export function Services() {
               05
             </span>
             <span className="h-px w-8 bg-burgundy/50" />
-            <span className="eyebrow">Services</span>
+            <span className="eyebrow">Capabilities</span>
           </div>
 
           <div className="mt-6 grid gap-8 md:mt-8 md:grid-cols-12 md:items-end">
             <Reveal className="md:col-span-7">
               <h2 className="serif text-[clamp(2.3rem,4.7vw,4.7rem)] leading-[1.02] tracking-[-0.025em] text-dark">
-                One director. <em className="text-burgundy">Every frame</em>{" "}
-                accounted for.
+                From creative concept to{" "}
+                <em className="text-burgundy">finished production.</em>
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9">
               <p className="max-w-sm text-sm leading-relaxed text-espresso md:ml-auto md:text-right">
-                From a blank page to a finished film. Choose the full production or
-                bring me in where you need the most leverage.
+                A connected production skill set combining generative technology,
+                editorial craft and audience-focused creative thinking. I can
+                contribute across the full workflow or integrate into an established
+                production team.
               </p>
             </Reveal>
           </div>
@@ -103,7 +105,7 @@ export function Services() {
                         </p>
                         <div className="md:col-span-3">
                           <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
-                            Deliverables
+                            What I do
                           </p>
                           <ul className="mt-3 flex flex-col gap-2">
                             {service.deliverables.map((item) => (
@@ -122,7 +124,7 @@ export function Services() {
                         </div>
                         <div className="md:col-span-4">
                           <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
-                            Typical use
+                            Output
                           </p>
                           <div className="mt-3 flex flex-wrap gap-2">
                             {service.useCases.map((item) => (
@@ -145,16 +147,16 @@ export function Services() {
 
           <Reveal className="mt-10 flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
             <p className="max-w-md text-sm leading-relaxed text-espresso">
-              Not sure what you need? Most projects start with a 20-minute call and
-              a one-paragraph brief.
+              For AI video production roles, creative collaborations or project
+              opportunities, share the brief or tell me about your team.
             </p>
             <Link
               href="/#contact"
               className="btn btn-gold shrink-0"
               data-track="cta_click"
-              data-track-label="services_request_quote"
+              data-track-label="services_get_in_touch"
             >
-              Request a quote <span aria-hidden="true">↗</span>
+              Get in touch <span aria-hidden="true">↗</span>
             </Link>
           </Reveal>
         </div>

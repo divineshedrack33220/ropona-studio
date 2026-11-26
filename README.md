@@ -1,9 +1,9 @@
-# Ropona Benard — Studio Portfolio
+# Ropona Bernard — Portfolio
 
-A cinematic, conversion-focused portfolio for **Ropona Benard** — Creative Director,
-AI Filmmaker & Professional Video Editor. Built with Next.js 15, TypeScript,
-Tailwind CSS and a JSON content layer, so projects, services and testimonials can
-be updated without touching component code.
+A portfolio for **Ropona Bernard** — AI Video Editor, Generative AI Filmmaker &
+Creative Production Specialist. Built with Next.js 15, TypeScript, Tailwind CSS
+and a JSON content layer, so projects and copy can be updated without touching
+component code.
 
 ---
 
@@ -25,24 +25,25 @@ Node 20+ recommended.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Long-form single-page experience: hero showreel, selected work, about, services, process, testimonials, engagements, contact |
-| `/work` | Filterable archive of all projects |
-| `/work/[slug]` | Case study: overview, challenge, direction, film player, before/after grade comparison, process, results, testimonial, credits |
+| `/` | Single-page experience: hero, selected work, about, experience, capabilities, process, director mode, prompt direction, opportunities, contact |
+| `/work` | Filterable archive of approved projects |
+| `/work/[slug]` | Case study: overview, challenge, film player, direction, grade comparison, process and credits |
 | `/privacy` | GDPR / NDPR policy, cookie and analytics disclosure |
 | `/credits` | Licensing and colophon |
 | `/api/contact` | Validated brief endpoint (Resend-ready, throttled, honeypot on the client) |
 
-Also included: `sitemap.xml`, `robots.txt`, JSON-LD (`Person`,
-`ProfessionalService`, `WebSite`, `CreativeWork`, `BreadcrumbList`), Open Graph
+Also included: `sitemap.xml`, `robots.txt`, JSON-LD (`Person`, `WebSite`,
+`CreativeWork`, `BreadcrumbList`), Open Graph
 and Twitter metadata, security headers, immutable caching for `/media`, and a
 404 page.
 
 ### Key interactions
 
-- **Showreel** — autoplay muted hero loop with a real sound toggle, full-screen
-  modal player, keyboard focus trap, Escape to close, analytics events.
-- **Hover previews** — each project card lazy-loads a silent 6-second loop on
-  hover/focus (desktop only, paused when not hovered).
+- **Showreel** — muted-by-default modal player with real sound toggle, fullscreen
+  control, keyboard focus trap, Escape to close and analytics events; runtime is
+  read from video metadata.
+- **Hover previews** — each project card lazy-loads a silent preview loop on
+  hover/focus and removes it when not hovered.
 - **Route transitions** — each page settles in with a subtle vertical drift via
   `app/template.tsx`; removed entirely under `prefers-reduced-motion`.
 - **Filterable work** — category filters with counts, animated entry, empty state.
@@ -68,14 +69,16 @@ launch, and easy to swap for a headless CMS later.
 
 ```
 content/
-  site.json          # identity, contact, socials, showreel, clients, stats, tools
-  projects.json      # 9 case studies — all page content derives from this
-  services.json      # 7 services with deliverables and use cases
-  process.json       # 7-step process timeline
-  about.json         # story, philosophy, expertise, credentials
-  testimonials.json  # verified client quotes
-  pricing.json       # engagement models
-  credits.json       # colophon entries
+  site.json           # identity, contact, socials, showreel, stats, tool groups
+  projects.json       # 3 approved case studies — page content derives from this
+  services.json       # capabilities with deliverables and outputs
+  process.json        # 7-step process timeline
+  about.json          # story, philosophy, expertise, credentials
+  experience.json     # professional background
+  director-modes.json # production disciplines
+  prompt.json         # prompt direction copy
+  engagements.json    # opportunity types
+  credits.json        # colophon entries
 ```
 
 Type definitions and accessors live in `lib/types.ts` and `lib/content.ts`.
@@ -86,24 +89,25 @@ Type definitions and accessors live in `lib/types.ts` and `lib/content.ts`.
    `work-newproject-flat.jpg`, `work-newproject-frame-1.jpg`).
 2. Add a preview loop at `public/media/film-newproject.mp4` (6s, silent, 960×540).
 3. Append an object to `content/projects.json` — copy an existing entry and edit
-   `slug`, `title`, `category`, copy, `results`, `gallery`, `credits`.
+   `slug`, `title`, `client`, `category`, copy, `gallery`, `credits`.
 4. Run `npm run build`. The route, sitemap entry and archive card are generated
    automatically.
 
-Valid categories: `AI Film`, `Commercial`, `Editing`, `Storytelling`. Update
-`categories` in `lib/content.ts` if you add a new one.
+Valid categories: `AI Film`, `Commercial`, `Editing`, `Explainer`,
+`Documentary`, `Storytelling`. Update `categories` in `lib/content.ts` if you
+add a new one.
 
 ### Update the showreel
 
-Replace `public/media/showreel.mp4` (H.264/AAC, 16:9). Update the duration,
-tagline and note in `content/site.json → showreel`. The hero poster is
-`/media/hero.jpg`.
+Replace `public/media/showreel.mp4` (H.264/AAC, 16:9) and its poster. The
+displayed runtime is read from the video metadata; `duration` in
+`content/site.json → showreel` is only the fallback before metadata loads.
 
-### Replace placeholder imagery
+### Update imagery
 
-The current stills are original procedural light studies generated in-house
-(see `/credits`). They are intentionally cinematic and license-free, designed to
-be swapped one-for-one with real frames at the same paths.
+Project stills and preview clips are presented as approved work samples. Replace
+or approve media before publishing, and keep confidential client identity out of
+filenames, thumbnails, embeds and metadata.
 
 ### Swapping in a CMS
 
@@ -121,8 +125,8 @@ Resend:
 
 ```bash
 RESEND_API_KEY=re_xxxxxxxx
-CONTACT_TO=hello@ropona.studio
-CONTACT_FROM="Ropona Studio <briefs@ropona.studio>"
+CONTACT_TO=Bernardrops@gmail.com
+CONTACT_FROM="Ropona Bernard <onboarding@resend.dev>"
 ```
 
 Without a key, submissions are validated, rate-limited and logged with PII
@@ -140,7 +144,7 @@ redacted — useful for staging. Swap in Postmark/SendGrid by editing
 
 Events emitted: `cta_click`, `showreel_play`, `showreel_sound_toggle`,
 `video_play`, `portfolio_filter`, `film_play`, `project_next`,
-`service_toggle`, `form_submit`, `outbound_click`, `cv_download`.
+`service_toggle`, `form_submit`, `outbound_click`.
 Add tracking to any new element with `data-track="event_name"` and
 `data-track-label="label"`.
 
@@ -189,19 +193,17 @@ npm run build && npm start   # behind nginx/Caddy with TLS
 ```
 
 Media is served from `/public/media` with immutable caching. For very large
-video libraries, move files to Mux, Cloudflare Stream or Vimeo and update the
+video libraries, move files to a video host and update the
 `thumbnail`/`preview`/`src` fields in content — no component changes needed.
 
 ---
 
 ## Before going live
 
-- [ ] Replace placeholder email, phone, WhatsApp, booking link and socials in
-      `content/site.json`.
-- [ ] Replace the procedural stills and showreel with real project assets.
-- [ ] Confirm metrics and testimonials with clients; remove any that are not
-      verified.
-- [ ] Add `public/ropona-cv.pdf` (a starter PDF is included — replace it).
+- [ ] Verify the contact email and LinkedIn URL in `content/site.json`.
+- [ ] Replace or approve stills, showreel and project media before publishing.
+- [ ] Keep only approved work samples and anonymised client references.
+- [ ] Add an AI-focused CV only when a current version is supplied.
 - [ ] Set `NEXT_PUBLIC_SITE_URL` to the production domain (OG image and JSON-LD
       absolute URLs depend on it).
 - [ ] Configure the Resend key and test a live submission.

@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import { useShowreel } from "@/components/ShowreelProvider";
+import { useVideoDuration } from "@/components/useVideoDuration";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/content";
 import { track } from "@/lib/analytics";
 
 export function ReelBand() {
   const { open } = useShowreel();
+  const duration = useVideoDuration(site.showreel.src, site.showreel.duration);
 
   return (
     <section className="shell py-4 md:py-8">
@@ -15,8 +17,8 @@ export function ReelBand() {
         <div className="grid gap-6 md:grid-cols-12 md:items-center md:gap-8">
           <div className="media-frame aspect-[16/10] border-champagne/25 md:col-span-7 md:aspect-[16/9]">
             <Image
-              src="/media/work-monolith.jpg"
-              alt="Still from Ropona's 2026 showreel — a monolith in a desert at dusk"
+              src={site.showreel.poster}
+              alt="Frame from Ropona Bernard's showreel"
               fill
               sizes="(max-width: 768px) 100vw, 58vw"
               className="object-cover"
@@ -26,20 +28,25 @@ export function ReelBand() {
           <div className="flex flex-col p-2 md:col-span-5 md:p-4">
             <div className="flex items-center justify-between gap-4 border-b border-champagne/20 pb-4">
               <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
-                The reel
+                {site.showreel.title}
               </span>
               <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-champagne/75">
-                2022 — 2026
+                {duration}
               </span>
             </div>
 
             <p className="mt-6 font-sans text-[0.56rem] font-semibold uppercase tracking-[0.18em] text-champagne">
-              {site.showreel.duration} · Sound on recommended
+              {site.showreel.tagline}
             </p>
             <h2 className="serif mt-3 max-w-[16ch] text-[clamp(2rem,4vw,4rem)] leading-[1] text-ivory">
-              Four years, cut to{" "}
-              <em className="text-champagne">one pulse.</em>
+              A cross-section of my{" "}
+              <em className="text-champagne">creative work.</em>
             </h2>
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-champagne/85">
+              From cinematic AI sequences and commercial visuals to technical
+              explainers and documentary storytelling, this reel brings together
+              the range of my production practice.
+            </p>
 
             <button
               type="button"
@@ -48,7 +55,7 @@ export function ReelBand() {
                 track("showreel_play", { location: "reel_band" });
               }}
               className="group mt-9 flex items-center gap-4 text-left"
-              aria-label="Play showreel — full screen · with sound"
+              aria-label={`Play ${site.showreel.title}`}
               data-track="showreel_play"
               data-track-label="reel_band"
             >
@@ -62,7 +69,7 @@ export function ReelBand() {
                   Play showreel
                 </span>
                 <span className="mt-1 font-sans text-[0.52rem] font-medium uppercase tracking-[0.12em] text-champagne/75">
-                  Full screen · with sound
+                  {site.showreel.note}
                 </span>
               </span>
             </button>

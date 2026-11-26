@@ -133,7 +133,7 @@ export function WorkGrid({
       {variant === "home" && (
         <div className="mt-16 flex flex-col gap-3 border-t border-burgundy/15 pt-6 sm:flex-row sm:items-center sm:justify-between md:mt-20">
           <p className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-espresso">
-            Selected from 40+ delivered projects
+            A selection of approved projects
           </p>
           <Link
             href="/work"

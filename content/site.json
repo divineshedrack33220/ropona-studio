@@ -1,65 +1,63 @@
 {
-  "name": "Ropona Benard",
-  "role": "Creative Director · AI Filmmaker · Editor",
-  "tagline": "Cinematic AI filmmaking & professional video editing.",
-  "description": "Multidisciplinary creative blending traditional editing, AI-driven production, and strategic storytelling to create cinematic visuals, commercials, branded content, and digital experiences that bring ideas to life.",
+  "name": "Ropona Bernard",
+  "role": "AI Video Editor · Generative AI Filmmaker · Creative Production Specialist",
+  "tagline": "I turn ideas into films, and films into reasons to act.",
+  "description": "Explore Ropona Bernard’s AI filmmaking, cinematic editing, product UGC, commercial video production, paid advertising creative and YouTube documentary work.",
   "location": "Lagos, Nigeria",
   "locationShort": "Lagos",
   "timezone": "Africa/Lagos",
   "availability": {
-    "status": "Booking Q1 2027",
-    "note": "Two project slots open",
+    "status": "Open to creative opportunities",
+    "note": "Available for international remote opportunities",
     "available": true
   },
-  "email": "hello@ropona.studio",
-  "phone": "+234 812 000 0000",
-  "phoneHref": "+2348120000000",
-  "whatsapp": "https://wa.me/2348120000000",
-  "booking": "https://cal.com/ropona/intro",
-  "responseTime": "Replies within 24 hours, Monday–Friday.",
+  "email": "Bernardrops@gmail.com",
   "socials": [
-    { "label": "YouTube", "handle": "@ropona", "href": "https://youtube.com/@ropona" },
-    { "label": "Vimeo", "handle": "ropona", "href": "https://vimeo.com/ropona" },
-    { "label": "Instagram", "handle": "@ropona", "href": "https://instagram.com/ropona" },
-    { "label": "LinkedIn", "handle": "in/ropona", "href": "https://linkedin.com/in/ropona" },
-    { "label": "X", "handle": "@ropona", "href": "https://x.com/ropona" }
+    {
+      "label": "LinkedIn",
+      "handle": "in/enweremadu-ropona",
+      "href": "https://www.linkedin.com/in/enweremadu-ropona"
+    }
   ],
   "showreel": {
-    "title": "Showreel 2026",
+    "title": "Showreel",
     "duration": "00:24",
     "poster": "/media/hero.jpg",
     "src": "/media/showreel.mp4",
-    "tagline": "Four years. Nine countries. One through-line: story.",
-    "note": "Best watched with sound."
+    "tagline": "A cross-section of my creative work.",
+    "note": "Approved footage · play with sound if you like"
   },
   "stats": [
-    { "value": "4+", "label": "Years directing & editing" },
-    { "value": "40+", "label": "Films & campaigns delivered" },
-    { "value": "12M+", "label": "Organic views generated" },
-    { "value": "9", "label": "Countries worked with" }
+    { "value": "2 years", "label": "of AI video production experience" },
+    { "value": "200+", "label": "people worked with" },
+    { "value": "4", "label": "countries of professional experience" }
   ],
-  "clients": [
-    { "name": "TaskGo", "href": "https://taskgo.africa" },
-    { "name": "Optimaviz", "href": "https://optimaviz.com" },
-    { "name": "Cre8hive", "href": "#" },
-    { "name": "WayBackHistory", "href": "#" },
-    { "name": "PathForge", "href": "#" }
+  "toolGroups": [
+    {
+      "label": "Editing and finishing",
+      "items": ["Adobe Premiere Pro", "DaVinci Resolve", "CapCut"]
+    },
+    {
+      "label": "Image and video generation",
+      "items": ["Higgsfield", "Seedance", "Kling", "Google Flow", "Veo", "Runway", "Midjourney", "Grok", "Gemini"]
+    },
+    {
+      "label": "Research, scripting and prompts",
+      "items": ["Claude", "Gemini", "Perplexity", "Grok", "ChatGPT"]
+    },
+    {
+      "label": "Voice and audio",
+      "items": ["ElevenLabs", "Fish Audio"]
+    },
+    {
+      "label": "Design",
+      "items": ["Canva"]
+    },
+    {
+      "label": "AI-assisted workflows",
+      "items": ["Claude", "Gemini"]
+    }
   ],
-  "tools": [
-    "CapCut",
-    "DaVinci Resolve",
-    "Premiere Pro",
-    "After Effects",
-    "Runway",
-    "Kling",
-    "Veo",
-    "Midjourney",
-    "ElevenLabs",
-    "Topaz",
-    "Frame.io",
-    "Figma"
-  ],
-  "cv": "/ropona-cv.pdf",
   "analytics": {
     "gaId": ""
   }

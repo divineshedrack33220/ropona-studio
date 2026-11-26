@@ -21,29 +21,30 @@ const sans = Inter({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ropona.studio";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ropona-studio-bldm.onrender.com";
+const pageTitle = "Ropona Bernard | AI Video Editor & Generative AI Filmmaker";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ropona Benard — Creative Director, AI Filmmaker & Video Editor",
-    template: "%s — Ropona Benard",
+    default: pageTitle,
+    template: "%s | Ropona Bernard",
   },
   description: site.description,
   keywords: [
-    "Ropona Benard",
-    "Ropona",
-    "AI filmmaker",
-    "creative director",
-    "AI film production",
-    "video editor",
-    "cinematic editing",
-    "brand films",
-    "commercials",
-    "AI commercials",
-    "storytelling",
-    "Lagos creative director",
-    "Nigeria filmmaker",
+    "Ropona Bernard",
+    "AI video editor",
+    "generative AI filmmaker",
+    "creative production specialist",
+    "AI filmmaking",
+    "AI video production",
+    "product UGC",
+    "commercial video production",
+    "paid advertising creative",
+    "video editing",
+    "documentary editing",
+    "Lagos video editor",
   ],
   authors: [{ name: site.name, url: siteUrl }],
   creator: site.name,
@@ -53,24 +54,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Ropona Studio",
-    title: "Ropona Benard — Creative Director, AI Filmmaker & Video Editor",
-    description: site.tagline + " " + site.description,
+    siteName: site.name,
+    title: pageTitle,
+    description: site.description,
     images: [
       {
         url: "/media/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Ropona Benard — cinematic AI filmmaking and professional video editing",
+        alt: "Ropona Bernard — AI Video Editor & Generative AI Filmmaker",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ropona Benard — Creative Director, AI Filmmaker & Video Editor",
-    description: site.tagline,
+    title: pageTitle,
+    description: site.description,
     images: ["/media/og.jpg"],
-    creator: "@ropona",
   },
   robots: {
     index: true,
@@ -105,7 +105,7 @@ const jsonLd = {
       "@id": `${siteUrl}/#person`,
       name: site.name,
       alternateName: "Ropona",
-      jobTitle: "Creative Director, AI Filmmaker & Video Editor",
+      jobTitle: site.role,
       description: site.description,
       url: siteUrl,
       image: `${siteUrl}${about.portrait}`,
@@ -116,37 +116,21 @@ const jsonLd = {
         addressCountry: "NG",
       },
       knowsAbout: [
-        "AI filmmaking",
-        "Video editing",
-        "Creative direction",
-        "Storytelling",
-        "Commercial production",
-        "Colour grading",
+        "AI video editing",
+        "Generative filmmaking",
+        "Creative production",
+        "Product UGC",
+        "Commercial video",
+        "Paid advertising creative",
+        "Documentary editing",
       ],
       sameAs: site.socials.map((social) => social.href),
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": `${siteUrl}/#studio`,
-      name: "Ropona Studio",
-      description: site.description,
-      url: siteUrl,
-      email: site.email,
-      areaServed: ["US", "GB", "CA", "AU", "AE", "NG"],
-      founder: { "@id": `${siteUrl}/#person` },
-      serviceType: [
-        "AI Film Production",
-        "AI Commercial Production",
-        "Cinematic Video Editing",
-        "Creative Direction",
-      ],
-      priceRange: "$$$",
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Ropona Studio",
+      name: site.name,
       publisher: { "@id": `${siteUrl}/#person` },
       inLanguage: "en",
     },
@@ -157,10 +141,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${display.variable} ${sans.variable}`}
-    >
+    <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <head>
         <script
           type="application/ld+json"

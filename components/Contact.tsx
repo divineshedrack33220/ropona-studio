@@ -19,25 +19,27 @@ export function Contact() {
         <div className="rounded-feature border border-champagne/20 bg-burgundy p-6 text-ivory md:p-10 lg:p-12">
           <div className="flex items-center gap-3">
             <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-champagne">
-              09
+              10
             </span>
             <span className="h-px w-8 bg-champagne/50" />
             <span className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-champagne">
-              Start a project
+              Contact
             </span>
           </div>
 
           <div className="mt-6 grid gap-6 md:grid-cols-12 md:items-end">
             <Reveal className="md:col-span-8">
               <h2 className="serif text-[clamp(2.7rem,6vw,6.2rem)] leading-[0.98] tracking-[-0.03em] text-ivory">
-                Let&apos;s make something{" "}
-                <em className="text-champagne">that lasts.</em>
+                Let&apos;s discuss what{" "}
+                <em className="text-champagne">we can create.</em>
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:pb-3">
               <p className="max-w-sm text-sm leading-relaxed text-champagne md:ml-auto md:text-right">
-                A film, a campaign, a world. Send a paragraph — no deck required —
-                and I&apos;ll come back within one working day.
+                For AI video production roles, creative collaborations or project
+                opportunities, share your brief or tell me about your team. I would
+                welcome a conversation about how my experience can contribute to your
+                next production.
               </p>
             </Reveal>
           </div>
@@ -59,55 +61,15 @@ export function Contact() {
                 </a>
               </Reveal>
 
-              <Reveal delay={80} className="mt-8 grid grid-cols-2 gap-6">
-                <div>
-                  <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
-                    WhatsApp
-                  </p>
-                  <a
-                    href={site.whatsapp}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="link-line mt-3 block w-fit text-sm text-ivory"
-                    data-track="outbound_click"
-                    data-track-label="contact_whatsapp"
-                  >
-                    Message directly
-                  </a>
-                  <p className="mt-2 font-sans text-[0.52rem] font-medium tracking-[0.1em] text-champagne/75">
-                    {site.phone}
-                  </p>
-                </div>
-                <div>
-                  <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
-                    Book a call
-                  </p>
-                  <a
-                    href={site.booking}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="link-line mt-3 block w-fit text-sm text-ivory"
-                    data-track="outbound_click"
-                    data-track-label="contact_booking"
-                  >
-                    20-minute intro
-                  </a>
-                  <p className="mt-2 font-sans text-[0.52rem] font-medium tracking-[0.1em] text-champagne/75">
-                    Calendly / Cal.com
-                  </p>
-                </div>
-              </Reveal>
-
               <Reveal delay={120} className="mt-10 border-t border-champagne/20 pt-6">
                 <div className="flex items-center gap-2.5">
                   <span className="availability-dot h-1.5 w-1.5 rounded-full bg-champagne" />
                   <p className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-ivory">
-                    {site.availability.status} · {site.availability.note}
+                    {site.availability.status}
                   </p>
                 </div>
                 <p className="mt-3 text-xs leading-relaxed text-champagne/75">
-                  {site.responseTime} Based in {site.location}, working across the
-                  US, UK, Canada, Australia, UAE and Africa.
+                  {site.availability.note}. Based in {site.location}.
                 </p>
               </Reveal>
 
@@ -115,7 +77,7 @@ export function Contact() {
                 <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
                   Elsewhere
                 </p>
-                <ul className="mt-4 grid grid-cols-2 gap-x-6">
+                <ul className="mt-4 grid grid-cols-1 gap-x-6">
                   {site.socials.map((social) => (
                     <li key={social.label} className="border-b border-champagne/20">
                       <a
@@ -147,22 +109,22 @@ export function Contact() {
               <Reveal delay={80}>
                 <div className="rounded-[1.75rem] border border-burgundy/15 bg-champagne p-6 md:p-8">
                   <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
-                    Project brief
+                    Tell me about the opportunity
                   </p>
                   <p className="mt-2 text-sm text-cocoa">
-                    Tell me what you are making, who it is for, and when it needs to
-                    exist.
+                    Name, email, company, opportunity type, timeline and a short
+                    message are enough to start the conversation.
                   </p>
                   <ContactForm />
                 </div>
               </Reveal>
               <Reveal delay={140}>
                 <p className="mt-4 text-[0.68rem] leading-relaxed text-champagne/75">
-                  By submitting a brief you agree to the{" "}
+                  By submitting an enquiry you agree to the{" "}
                   <Link href="/privacy" className="link-line text-champagne">
                     privacy policy
                   </Link>
-                  . Your details are never shared or added to a mailing list.
+                  . Your details are used only to respond to your message.
                 </p>
               </Reveal>
             </div>

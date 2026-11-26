@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { portfolioProjects } from "@/lib/content";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ropona.studio";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ropona-studio-bldm.onrender.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

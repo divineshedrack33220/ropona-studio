@@ -1,27 +1,22 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { site } from "@/lib/content";
 import { track } from "@/lib/analytics";
 
-const projectTypes = [
-  "AI film",
-  "AI commercial",
-  "Brand film",
-  "Cinematic editing",
-  "Creative direction",
-  "Something else",
+const opportunityTypes = [
+  "Employment / remote role",
+  "Agency collaboration",
+  "Project",
+  "Other",
 ];
 
-const budgets = [
-  "Under $2,000",
-  "$2,000 – $5,000",
-  "$5,000 – $15,000",
-  "$15,000 – $30,000",
-  "$30,000+",
-  "Not sure yet",
+const timelines = [
+  "As soon as possible",
+  "1–3 months",
+  "This quarter",
+  "Just exploring",
 ];
-
-const timelines = ["ASAP", "2–4 weeks", "1–2 months", "This quarter", "Just exploring"];
 
 type FormState = "idle" | "sending" | "success" | "error";
 
@@ -44,15 +39,14 @@ export function ContactForm() {
       name: String(data.get("name") ?? "").trim(),
       email: String(data.get("email") ?? "").trim(),
       company: String(data.get("company") ?? "").trim(),
-      projectType: String(data.get("projectType") ?? "").trim(),
-      budget: String(data.get("budget") ?? "").trim(),
+      opportunityType: String(data.get("opportunityType") ?? "").trim(),
       timeline: String(data.get("timeline") ?? "").trim(),
-      brief: String(data.get("brief") ?? "").trim(),
+      message: String(data.get("message") ?? "").trim(),
       consent: data.get("consent") === "on",
     };
 
-    if (!payload.name || !payload.email || !payload.brief) {
-      setError("Please add your name, email and a short brief.");
+    if (!payload.name || !payload.email || !payload.opportunityType || !payload.message) {
+      setError("Please add your name, email, opportunity type and a short message.");
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
@@ -72,14 +66,11 @@ export function ContactForm() {
       if (!response.ok) throw new Error("request failed");
       setState("success");
       form.reset();
-      track("form_submit", {
-        project_type: payload.projectType || "unspecified",
-        budget: payload.budget || "unspecified",
-      });
+      track("form_submit", { opportunity_type: payload.opportunityType });
     } catch {
       setState("error");
       setError(
-        "Something went wrong sending the brief. Please email hello@ropona.studio directly."
+        `Something went wrong sending your enquiry. Please email ${site.email} directly.`
       );
     }
   }
@@ -90,17 +81,16 @@ export function ContactForm() {
         <span className="flex h-10 w-10 items-center justify-center rounded-full border border-burgundy/40 text-burgundy">
           ✓
         </span>
-        <h3 className="serif mt-5 text-2xl text-dark">Brief received.</h3>
+        <h3 className="serif mt-5 text-2xl text-dark">Message submitted.</h3>
         <p className="mt-2 text-sm leading-relaxed text-cocoa">
-          Thank you — I&apos;ll read it properly and reply within one working day.
-          If it is urgent, WhatsApp is the fastest route.
+          Thank you for reaching out. Your message has been submitted.
         </p>
         <button
           type="button"
           onClick={() => setState("idle")}
           className="mt-5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-burgundy"
         >
-          Send another brief
+          Send another enquiry
         </button>
       </div>
     );
@@ -142,7 +132,7 @@ export function ContactForm() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="company" className="field-label">
-            Company / project
+            Company / organisation
           </label>
           <input
             id="company"
@@ -154,12 +144,12 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="projectType" className="field-label">
-            What do you need?
+          <label htmlFor="opportunityType" className="field-label">
+            Opportunity type *
           </label>
-          <select id="projectType" name="projectType" className="field">
-            <option value="">Select a service</option>
-            {projectTypes.map((type) => (
+          <select id="opportunityType" name="opportunityType" className="field" required>
+            <option value="">Select an option</option>
+            {opportunityTypes.map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
@@ -168,46 +158,31 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div>
-          <label htmlFor="budget" className="field-label">
-            Budget range
-          </label>
-          <select id="budget" name="budget" className="field">
-            <option value="">Select a range</option>
-            {budgets.map((budget) => (
-              <option key={budget} value={budget}>
-                {budget}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="timeline" className="field-label">
-            Timeline
-          </label>
-          <select id="timeline" name="timeline" className="field">
-            <option value="">When do you need it?</option>
-            {timelines.map((timeline) => (
-              <option key={timeline} value={timeline}>
-                {timeline}
-              </option>
-            ))}
-          </select>
-        </div>
+      <div>
+        <label htmlFor="timeline" className="field-label">
+          Timeline
+        </label>
+        <select id="timeline" name="timeline" className="field">
+          <option value="">Optional</option>
+          {timelines.map((timeline) => (
+            <option key={timeline} value={timeline}>
+              {timeline}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div>
-        <label htmlFor="brief" className="field-label">
-          The brief *
+        <label htmlFor="message" className="field-label">
+          Message *
         </label>
         <textarea
-          id="brief"
-          name="brief"
+          id="message"
+          name="message"
           rows={5}
           required
           className="field resize-none"
-          placeholder="A paragraph is enough. What are you making, who is it for, and what should it make them feel?"
+          placeholder="Tell me about the role, team or project — and how you would like to work together."
         />
       </div>
 
@@ -224,7 +199,8 @@ export function ContactForm() {
           className="mt-0.5 h-4 w-4 shrink-0 appearance-none rounded border border-cocoa/40 bg-champagneLight checked:border-burgundy checked:bg-burgundy checked:bg-[length:70%] checked:bg-center checked:bg-no-repeat checked:[background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22><path d=%22M1 5l2.5 2.5L9 1.5%22 fill=%22none%22 stroke=%22%23F2E8D5%22 stroke-width=%221.5%22/></svg>')]"
         />
         <span>
-          I&apos;m happy for Ropona Benard to store this brief to respond to my enquiry.
+          I&apos;m happy for Ropona Bernard to store these details to respond to my
+          enquiry.
         </span>
       </label>
 
@@ -235,8 +211,8 @@ export function ContactForm() {
       )}
 
       <div className="flex flex-wrap items-center justify-between gap-4 border-t border-burgundy/15 pt-6">
-        <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-cocoa">
-          Replies within 24 hours
+        <p className="max-w-[22rem] font-sans text-[0.58rem] leading-relaxed tracking-[0.02em] text-cocoa">
+          Your details are used only to respond to your enquiry.
         </p>
         <button
           type="submit"
@@ -244,7 +220,7 @@ export function ContactForm() {
           className="btn btn-gold disabled:cursor-wait disabled:opacity-60"
           data-track="form_submit_attempt"
         >
-          {state === "sending" ? "Sending…" : "Send project brief"}
+          {state === "sending" ? "Sending…" : "Send enquiry"}
           {state !== "sending" && <span aria-hidden="true">↗</span>}
         </button>
       </div>

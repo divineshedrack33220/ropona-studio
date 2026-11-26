@@ -63,6 +63,7 @@ export function FilmPlayer({ src, poster, title, caption, note }: FilmPlayerProp
             poster={poster}
             controls
             autoPlay
+            muted
             playsInline
             preload="metadata"
             className="h-full w-full object-cover"

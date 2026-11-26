@@ -1,501 +1,232 @@
 [
   {
     "slug": "optimaviz-signal",
-    "title": "Optimaviz",
-    "filmTitle": "Signal",
+    "title": "Making industrial intelligence visible",
     "client": "Optimaviz",
-    "category": "AI Film",
-    "tags": ["AI Film", "Commercial", "Creative Direction"],
+    "category": "Explainer",
+    "tags": [
+      "Technology",
+      "B2B storytelling",
+      "Explainer"
+    ],
     "year": "2026",
-    "location": "Remote / London",
-    "role": "Creative Director, Editor & AI Production",
-    "description": "A data platform stops talking in dashboards and starts speaking in light.",
-    "outcome": "+38% demo requests",
+    "location": "Remote",
+    "role": "AI video production & editing",
+    "description": "A visual communication project for an industrial technology brand, translating complex product capabilities into accessible, engaging video content for professional audiences.",
     "thumbnail": "/media/work-optimaviz.jpg",
     "flat": "/media/work-optimaviz-flat.jpg",
     "preview": "/media/film-optimaviz.mp4",
     "accent": "#c98f5a",
     "featured": true,
-    "overview": "Optimaviz had built an intelligence layer that could read a business in real time. The problem was that every competitor claimed the same thing. We needed a film that made insight feel like a physical force — sixty seconds a CFO would remember and a founder would share.",
-    "challenge": "Enterprise analytics is abstract by nature. Dashboards all look alike, feature lists blur together, and buyers have learned to tune out product demos. With no budget for a traditional shoot and six weeks to launch, we had to create a visual world from scratch — without inventing a single product claim.\n\nThe film also had to work silently in a LinkedIn feed, with sound in a boardroom, and as a 15-second cutdown. One idea, three very different attention spans.",
-    "approach": "We stopped filming software. Instead, we treated data as a natural phenomenon: rivers of warm light moving through vast, quiet architecture. Nothing on screen was a UI. Everything on screen was a consequence of intelligence at work.\n\nThe narrative was built in the edit — a slow build from darkness to clarity, cut to an original ambient score. AI generation gave us locations no budget could reach; traditional editing discipline kept it from becoming a showreel of pretty accidents.",
+    "overview": "A visual communication project for an industrial technology brand, translating complex product capabilities into accessible, engaging video content for professional audiences.",
+    "challenge": "Industrial technology is easy to describe in a specification sheet and harder to make feel relevant. The film needed to explain product capabilities without oversimplifying them, and to hold attention in a professional audience context.",
+    "approach": "The film was developed as visual communication: a clear narrative, controlled visuals and an edit that makes technical information easier to understand. Generative production was used where it served clarity; editorial discipline kept the story coherent.",
     "pillars": [
-      { "title": "Emotion before explanation", "body": "The viewer should feel the value of clarity before they understand a single feature." },
-      { "title": "One visual metaphor", "body": "Data as light. Every shot, transition and sound choice serves that single idea." },
-      { "title": "Sound-led pacing", "body": "The score was composed first; the edit was cut to its breath and swells." }
+      {
+        "title": "Technology",
+        "body": "Industrial product capabilities translated into an accessible visual language."
+      },
+      {
+        "title": "B2B storytelling",
+        "body": "A professional audience addressed with clarity rather than spectacle."
+      },
+      {
+        "title": "Explainer",
+        "body": "Structure, pacing and visuals built around understanding."
+      }
     ],
     "process": [
-      { "step": "Research & narrative", "body": "Two weeks with the product and sales teams, mapping the moment buyers actually lean in." },
-      { "step": "Visual language", "body": "Light tests, lens references and a strict palette: amber, charcoal, no blue-tech clichés." },
-      { "step": "Generation & compositing", "body": "Runway, Kling and Veo for environments; Midjourney for boards; practical plates for texture." },
-      { "step": "Edit & sound", "body": "Cut in Resolve to an original ambient score, then layered foley and designed transitions." },
-      { "step": "Grade & finish", "body": "Filmic contrast, halation, grain and clean-up — reviewed on phone, laptop and cinema display." }
+      {
+        "step": "Brief & research",
+        "body": "Understand the product, the audience and the capabilities the film needed to communicate."
+      },
+      {
+        "step": "Narrative & visuals",
+        "body": "Develop the structure, visual direction and supporting references."
+      },
+      {
+        "step": "Production",
+        "body": "Create and refine the visuals that carry the explanation."
+      },
+      {
+        "step": "Edit & finish",
+        "body": "Shape pacing, captions, sound and delivery masters."
+      }
     ],
     "beforeAfter": {
       "image": "/media/work-optimaviz.jpg",
       "flat": "/media/work-optimaviz-flat.jpg",
-      "note": "The grade was designed to feel like light passing through dust — warm highlights, held shadows, and a fine 35mm grain."
-    },
-    "results": [
-      { "value": "2.4M", "label": "organic views in 30 days" },
-      { "value": "+38%", "label": "demo requests quarter on quarter" },
-      { "value": "4.1×", "label": "watch-through vs. category benchmark" },
-      { "value": "61%", "label": "average completion rate" }
-    ],
-    "testimonial": {
-      "quote": "Ropona took a product feature we'd struggled to explain for a year and turned it into something people actually felt. The film did more for our pipeline than three quarters of paid media.",
-      "name": "Daniel Okafor",
-      "role": "Head of Growth, Optimaviz"
+      "note": "The grade is restrained and professional, keeping attention on clarity rather than effect."
     },
     "gallery": [
-      { "src": "/media/work-optimaviz-frame-1.jpg", "caption": "Frame 04 — the first signal" },
-      { "src": "/media/work-optimaviz-frame-2.jpg", "caption": "Frame 19 — clarity" },
-      { "src": "/media/bts.jpg", "caption": "Look development & grade review" }
+      {
+        "src": "/media/work-optimaviz-frame-1.jpg",
+        "caption": "Frame 01 — product context"
+      },
+      {
+        "src": "/media/work-optimaviz-frame-2.jpg",
+        "caption": "Frame 02 — visual explanation"
+      },
+      {
+        "src": "/media/bts.jpg",
+        "caption": "Look development & review"
+      }
     ],
     "credits": [
-      "Creative direction & edit — Ropona Benard",
-      "AI production — Ropona Benard",
-      "Original score & sound — Ropona Benard",
-      "Colour & finish — Ropona Benard",
+      "AI video production & edit — Ropona Bernard",
       "Client — Optimaviz"
     ]
   },
   {
     "slug": "taskgo-dawn-run",
-    "title": "TaskGo",
-    "filmTitle": "Dawn Run",
+    "title": "Connecting people with everyday support",
     "client": "TaskGo",
     "category": "Commercial",
-    "tags": ["Commercial", "Brand Film", "Editing"],
-    "year": "2025",
-    "location": "Lagos, Nigeria",
-    "role": "Director, Editor & Colourist",
-    "description": "The city wakes up, and so does the errand.",
-    "outcome": "+31% app installs",
+    "tags": [
+      "Brand film",
+      "Service marketing",
+      "AI-assisted video"
+    ],
+    "year": "2026",
+    "location": "Perth, Australia (remote)",
+    "role": "Brand video & promotional content",
+    "description": "Brand and promotional video content for a Perth-based cleaning and care services platform, designed to communicate its service offering and make the customer journey easier to understand.",
     "thumbnail": "/media/work-taskgo.jpg",
     "flat": "/media/work-taskgo-flat.jpg",
     "preview": "/media/film-taskgo.mp4",
     "accent": "#d98b4a",
     "featured": true,
-    "overview": "TaskGo needed to move from 'the app that runs your errands' to a brand people trusted with their morning. The answer was not a discount. It was a feeling: the city as a living thing, and one person moving through it while everyone else sleeps.",
-    "challenge": "The category was drowning in price-led creative. Every competitor sold speed and convenience with the same bright, loud grammar. TaskGo had three weeks, a modest production budget, and a limited window with real riders.\n\nWe had to shoot fast, stay honest to Lagos, and build a film that worked as a 45-second anthem and as six platform cutdowns.",
-    "approach": "One continuous dawn, told in fragments. We followed real riders on their first run of the day, shooting available light with a small crew and a long lens. AI previz helped us plan impossible light; practical plates kept the streets real.\n\nThe edit finds the story in small gestures — a helmet click, a gate opening, steam off a flask — and builds to the city fully awake. The grade holds teal shadows and warm streetlight, like the hour before the sun takes over.",
+    "overview": "Brand and promotional video content for a Perth-based cleaning and care services platform, designed to communicate its service offering and make the customer journey easier to understand.",
+    "challenge": "The service needed to be explained quickly and clearly, without relying on price-led messaging or unsupported claims. The films had to make the offering and the customer journey easy to follow.",
+    "approach": "The content was built around service clarity: a defined message, accessible visuals and an edit that leads the viewer from need to action. AI-assisted production supported the visual work while the editorial decisions stayed audience-led.",
     "pillars": [
-      { "title": "Real people, real streets", "body": "No actors, no studio. The authenticity is the production value." },
-      { "title": "One city, one morning", "body": "Every scene belongs to the same 42 minutes of dawn light." },
-      { "title": "Built for the feed", "body": "The 45-second cut was written to survive muted, vertical and three seconds of scroll." }
+      {
+        "title": "Brand film",
+        "body": "Promotional content built around a clear service proposition."
+      },
+      {
+        "title": "Service marketing",
+        "body": "The customer journey made easier to understand."
+      },
+      {
+        "title": "AI-assisted video",
+        "body": "Generated visuals integrated into a coherent edit."
+      }
     ],
     "process": [
-      { "step": "Field research", "body": "Two dawn ride-alongs with TaskGo riders before a single frame was planned." },
-      { "step": "Previs & shot list", "body": "AI-generated light studies mapped the route and the exact minute each shot needed." },
-      { "step": "Two-day shoot", "body": "Small crew, available light, real riders — captured across three neighbourhoods." },
-      { "step": "Edit & cutdowns", "body": "Anthem first, then eight platform edits built from the same visual grammar." }
+      {
+        "step": "Brief & research",
+        "body": "Understand the service, audience and journey being communicated."
+      },
+      {
+        "step": "Message & visuals",
+        "body": "Develop the structure, visual direction and supporting references."
+      },
+      {
+        "step": "Production",
+        "body": "Create the visual assets needed for the brand and explainer content."
+      },
+      {
+        "step": "Edit & delivery",
+        "body": "Refine pacing, captions, sound and platform-ready exports."
+      }
     ],
     "beforeAfter": {
       "image": "/media/work-taskgo.jpg",
       "flat": "/media/work-taskgo-flat.jpg",
-      "note": "The grade leans into pre-sunrise blue and sodium-vapour amber — a palette drawn directly from the streets we shot."
-    },
-    "results": [
-      { "value": "5.8M", "label": "views across paid & organic" },
-      { "value": "+31%", "label": "app install lift during flight" },
-      { "value": "2.1M", "label": "paid reach in three markets" },
-      { "value": "8", "label": "platform cutdowns delivered" }
-    ],
-    "testimonial": {
-      "quote": "She directs like an editor and edits like a director. Every frame had a reason to be there — and the turnaround was faster than our traditional pipeline by weeks.",
-      "name": "Sarah Mitchell",
-      "role": "Brand Lead, TaskGo"
+      "note": "The finish is clean and service-led, keeping the message easy to read."
     },
     "gallery": [
-      { "src": "/media/work-taskgo-frame-1.jpg", "caption": "Frame 07 — first light, third mainland" },
-      { "src": "/media/work-taskgo-frame-2.jpg", "caption": "Frame 22 — the handoff" }
+      {
+        "src": "/media/work-taskgo-frame-1.jpg",
+        "caption": "Frame 01 — service context"
+      },
+      {
+        "src": "/media/work-taskgo-frame-2.jpg",
+        "caption": "Frame 02 — customer journey"
+      }
     ],
     "credits": [
-      "Direction & edit — Ropona Benard",
-      "Cinematography — small crew, available light",
-      "Colour — Ropona Benard",
-      "Sound design — Ropona Benard",
+      "AI video production & edit — Ropona Bernard",
       "Client — TaskGo"
     ]
   },
   {
-    "slug": "waybackhistory-archive-of-us",
-    "title": "WayBackHistory",
-    "filmTitle": "The Archive of Us",
-    "client": "WayBackHistory",
-    "category": "Storytelling",
-    "tags": ["Storytelling", "AI Film", "Documentary"],
-    "year": "2025",
-    "location": "Remote / Global",
-    "role": "Creative Director, Editor & AI Production",
-    "description": "History, remembered the way it felt.",
-    "outcome": "+62K subscribers in 90 days",
-    "thumbnail": "/media/work-waybackhistory.jpg",
-    "flat": "/media/work-waybackhistory-flat.jpg",
-    "preview": "/media/film-waybackhistory.mp4",
-    "accent": "#b9a37e",
-    "featured": true,
-    "overview": "A three-part series for a history publisher with a simple brief: make the past feel present. Not a lecture. Not a slideshow of archival stills. A film that puts the viewer inside a moment they have only ever read about.",
-    "challenge": "Archive-led history content has two failure modes: it either feels like a museum audio guide, or it drifts into historical fiction with no rigour. WayBackHistory needed scale too — three episodes in six weeks, with a small editorial team and limited rights budget.\n\nEvery reconstruction had to be defensible, visually consistent, and clearly framed as interpretation rather than record.",
-    "approach": "We built each episode around a single human moment, then reconstructed only what the archive could support: light, texture, objects, weather, silhouettes. Faces were kept partial or turned away — a deliberate choice that protected accuracy and made the films feel like memory rather than re-enactment.\n\nAI generation handled environments and period detail; traditional documentary editing handled structure, narration, and restraint. The grade is built on parchment, dust and low winter sun.",
-    "pillars": [
-      { "title": "Rigour over spectacle", "body": "Every generated frame traces back to a reference, a source, or a note in the research doc." },
-      { "title": "Memory, not re-enactment", "body": "Partial faces and abstract detail keep the films honest and emotionally open." },
-      { "title": "A repeatable system", "body": "Character, period and grade libraries let a small team ship weekly without drift." }
+    "slug": "confidential-documentary-channel",
+    "title": "History, reconstructed through visual storytelling",
+    "client": "Confidential",
+    "category": "Documentary",
+    "tags": [
+      "Documentary",
+      "YouTube",
+      "AI storytelling"
     ],
-    "process": [
-      { "step": "Archive & research", "body": "Source-first research with citations, reference boards and a period-accurate visual bible." },
-      { "step": "Narrative structure", "body": "Each episode built as a three-act essay around one decision or turning point." },
-      { "step": "Reconstruction", "body": "AI environments, objects and atmospheres generated from archival references, then composited." },
-      { "step": "Edit, narration & sound", "body": "Narration-led pacing with designed silence, foley and a restrained original score." },
-      { "step": "Continuity & finish", "body": "Period QC across episodes, grade consistency, grain and archival texture." }
-    ],
-    "beforeAfter": {
-      "image": "/media/work-waybackhistory.jpg",
-      "flat": "/media/work-waybackhistory-flat.jpg",
-      "note": "Archive plates were stabilised and graded toward aged paper and window light — never sepia, which reads as costume."
-    },
-    "results": [
-      { "value": "1.9M", "label": "views across the three episodes" },
-      { "value": "+62K", "label": "subscribers in 90 days" },
-      { "value": "8.2%", "label": "engagement rate" },
-      { "value": "3", "label": "episodes shipped in 6 weeks" }
-    ],
-    "testimonial": {
-      "quote": "The rare creative who understands both the craft and the commercial. We came for a video; we left with a visual language for the whole brand.",
-      "name": "Amara Eze",
-      "role": "Founder, WayBackHistory"
-    },
-    "gallery": [
-      { "src": "/media/work-waybackhistory-frame-1.jpg", "caption": "Episode 02 — the reading room" },
-      { "src": "/media/work-waybackhistory-frame-2.jpg", "caption": "Episode 03 — dust and window light" },
-      { "src": "/media/bts.jpg", "caption": "Reference review & continuity pass" }
-    ],
-    "credits": [
-      "Creative direction & edit — Ropona Benard",
-      "Research & narrative — WayBackHistory editorial",
-      "AI reconstruction — Ropona Benard",
-      "Narration & sound — Ropona Benard",
-      "Client — WayBackHistory"
-    ]
-  },
-  {
-    "slug": "aura-liquid-gold",
-    "title": "AURA",
-    "filmTitle": "Liquid Gold",
-    "client": "Cre8hive",
-    "category": "Commercial",
-    "tags": ["AI Commercial", "Beauty", "Product"],
-    "year": "2026",
-    "location": "Remote / Dubai",
-    "role": "Creative Director, AI Production & Editor",
-    "description": "A fragrance campaign built from light, glass and gravity.",
-    "outcome": "3.2M views in 14 days",
-    "thumbnail": "/media/work-aura.jpg",
-    "flat": "/media/work-aura-flat.jpg",
-    "preview": "/media/film-aura.mp4",
-    "accent": "#d8b26a",
-    "featured": false,
-    "overview": "A launch film for an AI-native fragrance brand that existed before its first physical bottle. With no product to shoot, the film had to make the object feel more real than a sample ever could — and build a world the brand could own.",
-    "challenge": "Luxury fragrance advertising is a craft of surfaces: glass, liquid, skin, light. With no physical product, every reflection and refraction had to be invented without the frame drifting into uncanny CGI.\n\nThe film also needed to launch across paid social, retail screens and a brand site — each with different aspect ratios and sound conditions.",
-    "approach": "We designed the bottle in 3D first, then used generative tools for the fluid behaviour and atmospheric elements. The camera language is deliberately macro and slow: the product is treated like a landscape, not a pack shot.\n\nSound design carries the luxury — glass tones, low sub, a breath of room — so the film still feels expensive on mute. Gold is used as a material, never a filter.",
-    "pillars": [
-      { "title": "Design the object first", "body": "A solid 3D base kept the bottle consistent through every generated shot." },
-      { "title": "Macro as landscape", "body": "Slow moves and shallow focus make small surfaces feel monumental." },
-      { "title": "Luxury in the mix", "body": "Sound design does as much brand work as the image." }
-    ],
-    "process": [
-      { "step": "Product design", "body": "Bottle form, glass thickness and label geometry modelled before generation." },
-      { "step": "Look development", "body": "Gold, amber and black references; tests for caustics, refraction and fluid tension." },
-      { "step": "Generation & comp", "body": "Liquid simulations, atmospheric passes and clean-up composited around the hero object." },
-      { "step": "Edit, sound & masters", "body": "One 30-second anthem plus vertical, square and silent-first edits." }
-    ],
-    "beforeAfter": {
-      "image": "/media/work-aura.jpg",
-      "flat": "/media/work-aura-flat.jpg",
-      "note": "The finish leans on specular restraint: bright where the glass catches light, never golden everywhere."
-    },
-    "results": [
-      { "value": "3.2M", "label": "views in the first 14 days" },
-      { "value": "6.4%", "label": "engagement rate on paid social" },
-      { "value": "4", "label": "aspect-ratio masters delivered" },
-      { "value": "0", "label": "product samples required" }
-    ],
-    "gallery": [
-      { "src": "/media/work-aura-frame-1.jpg", "caption": "Frame 12 — refraction study" },
-      { "src": "/media/work-aura-frame-2.jpg", "caption": "Frame 28 — the pour" }
-    ],
-    "credits": [
-      "Creative direction & edit — Ropona Benard",
-      "3D product base — Ropona Benard",
-      "AI production & compositing — Ropona Benard",
-      "Sound design — Ropona Benard",
-      "Agency — Cre8hive"
-    ]
-  },
-  {
-    "slug": "monolith",
-    "title": "MONOLITH",
-    "filmTitle": "Monolith",
-    "client": "Self-initiated",
-    "category": "AI Film",
-    "tags": ["AI Film", "Short Film", "Speculative"],
     "year": "2026",
     "location": "Remote",
-    "role": "Writer, Director, Editor & AI Production",
-    "description": "A short film about the things we build and then forget to understand.",
-    "outcome": "Official selection, 3 festivals",
-    "thumbnail": "/media/work-monolith.jpg",
-    "flat": "/media/work-monolith-flat.jpg",
-    "accent": "#94a0a8",
-    "featured": false,
-    "overview": "A self-initiated seven-minute short made to test a question: can a fully AI-produced film hold a silence? Monolith follows two surveyors crossing a desert to measure an object that should not exist.",
-    "challenge": "Short films made with generative tools often rely on novelty. I wanted the opposite: long takes, minimal dialogue, and a visual grammar that would feel at home in a cinema. The production had to maintain a single sun direction, one palette, and a consistent landscape across hundreds of generations.\n\nWith no crew and no location budget, every frame also had to be built in a way that could be revised without starting over.",
-    "approach": "The film was designed like a live-action production: a proper screenplay, a shot list, a floor plan, and a continuity bible. I built a desert library first — dunes, rock, haze, horizon — then treated the monolith as a fixed set piece with consistent scale and shadow.\n\nSilence is the main character. The sound design strips almost everything away, leaving wind, footsteps, and a low tone that arrives before the object does.",
+    "role": "AI Video Editor",
+    "description": "Long-form historical storytelling combining AI-assisted visual reconstruction, narrative editing and audio to bring past events into an engaging digital viewing experience.",
+    "thumbnail": "/media/work-documentary-channel.jpg",
+    "flat": "/media/work-documentary-channel-flat.jpg",
+    "preview": "/media/film-documentary-channel.mp4",
+    "accent": "#b9a37e",
+    "featured": true,
+    "overview": "Long-form historical storytelling combining AI-assisted visual reconstruction, narrative editing and audio to bring past events into an engaging digital viewing experience. The client channel identity remains confidential.",
+    "challenge": "Historical material needs careful handling: the visuals must support the story without being mistaken for record. The edit also has to sustain attention across a long-form digital format.",
+    "approach": "The work combines research-led visual reconstruction, narrative editing and audio. Generated scenes are framed as interpretation, and the structure is built for clarity and viewer retention rather than spectacle.",
     "pillars": [
-      { "title": "Write for silence", "body": "The story is carried by scale, duration and what the characters refuse to say." },
-      { "title": "One sun, one landscape", "body": "A continuity bible locks light direction, palette and geography across every shot." },
-      { "title": "Cinema grammar", "body": "Wide, wider, close. The edit refuses the montage rhythm typical of AI reels." }
+      {
+        "title": "Documentary",
+        "body": "Long-form structure built around a clear historical narrative."
+      },
+      {
+        "title": "YouTube",
+        "body": "Pacing, titles and metadata considered for digital viewing."
+      },
+      {
+        "title": "AI storytelling",
+        "body": "Generated visuals used with appropriate caveats and context."
+      }
     ],
     "process": [
-      { "step": "Screenplay", "body": "A 9-page script and a beat sheet built around three long sequences." },
-      { "step": "World-building", "body": "Desert library, monolith scale tests, and a strict shot-by-shot continuity map." },
-      { "step": "Production", "body": "Generative plates, compositing and practical grain passes across six weeks." },
-      { "step": "Edit & sound", "body": "Assembly to temp score, then an original ambient composition and final mix." },
-      { "step": "Festival finish", "body": "4K master, DCP-ready delivery, closed captions and stills package." }
+      {
+        "step": "Research & structure",
+        "body": "Verify source material and shape the narrative around a clear opening and sustained interest."
+      },
+      {
+        "step": "Visual development",
+        "body": "Create historically informed scenes with appropriate caveats."
+      },
+      {
+        "step": "Edit & sound",
+        "body": "Assemble narration, B-roll, titles, maps and audio."
+      },
+      {
+        "step": "Review & delivery",
+        "body": "Check factual accuracy, continuity, legibility and channel metadata."
+      }
     ],
     "beforeAfter": {
-      "image": "/media/work-monolith.jpg",
-      "flat": "/media/work-monolith-flat.jpg",
-      "note": "The grade keeps the sky almost colourless; warmth lives in the sand and the object's edge."
+      "image": "/media/work-documentary-channel.jpg",
+      "flat": "/media/work-documentary-channel-flat.jpg",
+      "note": "The grade supports an archival feel while keeping generated material clearly interpretive."
     },
-    "results": [
-      { "value": "3", "label": "festival selections" },
-      { "value": "7:12", "label": "final runtime" },
-      { "value": "6", "label": "weeks from script to master" },
-      { "value": "0", "label": "crew on location" }
-    ],
     "gallery": [
-      { "src": "/media/work-monolith-frame-1.jpg", "caption": "Frame 03 — approach" },
-      { "src": "/media/work-monolith-frame-2.jpg", "caption": "Frame 41 — measurement" }
+      {
+        "src": "/media/work-documentary-channel-frame-1.jpg",
+        "caption": "Frame 01 — visual reconstruction"
+      },
+      {
+        "src": "/media/work-documentary-channel-frame-2.jpg",
+        "caption": "Frame 02 — documentary sequence"
+      },
+      {
+        "src": "/media/bts.jpg",
+        "caption": "Reference & continuity review"
+      }
     ],
     "credits": [
-      "Writer, director & editor — Ropona Benard",
-      "AI production — Ropona Benard",
-      "Original score — Ropona Benard",
-      "Colour & finish — Ropona Benard"
-    ]
-  },
-  {
-    "slug": "atelier-crimson-study",
-    "title": "ATELIER",
-    "filmTitle": "Crimson Study",
-    "client": "Cre8hive",
-    "category": "Editing",
-    "tags": ["Fashion Film", "Editing", "Colour"],
-    "year": "2025",
-    "location": "Lagos / Paris",
-    "role": "Editor & Colourist",
-    "description": "A fashion film cut to the rhythm of fabric in motion.",
-    "outcome": "Campaign film for Paris Fashion Week",
-    "thumbnail": "/media/work-atelier.jpg",
-    "flat": "/media/work-atelier-flat.jpg",
-    "accent": "#b4553f",
-    "featured": false,
-    "overview": "A 90-second fashion film for a couture capsule shown at Paris Fashion Week. The footage was shot by a separate director; I came in as editor and colourist to find the film inside it.",
-    "challenge": "The rushes were beautiful but structurally loose: long runway walks, fabric tests, and a model performance with no clear narrative spine. The film had to feel like a statement, not a lookbook, and it had to sync to a commissioned score that was still being written.\n\nThe colour also had to hold a deep crimson without clipping, on everything from a phone to a projection wall.",
-    "approach": "I built the edit around the movement of the fabric itself — the cut lands on a fold, a turn, a collapse. Dialogue and voiceover were removed entirely; the model's breath and the room tone became the narrative.\n\nFor the grade, I isolated the red into its own texture: rich in shadow, desaturated at the edges, with skin kept warm and natural. The result is less 'fashion video' and more portrait.",
-    "pillars": [
-      { "title": "Cut on movement", "body": "Transitions are motivated by fabric and body, never by a music beat alone." },
-      { "title": "Remove the explainer", "body": "No voiceover. The film trusts the image to carry the idea." },
-      { "title": "Protect the red", "body": "A dedicated grade pipeline keeps crimson rich without losing detail." }
-    ],
-    "process": [
-      { "step": "Rush review", "body": "Selects, scene mapping and a paper edit before touching the timeline." },
-      { "step": "Structural edit", "body": "Three-act assembly built around movement and breath, not chronology." },
-      { "step": "Sound & temp", "body": "Sound design and temp score used to test pace with the client." },
-      { "step": "Grade & finish", "body": "Crimson isolation, skin protection, grain and projection test." }
-    ],
-    "beforeAfter": {
-      "image": "/media/work-atelier.jpg",
-      "flat": "/media/work-atelier-flat.jpg",
-      "note": "The crimson was pulled back from digital red into a deeper, fabric-like tone; skin was protected throughout."
-    },
-    "results": [
-      { "value": "90s", "label": "final runtime" },
-      { "value": "PFW", "label": "screened at Paris Fashion Week" },
-      { "value": "4", "label": "deliverable aspect ratios" },
-      { "value": "2", "label": "revision rounds, both structural" }
-    ],
-    "gallery": [
-      { "src": "/media/work-atelier-frame-1.jpg", "caption": "Frame 11 — fold" },
-      { "src": "/media/work-atelier-frame-2.jpg", "caption": "Frame 34 — collapse" }
-    ],
-    "credits": [
-      "Edit & colour — Ropona Benard",
-      "Direction — Cre8hive",
-      "Commissioning client — ATELIER",
-      "Sound design — Cre8hive"
-    ]
-  },
-  {
-    "slug": "pulse-dissolve",
-    "title": "PULSE",
-    "filmTitle": "Dissolve",
-    "client": "SÉV",
-    "category": "Editing",
-    "tags": ["Music Film", "Editing", "Visual Effects"],
-    "year": "2024",
-    "location": "Lagos, Nigeria",
-    "role": "Editor & Post Supervisor",
-    "description": "A performance that falls apart, one frame at a time.",
-    "outcome": "1.4M views, editorial pick",
-    "thumbnail": "/media/work-pulse.jpg",
-    "flat": "/media/work-pulse-flat.jpg",
-    "accent": "#9a8fa6",
-    "featured": false,
-    "overview": "A music film for an independent artist's single 'Dissolve'. The director shot a single continuous performance in smoke and hard light; my job was to make the image disintegrate in sync with the track without losing the human performance at its centre.",
-    "challenge": "The brief was conceptually simple and technically delicate: the performer should appear to dissolve into particles as the song builds. Too much effect and the performance disappears; too little and the idea never lands.\n\nWe also had a hard deadline tied to the release date and a fixed post budget.",
-    "approach": "I treated the effect as an edit problem first. The performance was cut normally, then the disintegration was mapped shot by shot, starting in the shadows and edges and only reaching the face at the final chorus.\n\nParticle passes were generated from the plate itself, so the image always dissolved into its own texture. The grade keeps contrast high and colour almost absent, letting the warm key light do all the emotional work.",
-    "pillars": [
-      { "title": "Performance first", "body": "The effect never obscures the artist's face until the story earns it." },
-      { "title": "Dissolve into itself", "body": "Particles are sampled from the original plate, keeping the image coherent." },
-      { "title": "Cut to the vocal", "body": "The disintegration follows breath and phrasing, not just the beat." }
-    ],
-    "process": [
-      { "step": "Selects & assembly", "body": "One performance, multiple angles; cut for vocal phrasing before effects." },
-      { "step": "Effect mapping", "body": "A frame-by-frame disintegration plan tied to the arrangement." },
-      { "step": "Particle & comp", "body": "Plate-derived particles, edge erosion and light-wrap compositing." },
-      { "step": "Grade & delivery", "body": "High-contrast finish, grain, and platform masters for release day." }
-    ],
-    "beforeAfter": {
-      "image": "/media/work-pulse.jpg",
-      "flat": "/media/work-pulse-flat.jpg",
-      "note": "The grade was pushed toward near-monochrome so the warm key light and the particles carry all the colour."
-    },
-    "results": [
-      { "value": "1.4M", "label": "views in the first month" },
-      { "value": "Editorial", "label": "pick on a leading music platform" },
-      { "value": "3:48", "label": "runtime, cut to the master" },
-      { "value": "10", "label": "days in post" }
-    ],
-    "gallery": [
-      { "src": "/media/work-pulse-frame-1.jpg", "caption": "Frame 18 — first erosion" },
-      { "src": "/media/work-pulse-frame-2.jpg", "caption": "Frame 52 — final chorus" }
-    ],
-    "credits": [
-      "Edit & post supervision — Ropona Benard",
-      "Direction — SÉV & team",
-      "Particle & comp — Ropona Benard",
-      "Colour — Ropona Benard",
-      "Artist — SÉV"
-    ]
-  },
-  {
-    "slug": "meridian-long-coast",
-    "title": "MERIDIAN",
-    "filmTitle": "The Long Coast",
-    "client": "Meridian",
-    "category": "Commercial",
-    "tags": ["Commercial", "Travel", "AI Production"],
-    "year": "2025",
-    "location": "Remote / Cape Town",
-    "role": "Creative Director, Editor & AI Production",
-    "description": "A coastline told as a single, unhurried breath.",
-    "outcome": "+27% direct bookings",
-    "thumbnail": "/media/work-meridian.jpg",
-    "flat": "/media/work-meridian-flat.jpg",
-    "accent": "#7fa3a0",
-    "featured": false,
-    "overview": "A destination brand film for a coastal hospitality group. The brief: sell the feeling of arriving, not the amenities. With properties spread across a coastline that would take weeks to shoot, the film needed a visual journey that felt continuous.",
-    "challenge": "Travel films default to drone montage: waterfall, sunset, infinity pool. Meridian wanted restraint and a sense of place. There was also no budget for a multi-location shoot, and the film had to work as a 60-second brand piece and a 15-second booking ad.\n\nThe locations had to feel like one continuous coastline, even though they were generated and composited from different references.",
-    "approach": "We built the film as one drive down the coast: cliffs, water, a room, a table, a swim. Each shot is held long enough to breathe, with transitions hidden in water and rock. AI environments extended real reference plates and created the impossible aerial continuity.\n\nSound is the travel: wind, distant surf, a single piano note. The grade leans into the last twenty minutes of daylight — deep teal water, warm rock, no oversaturation.",
-    "pillars": [
-      { "title": "Sell arrival", "body": "The film is about the moment the city noise stops, not a list of facilities." },
-      { "title": "One continuous coast", "body": "A visual map hides the joins between locations and generated plates." },
-      { "title": "Hold the shot", "body": "Longer takes and minimal cuts give the viewer room to want to be there." }
-    ],
-    "process": [
-      { "step": "Location logic", "body": "A single coastal route mapped from reference photography and property footage." },
-      { "step": "Reference plates", "body": "Licensed aerials and practical footage used as the backbone for extension." },
-      { "step": "AI environment build", "body": "Coastline, water and architectural shots generated to match the route." },
-      { "step": "Edit, sound & cutdowns", "body": "60-second anthem, 15-second booking edit, and silent social versions." }
-    ],
-    "beforeAfter": {
-      "image": "/media/work-meridian.jpg",
-      "flat": "/media/work-meridian-flat.jpg",
-      "note": "Water was graded toward deep teal to contrast the warm rock and keep the coast from looking like a postcard."
-    },
-    "results": [
-      { "value": "+27%", "label": "direct bookings during campaign" },
-      { "value": "1.1M", "label": "views across organic & paid" },
-      { "value": "2.4×", "label": "landing-page dwell time lift" },
-      { "value": "3", "label": "markets, one master" }
-    ],
-    "gallery": [
-      { "src": "/media/work-meridian-frame-1.jpg", "caption": "Frame 09 — the coast road" },
-      { "src": "/media/work-meridian-frame-2.jpg", "caption": "Frame 33 — last light" }
-    ],
-    "credits": [
-      "Creative direction & edit — Ropona Benard",
-      "AI production & compositing — Ropona Benard",
-      "Reference plates — licensed",
-      "Sound design — Ropona Benard",
-      "Client — Meridian"
-    ]
-  },
-  {
-    "slug": "pathforge-first-step",
-    "title": "PathForge",
-    "filmTitle": "The First Step",
-    "client": "PathForge",
-    "category": "Storytelling",
-    "tags": ["Storytelling", "Education", "AI Film"],
-    "year": "2024",
-    "location": "Remote / Toronto",
-    "role": "Creative Director, Editor & AI Production",
-    "description": "An education brand film about the moment before everything changes.",
-    "outcome": "+27% enrolment enquiries",
-    "thumbnail": "/media/work-pathforge.jpg",
-    "flat": "/media/work-pathforge-flat.jpg",
-    "accent": "#b7a06a",
-    "featured": false,
-    "overview": "PathForge helps people change careers. Their marketing explained the how; it never captured the why. We made a film about the first step — the quiet, unglamorous decision to begin — and built a campaign around that moment.",
-    "challenge": "Education advertising is crowded with outcomes: salaries, certificates, job placements. PathForge wanted to stand for something less transactional: courage. But courage is hard to show without drifting into cliché.\n\nWe also had to speak to two audiences at once — career changers and the employers who fund their teams' development — without blurring the message.",
-    "approach": "We built the film around small, recognisable moments rather than big declarations: an empty desk at night, a browser tab left open, a hand reaching for a light switch. AI generated intimate interiors and impossible transitions between them, while real voiceover testimonies grounded the piece in truth.\n\nThe edit moves at the pace of a held breath. The final frame is not a graduation, but a start.",
-    "pillars": [
-      { "title": "Show the before", "body": "The film lives in the moment of doubt, not the success story." },
-      { "title": "Real voices", "body": "Actual learner testimonies anchor the generated imagery in truth." },
-      { "title": "One ask", "body": "Every frame points to a single action: take the first step." }
-    ],
-    "process": [
-      { "step": "Audience interviews", "body": "Six learner conversations distilled into a single emotional through-line." },
-      { "step": "Concept & script", "body": "A 500-word narrative pared down to 90 seconds and one idea." },
-      { "step": "AI scene build", "body": "Intimate interiors and transitions generated from reference photography." },
-      { "step": "Edit & finish", "body": "Voice-led edit, warm grade, and a six-cutdown enrolment campaign." }
-    ],
-    "beforeAfter": {
-      "image": "/media/work-pathforge.jpg",
-      "flat": "/media/work-pathforge-flat.jpg",
-      "note": "Warm practical light and deep shadow make the generated rooms feel lived in rather than designed."
-    },
-    "results": [
-      { "value": "+27%", "label": "enrolment enquiries in 60 days" },
-      { "value": "890K", "label": "views across organic and email" },
-      { "value": "6", "label": "campaign cutdowns" },
-      { "value": "3.2×", "label": "landing-page conversion lift" }
-    ],
-    "gallery": [
-      { "src": "/media/work-pathforge-frame-1.jpg", "caption": "Frame 14 — the empty desk" },
-      { "src": "/media/work-pathforge-frame-2.jpg", "caption": "Frame 48 — the first step" }
-    ],
-    "credits": [
-      "Creative direction & edit — Ropona Benard",
-      "Narrative & script — Ropona Benard",
-      "AI production — Ropona Benard",
-      "Learner voices — PathForge community",
-      "Client — PathForge"
+      "AI video editing & visual reconstruction — Ropona Bernard",
+      "Client — confidential"
     ]
   }
 ]

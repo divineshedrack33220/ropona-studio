@@ -5,7 +5,7 @@ import { site } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Privacy & cookies",
   description:
-    "How Ropona Benard (Ropona Studio) handles enquiry data, analytics consent, cookies and your rights under GDPR and the NDPR.",
+    "How Ropona Bernard handles enquiry data, analytics consent, cookies and your rights under GDPR and the NDPR.",
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
 };
@@ -14,14 +14,14 @@ const sections = [
   {
     title: "What this policy covers",
     body: [
-      "This policy explains what happens to information you share with Ropona Benard (Ropona Studio) through this website — project briefs, emails, WhatsApp messages and analytics data — and the choices you have over it.",
-      "It applies to ropona.studio and any subdomain of it. It does not cover third-party platforms you reach from this site, such as YouTube, Vimeo or Instagram, which have their own policies.",
+      "This policy explains what happens to information you share with Ropona Bernard through this website — enquiries, emails and analytics data — and the choices you have over it.",
+      "It applies to this website. It does not cover third-party platforms you reach from this site, such as LinkedIn, which have their own policies.",
     ],
   },
   {
     title: "Information collected",
     body: [
-      "When you submit a project brief, I receive the name, email address, company, service interest, budget range, timeline and message you choose to provide. That information is used solely to respond to your enquiry and, if we work together, to deliver the project.",
+      "When you submit a project brief, I receive the name, email address, company, opportunity type, timeline and message you choose to provide. That information is used solely to respond to your enquiry and, if we work together, to deliver the project.",
       "Basic technical information — such as page views, referral source and approximate region — is collected only if you accept analytics cookies. Nothing is collected before you make that choice.",
     ],
   },
@@ -29,7 +29,7 @@ const sections = [
     title: "Legal basis",
     body: [
       "Enquiry data is processed on the basis of legitimate interest and, where required, your consent: you are asking to be contacted about a project. Analytics data is processed on the basis of your explicit consent, which you can withdraw at any time.",
-      "Where the GDPR applies, Ropona Benard (Ropona Studio) acts as the data controller. Where the Nigeria Data Protection Regulation applies, the same commitments apply.",
+      "Where the GDPR applies, Ropona Bernard acts as the data controller. Where the Nigeria Data Protection Regulation applies, the same commitments apply.",
     ],
   },
   {
@@ -49,7 +49,7 @@ const sections = [
   {
     title: "Your rights",
     body: [
-      "You can ask for a copy of the information held about you, request correction, request deletion, or object to processing. Write to hello@ropona.studio and you will receive a response within 30 days.",
+      "You can ask for a copy of the information held about you, request correction, request deletion, or object to processing. Write to the email address listed at the end of this page.",
       "If you believe your information has been handled improperly, you may complain to your local supervisory authority — for example the ICO in the United Kingdom or the Nigeria Data Protection Commission.",
     ],
   },
@@ -141,11 +141,11 @@ export default function PrivacyPage() {
               Contact
             </p>
             <p className="mt-3 max-w-lg text-sm leading-relaxed text-champagne/90">
-              Ropona Benard · Ropona Studio · {site.location}. For any privacy request, email{" "}
+              Ropona Bernard · {site.location}. For any privacy request, email{" "}
               <a href={`mailto:${site.email}`} className="link-line text-ivory">
                 {site.email}
               </a>
-              . Replies within one working day.
+              .
             </p>
             <Link
               href="/#contact"
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
               data-track="cta_click"
               data-track-label="privacy_contact"
             >
-              Start a project <span aria-hidden="true">↗</span>
+              Get in touch <span aria-hidden="true">↗</span>
             </Link>
           </div>
         </div>

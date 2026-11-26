@@ -1,44 +1,44 @@
 [
   {
     "number": "01",
-    "title": "Discovery & Research",
-    "duration": "2–4 days",
-    "body": "I start with the business, not the brief. Audience, category, competitors, and the one thing this film has to make people feel. You get a short strategic summary before we write a word."
+    "title": "Discovery & research",
+    "duration": "",
+    "body": "Understand audience, brand, business objective, references and delivery requirements."
   },
   {
     "number": "02",
-    "title": "Concept & Scriptwriting",
-    "duration": "3–5 days",
-    "body": "Three distinct territories, one recommended direction. Then the script: voiceover, dialogue, and visual beats written to be shot — not to sound clever on a page."
+    "title": "Concept & script",
+    "duration": "",
+    "body": "Develop the narrative, creative hook, voiceover and visual beats."
   },
   {
     "number": "03",
-    "title": "Storyboarding & Visual Direction",
-    "duration": "2–4 days",
-    "body": "Frame-accurate boards, a look book, and test generations. We lock the visual language — palette, lens, texture, pace — before production spend begins."
+    "title": "Storyboard & visual direction",
+    "duration": "",
+    "body": "Plan shots, establish reference imagery, define style and continuity."
   },
   {
     "number": "04",
-    "title": "Asset Creation & Production",
-    "duration": "1–3 weeks",
-    "body": "The build. AI generation, practical plates, motion design, and sound assets, produced in parallel and reviewed in daily selects. You see the film taking shape, not just a bill."
+    "title": "Generative production",
+    "duration": "",
+    "body": "Create and refine keyframes, characters, environments and motion; select assets that serve the story."
   },
   {
     "number": "05",
-    "title": "Editing & Post-Production",
-    "duration": "1–2 weeks",
-    "body": "Story assembly, then rhythm. Colour, sound design, music, titles, and finishing. This is where the film finds its pulse and the commercial idea becomes undeniable."
+    "title": "Editing & post-production",
+    "duration": "",
+    "body": "Assemble the narrative, refine pacing, integrate sound, motion graphics, captions and finishing."
   },
   {
     "number": "06",
-    "title": "Quality Control & Revisions",
-    "duration": "2–3 days",
-    "body": "Frame-by-frame checks, artefact clean-up, continuity, loudness, legibility, and two structured revision rounds. Nothing ships until it holds up on a phone and a cinema screen."
+    "title": "Review & quality control",
+    "duration": "",
+    "body": "Check continuity, visual artefacts, audio, brand accuracy and legibility; incorporate agreed feedback."
   },
   {
     "number": "07",
-    "title": "Final Delivery",
-    "duration": "1–2 days",
-    "body": "Every master you need, correctly encoded and named: broadcast, web, social, vertical, captions, and thumbnails. Plus a tidy handover folder your team can actually use."
+    "title": "Delivery",
+    "duration": "",
+    "body": "Export to required formats, aspect ratios and specifications, with relevant assets and handover notes as agreed."
   }
 ]

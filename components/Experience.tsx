@@ -1,4 +1,4 @@
-import { about, site } from "@/lib/content";
+import { experience, site } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 
 export function Experience() {
@@ -16,21 +16,29 @@ export function Experience() {
         <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-12 md:gap-8">
           <Reveal className="md:col-span-5">
             <div className="surface-card h-full rounded-feature p-7 md:p-9">
-              <h2 className="serif max-w-[14ch] text-[clamp(2.2rem,4vw,4rem)] leading-[1.02] text-dark">
-                Craft first. <em className="text-burgundy">Tools in service.</em>
+              <h2 className="serif max-w-[16ch] text-[clamp(2.2rem,4vw,4rem)] leading-[1.02] text-dark">
+                Creative production across{" "}
+                <em className="text-burgundy">brands, industries and formats.</em>
               </h2>
               <p className="mt-5 max-w-md text-sm leading-[1.85] text-cocoa">
-                {about.credentials[1]?.value}
+                My experience spans commercial marketing, technical communication,
+                property promotion and long-form digital storytelling.
               </p>
 
               <dl className="mt-9 flex flex-col gap-6 border-l border-burgundy/25 pl-6">
-                {about.credentials.map((item) => (
-                  <div key={item.label}>
+                {experience.map((item) => (
+                  <div key={`${item.organization}-${item.role}`}>
                     <dt className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
-                      {item.label}
+                      {item.organization}
                     </dt>
                     <dd className="mt-1.5 text-sm leading-relaxed text-cocoa">
-                      {item.value}
+                      <span className="font-medium text-espresso">{item.role}</span>
+                      {item.meta && (
+                        <span className="mt-1 block font-sans text-[0.52rem] uppercase tracking-[0.1em] text-cocoa">
+                          {item.meta}
+                        </span>
+                      )}
+                      <span className="mt-2 block">{item.description}</span>
                     </dd>
                   </div>
                 ))}
@@ -41,26 +49,20 @@ export function Experience() {
           <Reveal delay={100} className="md:col-span-7">
             <div className="surface-light h-full rounded-feature p-7 md:p-9">
               <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-burgundy/15 pb-5">
-                <h3 className="serif text-2xl text-dark md:text-3xl">Expertise</h3>
+                <h3 className="serif text-2xl text-dark md:text-3xl">
+                  Capabilities
+                </h3>
                 <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
-                  Director · Editor · AI production
+                  Concept to finished production
                 </span>
               </div>
 
-              <ul className="mt-5 grid gap-x-8 sm:grid-cols-2">
-                {about.expertise.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 border-b border-burgundy/10 py-3 text-sm leading-relaxed text-cocoa"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-burgundy"
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-5 max-w-xl text-sm leading-[1.85] text-cocoa">
+                A connected production skill set combining generative technology,
+                editorial craft and audience-focused creative thinking. I can
+                contribute across the full workflow or integrate into an established
+                production team.
+              </p>
 
               <div className="mt-9 border-t border-burgundy/15 pt-6">
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
@@ -68,19 +70,28 @@ export function Experience() {
                     Working toolkit
                   </h3>
                   <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
-                    {site.tools.length} tools
+                    By production function
                   </span>
                 </div>
-                <ul className="mt-5 flex flex-wrap gap-2">
-                  {site.tools.map((tool) => (
-                    <li
-                      key={tool}
-                      className="rounded-full border border-burgundy/20 bg-champagne/70 px-3 py-1.5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.1em] text-espresso"
-                    >
-                      {tool}
-                    </li>
+                <div className="mt-5 flex flex-col gap-5">
+                  {site.toolGroups.map((group) => (
+                    <div key={group.label}>
+                      <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
+                        {group.label}
+                      </p>
+                      <ul className="mt-2 flex flex-wrap gap-2">
+                        {group.items.map((tool) => (
+                          <li
+                            key={`${group.label}-${tool}`}
+                            className="rounded-full border border-burgundy/20 bg-champagne/70 px-3 py-1.5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.1em] text-espresso"
+                          >
+                            {tool}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           </Reveal>

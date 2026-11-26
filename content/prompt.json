@@ -1,0 +1,8 @@
+{
+  "headline": "I prompt for the shot, not just the image.",
+  "intro": "I treat prompts as production instructions. Before generating a scene, I establish its narrative purpose, subject, action, environment, composition, camera angle, lens feel, lighting, colour, texture and emotional tone. For motion, I specify subject movement, camera movement, timing, direction and what must remain stable. I use reference frames and continuity constraints to maintain character identity, wardrobe, product appearance and spatial logic.",
+  "process": "My process is iterative: generate controlled alternatives, compare them against the storyboard, isolate errors, refine one variable at a time and select the strongest usable result. I look for anatomical errors, warped logos, inconsistent props, flicker, unnatural motion, continuity breaks and unintended text before footage enters the edit.",
+  "exampleLabel": "Prompt example (illustrative, not a client asset)",
+  "example": "Vertical product commercial; approved reference bottle on a clean stone counter; soft morning side light; close-up at eye level; slow controlled push-in; preserve label, cap and proportions; natural reflections; no extra text, no deformation or sudden camera changes. Adapt syntax and negative constraints to the selected model.",
+  "deliverables": ["Reusable shot prompts", "Reference boards", "Generation notes", "Approved keyframes", "Selected motion clips"]
+}

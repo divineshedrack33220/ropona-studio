@@ -22,7 +22,7 @@ export function About() {
                     />
                     <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 rounded-2xl bg-espresso/85 px-4 py-3 text-ivory md:inset-x-5 md:bottom-5">
                       <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.16em]">
-                        Ropona Benard
+                        Ropona Bernard
                       </p>
                       <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.16em] text-champagne/75">
                         Lagos
@@ -105,22 +105,21 @@ export function About() {
               </Reveal>
 
               <Reveal delay={120} className="mt-9 flex flex-wrap items-center gap-4">
-                <a
-                  href={site.cv}
-                  download
-                  className="btn btn-gold"
-                  data-track="cv_download"
-                >
-                  Download CV / bio
-                  <span aria-hidden="true">↓</span>
-                </a>
                 <Link
                   href="/#contact"
+                  className="btn btn-gold"
+                  data-track="cta_click"
+                  data-track-label="about_get_in_touch"
+                >
+                  Get in touch <span aria-hidden="true">↗</span>
+                </Link>
+                <Link
+                  href="#experience"
                   className="btn btn-ghost"
                   data-track="cta_click"
-                  data-track-label="about_book_call"
+                  data-track-label="about_view_experience"
                 >
-                  Book an intro call <span aria-hidden="true">↗</span>
+                  View experience <span aria-hidden="true">↓</span>
                 </Link>
               </Reveal>
 
@@ -135,7 +134,7 @@ export function About() {
                   />
                 </span>
                 <span className="serif text-2xl italic text-burgundy sm:text-3xl">
-                  Ropona Benard
+                  Ropona Bernard
                 </span>
                 <span className="h-px flex-1 bg-burgundy/20" />
                 <span className="hidden font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-cocoa sm:inline">

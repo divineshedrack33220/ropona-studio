@@ -11,6 +11,7 @@ import {
 } from "react";
 import { site } from "@/lib/content";
 import { track } from "@/lib/analytics";
+import { useVideoDuration } from "@/components/useVideoDuration";
 
 export type Film = {
   src: string;
@@ -45,7 +46,8 @@ function CloseIcon() {
 
 export function ShowreelProvider({ children }: { children: ReactNode }) {
   const [film, setFilm] = useState<Film | null>(null);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const duration = useVideoDuration(site.showreel.src, site.showreel.duration);
   const dialogRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -55,18 +57,20 @@ export function ShowreelProvider({ children }: { children: ReactNode }) {
 
   const open = useCallback(() => {
     lastFocused.current = document.activeElement as HTMLElement;
+    setMuted(true);
     setFilm({
       src: site.showreel.src,
       poster: site.showreel.poster,
       title: site.showreel.title,
       subtitle: site.showreel.tagline,
-      note: `${site.showreel.duration} · ${site.showreel.note}`,
+      note: `${duration} · ${site.showreel.note}`,
     });
     track("showreel_play", { location: "modal" });
-  }, []);
+  }, [duration]);
 
   const openFilm = useCallback((next: Film) => {
     lastFocused.current = document.activeElement as HTMLElement;
+    setMuted(true);
     setFilm(next);
     track("video_play", { video: next.title, location: "portfolio_modal" });
   }, []);

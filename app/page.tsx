@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { CapabilityMarquee } from "@/components/CapabilityMarquee";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -8,8 +7,9 @@ import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
-import { Testimonials } from "@/components/Testimonials";
-import { Pricing } from "@/components/Pricing";
+import { DirectorMode } from "@/components/DirectorMode";
+import { PromptDirection } from "@/components/PromptDirection";
+import { Engagements } from "@/components/Engagements";
 import { Contact } from "@/components/Contact";
 import { Reveal } from "@/components/Reveal";
 import { portfolioProjects, site } from "@/lib/content";
@@ -31,19 +31,21 @@ export default function HomePage() {
               <span className="eyebrow">The practice</span>
             </div>
             <p className="mt-6 max-w-[17rem] font-sans text-[0.58rem] font-medium uppercase leading-[1.9] tracking-[0.12em] text-espresso">
-              Director-led. Editor-brained.
+              Generative production.
               <br />
-              Built for the way films are made now.
+              Editorial craft.
+              <br />
+              Audience-led strategy.
             </p>
           </Reveal>
 
           <div className="md:col-span-9">
             <Reveal>
               <h2 className="serif max-w-5xl text-[clamp(2.2rem,4.5vw,4.6rem)] leading-[1.04] tracking-[-0.025em] text-dark">
-                Anyone can generate a shot.
+                The technology creates possibilities.
                 <br />
                 <em className="text-burgundy">
-                  Very few can make you feel it.
+                  The story gives them purpose.
                 </em>
               </h2>
             </Reveal>
@@ -51,23 +53,25 @@ export default function HomePage() {
             <div className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-12">
               <Reveal delay={80} className="surface-card p-6 md:p-7">
                 <p className="text-[0.95rem] leading-[1.85] text-cocoa">
-                  I&apos;m Ropona Benard — a creative director, AI filmmaker and editor
-                  working where traditional post-production meets generative
-                  production. I build films the way a director should: story
-                  first, craft always, technology only where it serves the frame.
+                  My work sits at the intersection of generative production, video
+                  editing and marketing strategy. I understand how audiences think,
+                  how brands communicate and how visual decisions influence the way
+                  a message is received. That perspective shapes everything I
+                  produce, from a short-form commercial to a long-form documentary.
                 </p>
               </Reveal>
               <Reveal delay={140} className="surface-card p-6 md:p-7">
                 <p className="text-[0.95rem] leading-[1.85] text-cocoa">
-                  For brands and storytellers, that means one partner from concept
-                  to final cut — a hybrid pipeline that keeps cinema-grade craft
-                  while collapsing the time and cost between an idea and a
-                  finished film.
+                  I approach AI as a production medium, not a shortcut around
+                  creative judgement. Concept development, shot design, continuity,
+                  pacing, sound and finishing all contribute to the final
+                  experience. The objective is not simply to generate impressive
+                  imagery; it is to create a coherent film that serves the brief.
                 </p>
               </Reveal>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-4 md:mt-8 lg:grid-cols-4">
+            <div className="mt-6 grid grid-cols-1 gap-4 md:mt-8 sm:grid-cols-3">
               {site.stats.map((stat, index) => (
                 <Reveal
                   key={stat.label}
@@ -97,12 +101,12 @@ export default function HomePage() {
             label="Selected work"
             title={
               <>
-                A few frames from the{" "}
-                <em className="text-burgundy">last four years.</em>
+                Selected films. Distinct briefs.{" "}
+                <em className="text-burgundy">Deliberate creative choices.</em>
               </>
             }
-            description="Commercials, AI films, brand worlds and edits. Each one built around a single idea — and measured by what it did for the client."
-            action={{ label: "All projects", href: "/work" }}
+            description="Explore a selection of commercial, technical and narrative productions. Each project demonstrates a different application of AI-assisted filmmaking, visual storytelling and post-production."
+            action={{ label: "Explore all projects", href: "/work" }}
           />
           <WorkGrid projects={portfolioProjects} />
         </div>
@@ -113,30 +117,10 @@ export default function HomePage() {
       <Experience />
       <Services />
       <Process />
-      <Testimonials />
-      <Pricing />
+      <DirectorMode />
+      <PromptDirection />
+      <Engagements />
       <Contact />
-
-      <section className="border-t border-burgundy/15">
-        <div className="shell py-12 md:py-16">
-          <div className="flex flex-col items-start justify-between gap-7 rounded-feature bg-burgundy p-7 text-ivory md:flex-row md:items-center md:p-10">
-            <p className="max-w-xl text-base leading-relaxed text-champagne">
-              Prefer to talk it through? A 20-minute call is usually enough to know
-              whether we should make something together.
-            </p>
-            <Link
-              href={site.booking}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-outline shrink-0"
-              data-track="outbound_click"
-              data-track-label="footer_booking"
-            >
-              Book an intro call <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
