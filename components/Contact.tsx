@@ -16,7 +16,7 @@ export function Contact() {
   return (
     <section id="contact" className="section border-t border-burgundy/15">
       <div className="shell">
-        <div className="rounded-feature border border-champagne/20 bg-burgundy p-6 text-ivory md:p-10 lg:p-12">
+        <div className="rounded-panel border border-champagne/20 bg-burgundy p-5 text-ivory md:p-7 lg:p-8">
           <div className="flex items-center gap-3">
             <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-champagne">
               10
@@ -27,9 +27,9 @@ export function Contact() {
             </span>
           </div>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-12 md:items-end">
+          <div className="mt-5 grid gap-5 md:grid-cols-12 md:items-end">
             <Reveal className="md:col-span-8">
-              <h2 className="serif text-[clamp(2.7rem,6vw,6.2rem)] leading-[0.98] tracking-[-0.03em] text-ivory">
+              <h2 className="serif text-[clamp(2.2rem,4.4vw,4.4rem)] leading-[1.02] tracking-[-0.03em] text-ivory">
                 Let&apos;s discuss what{" "}
                 <em className="text-champagne">we can create.</em>
               </h2>
@@ -44,7 +44,7 @@ export function Contact() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-9 md:grid-cols-12 md:gap-8">
+          <div className="mt-8 grid gap-7 md:grid-cols-12 md:gap-6">
             <div className="flex flex-col md:col-span-5">
               <Reveal>
                 <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
@@ -61,7 +61,7 @@ export function Contact() {
                 </a>
               </Reveal>
 
-              <Reveal delay={120} className="mt-10 border-t border-champagne/20 pt-6">
+              <Reveal delay={120} className="mt-8 border-t border-champagne/20 pt-5">
                 <div className="flex items-center gap-2.5">
                   <span className="availability-dot h-1.5 w-1.5 rounded-full bg-champagne" />
                   <p className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-ivory">
@@ -73,7 +73,7 @@ export function Contact() {
                 </p>
               </Reveal>
 
-              <Reveal delay={160} className="mt-10">
+              <Reveal delay={160} className="mt-8">
                 <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
                   Elsewhere
                 </p>
@@ -98,7 +98,7 @@ export function Contact() {
                 </ul>
               </Reveal>
 
-              <Reveal delay={120} className="mt-auto hidden pt-12 md:block">
+              <Reveal delay={120} className="mt-auto hidden pt-8 md:block">
                 <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-champagne/75">
                   {site.location} · <LocalTime />
                 </p>
@@ -107,7 +107,7 @@ export function Contact() {
 
             <div className="md:col-span-7">
               <Reveal delay={80}>
-                <div className="rounded-[1.75rem] border border-burgundy/15 bg-champagne p-6 md:p-8">
+                <div className="rounded-panel border border-burgundy/15 bg-champagne p-5 md:p-6">
                   <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
                     Tell me about the opportunity
                   </p>

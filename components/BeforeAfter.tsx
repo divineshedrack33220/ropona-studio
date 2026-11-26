@@ -15,12 +15,12 @@ export function BeforeAfter({ image, flat, note, title }: BeforeAfterProps) {
 
   return (
     <div>
-      <div className="before-after media-frame relative aspect-[16/9] w-full select-none">
+      <div className="before-after media-frame relative mx-auto aspect-ig-square w-full max-w-2xl select-none">
         <Image
           src={image}
           alt={`${title} — final graded frame`}
           fill
-          sizes="(max-width: 1680px) 100vw, 1600px"
+          sizes="(max-width: 768px) 100vw, 48rem"
           className="object-cover"
         />
         <div
@@ -31,7 +31,7 @@ export function BeforeAfter({ image, flat, note, title }: BeforeAfterProps) {
             src={flat}
             alt={`${title} — ungraded camera plate`}
             fill
-            sizes="(max-width: 1680px) 100vw, 1600px"
+            sizes="(max-width: 768px) 100vw, 48rem"
             className="object-cover"
           />
         </div>

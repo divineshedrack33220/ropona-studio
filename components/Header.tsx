@@ -89,14 +89,14 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-[70] pt-3 md:pt-5">
+      <header className="fixed inset-x-0 top-0 z-[70] pt-2 md:pt-3">
         <div className="shell">
-          <div className="flex h-16 items-center justify-between gap-3 rounded-full border border-burgundy/30 bg-burgundy px-3 md:h-[72px] md:px-4">
+          <div className="flex h-14 items-center justify-between gap-3 rounded-full border border-burgundy/30 bg-burgundy px-3 md:h-16 md:px-4">
             <Link
               href="/#top"
               className="group flex min-w-0 items-center gap-2.5 rounded-full px-2 py-1"
             >
-              <Mark className="h-8 w-8 shrink-0 text-champagne transition-colors duration-300 group-hover:text-ivory" />
+              <Mark className="h-7 w-7 shrink-0 text-champagne transition-colors duration-300 group-hover:text-ivory" />
               <span className="flex min-w-0 flex-col leading-none">
                 <span className="truncate font-sans text-[0.78rem] font-semibold uppercase tracking-[0.26em] text-ivory">
                   Ropona
@@ -117,7 +117,7 @@ export function Header() {
                     onClick={() => setHash(`#${item.href.split("#")[1] ?? ""}`)}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "flex items-center gap-2 rounded-full px-3.5 py-2 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-300",
+                      "flex items-center gap-1.5 rounded-full px-2.5 py-1.5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.12em] transition-colors duration-300",
                       active
                         ? "bg-champagne text-burgundy"
                         : "text-ivory/80 hover:bg-champagne/10 hover:text-ivory"
@@ -137,7 +137,7 @@ export function Header() {
             </nav>
 
             <div className="flex shrink-0 items-center gap-2 md:gap-3">
-              <div className="hidden items-center gap-2.5 rounded-full border border-champagne/25 px-3.5 py-2 xl:flex">
+              <div className="hidden items-center gap-2 rounded-full border border-champagne/25 px-3 py-1.5 xl:flex">
                 <span className="availability-dot h-1.5 w-1.5 rounded-full bg-champagne" />
                 <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-champagne">
                   {site.availability.status}
@@ -147,7 +147,7 @@ export function Header() {
                 href="/#contact"
                 data-track="cta_click"
                 data-track-label="header_get_in_touch"
-                className="btn btn-outline hidden !px-4 !py-2.5 !text-[0.58rem] sm:inline-flex"
+                className="btn btn-outline hidden !px-3.5 !py-2 !text-[0.56rem] sm:inline-flex"
               >
                 Get in touch
               </Link>
@@ -157,7 +157,7 @@ export function Header() {
                 aria-expanded={open}
                 aria-controls="mobile-menu"
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-champagne/30 text-champagne transition-colors hover:bg-champagne/10 lg:hidden"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-champagne/30 text-champagne transition-colors hover:bg-champagne/10 lg:hidden"
               >
                 <span className="relative block h-3 w-6">
                   <span
@@ -187,7 +187,7 @@ export function Header() {
           open ? "visible opacity-100" : "invisible opacity-0"
         )}
       >
-        <div className="shell flex min-h-full flex-col pb-10 pt-28 md:pt-32">
+        <div className="shell flex min-h-full flex-col pb-8 pt-24 md:pt-28">
           <nav aria-label="Mobile" className="flex flex-col gap-1">
             {nav.map((item, index) => {
               const active = isActive(item.href);
@@ -221,7 +221,7 @@ export function Header() {
                   >
                     {item.index}
                   </span>
-                  <span className="font-sans text-[clamp(1.8rem,8vw,3rem)] font-medium leading-none tracking-[-0.03em]">
+                  <span className="font-sans text-[clamp(1.55rem,7vw,2.4rem)] font-medium leading-none tracking-[-0.03em]">
                     {item.label}
                   </span>
                 </Link>
@@ -230,7 +230,7 @@ export function Header() {
           </nav>
 
           <div
-            className="mt-10 flex flex-col gap-6 rounded-[2rem] border border-champagne/20 bg-espresso/35 p-6"
+            className="mt-8 flex flex-col gap-5 rounded-panel border border-champagne/20 bg-espresso/35 p-5"
             style={{
               animation: open
                 ? "floatIn 0.6s cubic-bezier(0.16,1,0.3,1) 390ms both"

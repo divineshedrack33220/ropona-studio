@@ -52,19 +52,19 @@ export function ProjectCard({
 
   return (
     <div
-      className={`project-card group relative block w-full rounded-feature border border-burgundy/15 bg-champagne p-4 transition-colors duration-500 hover:border-burgundy/35 md:p-5 ${className}`}
+      className={`project-card group relative block w-full rounded-card border border-burgundy/15 bg-champagne p-3 transition-colors duration-500 hover:border-burgundy/35 md:p-4 ${className}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
     >
-      <div className="relative aspect-[16/10] overflow-hidden rounded-[1.4rem] border border-burgundy/15 bg-champagneLight">
+      <div className="relative aspect-ig-square overflow-hidden rounded-panel border border-burgundy/15 bg-champagneLight">
         <Image
           src={project.thumbnail}
           alt={`${project.title} — ${project.category.toLowerCase()} still by Ropona Bernard`}
           fill
           priority={priority}
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 55vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className={`object-cover ${
             hasPreview
               ? ""
@@ -95,25 +95,25 @@ export function ProjectCard({
           className="pointer-events-none absolute inset-0 bg-espresso/30 transition-opacity duration-500 group-hover:bg-espresso/20"
         />
 
-        <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-4 md:p-5">
-          <span className="rounded-full bg-champagne px-3 py-1.5 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
+        <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3">
+          <span className="rounded-full bg-champagne px-2.5 py-1 font-sans text-[0.5rem] font-semibold uppercase tracking-[0.12em] text-burgundy">
             {project.category}
           </span>
-          <span className="font-sans text-[0.56rem] font-semibold tracking-[0.14em] text-ivory">
+          <span className="font-sans text-[0.52rem] font-semibold tracking-[0.12em] text-ivory">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 md:p-5">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-3">
           {hasPreview && (
-            <span className="flex translate-y-2 items-center gap-2 rounded-full bg-burgundy px-3 py-2 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-ivory opacity-0 transition-all duration-500 ease-cinema group-hover:translate-y-0 group-hover:opacity-100">
+            <span className="flex translate-y-2 items-center gap-1.5 rounded-full bg-burgundy px-2.5 py-1.5 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-ivory opacity-0 transition-all duration-500 ease-cinema group-hover:translate-y-0 group-hover:opacity-100">
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-champagne text-burgundy">
                 <PlayGlyph className="h-2 w-2" />
               </span>
               Play film
             </span>
           )}
-          <span className="flex items-center gap-2 rounded-full bg-espresso/85 px-3 py-2 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.12em] text-champagne">
+          <span className="flex items-center gap-1.5 rounded-full bg-espresso/85 px-2.5 py-1.5 font-sans text-[0.5rem] font-semibold uppercase tracking-[0.1em] text-champagne">
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-champagne" />
             {clientLabel}
           </span>
@@ -122,7 +122,7 @@ export function ProjectCard({
         {hovered && hasPreview && (
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-champagne/60 bg-espresso/60 text-ivory"
+            className="pointer-events-none absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-champagne/60 bg-espresso/60 text-ivory"
           >
             <PlayGlyph className="h-3 w-3" />
           </span>
@@ -135,15 +135,15 @@ export function ProjectCard({
             aria-label={`Play film: ${project.title}`}
             data-track="film_play"
             data-track-label={project.slug}
-            className="absolute inset-0 z-20 cursor-pointer rounded-[1.4rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
+            className="absolute inset-0 z-20 cursor-pointer rounded-panel focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
           />
         )}
       </div>
 
-      <div className="mt-5 grid grid-cols-12 items-start gap-4 px-1 pb-1 md:px-2 md:pb-2">
+      <div className="mt-4 grid grid-cols-12 items-start gap-3 px-1 pb-1">
         <div className="col-span-9">
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <h3 className="serif text-[clamp(1.65rem,2.3vw,2.4rem)] leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft">
+          <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+            <h3 className="serif text-[clamp(1.35rem,2vw,1.8rem)] leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft">
               <Link
                 href={`/work/${project.slug}`}
                 className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
@@ -155,16 +155,16 @@ export function ProjectCard({
               {project.year}
             </span>
           </div>
-          <p className="mt-2 max-w-md text-sm leading-relaxed text-cocoa">
+          <p className="mt-1.5 max-w-md text-[0.82rem] leading-relaxed text-cocoa">
             {project.description}
           </p>
 
           {project.tags && (
-            <ul className="mt-4 flex flex-wrap gap-2">
+            <ul className="mt-3 flex flex-wrap gap-1.5">
               {project.tags.slice(0, 3).map((tag) => (
                 <li
                   key={tag}
-                  className="rounded-full border border-burgundy/20 bg-champagneLight/70 px-2.5 py-1 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.1em] text-cocoa"
+                  className="rounded-full border border-burgundy/20 bg-champagneLight/70 px-2 py-1 font-sans text-[0.5rem] font-semibold uppercase tracking-[0.09em] text-cocoa"
                 >
                   {tag}
                 </li>

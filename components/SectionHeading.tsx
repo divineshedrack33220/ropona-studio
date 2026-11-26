@@ -29,19 +29,19 @@ export function SectionHeading({
         <span className="eyebrow">{label}</span>
       </Reveal>
 
-      <div className="mt-6 grid gap-6 md:mt-8 md:grid-cols-12 md:items-end">
+      <div className="mt-5 grid gap-5 md:mt-6 md:grid-cols-12 md:items-end">
         <Reveal delay={80} className="md:col-span-7">
-          <h2 className="serif max-w-3xl text-[clamp(2.3rem,4.7vw,4.7rem)] leading-[1.02] tracking-[-0.025em] text-dark">
+          <h2 className="serif max-w-3xl text-[clamp(2rem,3.8vw,3.8rem)] leading-[1.05] tracking-[-0.025em] text-dark">
             {title}
           </h2>
         </Reveal>
         {(description || action) && (
           <Reveal
             delay={160}
-            className="flex flex-col items-start gap-5 md:col-span-4 md:col-start-9 md:items-end md:text-right"
+            className="flex flex-col items-start gap-4 md:col-span-4 md:col-start-9 md:items-end md:text-right"
           >
             {description && (
-              <div className="max-w-sm text-sm leading-relaxed text-espresso">
+              <div className="max-w-sm text-[0.85rem] leading-relaxed text-espresso">
                 {description}
               </div>
             )}

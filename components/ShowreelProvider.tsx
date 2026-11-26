@@ -176,7 +176,7 @@ export function ShowreelProvider({ children }: { children: ReactNode }) {
           </div>
 
           <div className="flex flex-1 items-center justify-center overflow-hidden p-3 md:p-8">
-            <div className="relative w-full max-w-6xl overflow-hidden rounded-[1.5rem] border border-champagne/20 bg-burgundy">
+            <div className="relative w-full max-w-5xl overflow-hidden rounded-panel border border-champagne/20 bg-burgundy">
               <video
                 ref={videoRef}
                 key={film?.src ?? "empty"}

@@ -58,8 +58,8 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <header className="shell pb-10 pt-28 md:pb-12 md:pt-36">
-        <div className="surface-card rounded-feature p-6 md:p-10 lg:p-12">
+      <header className="shell pb-8 pt-24 md:pb-10 md:pt-28">
+        <div className="surface-card rounded-feature p-5 md:p-7 lg:p-8">
           <div className="flex flex-wrap items-center gap-3">
             <span className="eyebrow">Legal</span>
             <span className="h-px w-10 bg-burgundy/50" />
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
             </span>
           </div>
 
-          <h1 className="serif mt-6 max-w-4xl text-[clamp(2.8rem,6.6vw,6.6rem)] leading-[0.94] tracking-[-0.035em] text-dark">
+          <h1 className="serif mt-5 max-w-4xl text-[clamp(2.4rem,5vw,5rem)] leading-[0.98] tracking-[-0.03em] text-dark">
             Privacy &amp; <em className="text-burgundy">cookies.</em>
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-cocoa">
@@ -78,10 +78,10 @@ export default function PrivacyPage() {
         </div>
       </header>
 
-      <div className="shell grid gap-12 pb-24 md:grid-cols-12 md:gap-8">
+      <div className="shell grid gap-8 pb-16 md:grid-cols-12 md:gap-6">
         <aside className="md:col-span-3">
           <div className="md:sticky md:top-32">
-            <div className="surface-light rounded-[1.5rem] p-6">
+            <div className="surface-light rounded-card p-5">
               <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
                 On this page
               </p>
@@ -114,7 +114,7 @@ export default function PrivacyPage() {
           <div className="flex flex-col gap-6">
             {sections.map((section, index) => (
               <section key={section.title} id={`section-${index + 1}`}>
-                <div className="surface-card rounded-[1.5rem] p-6 md:p-8">
+                <div className="surface-card rounded-card p-5 md:p-6">
                   <div className="flex items-baseline gap-4 border-b border-burgundy/15 pb-4">
                     <span className="font-sans text-[0.55rem] font-semibold tracking-[0.14em] text-burgundy">
                       {String(index + 1).padStart(2, "0")}
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-feature border border-champagne/20 bg-burgundy p-6 text-ivory md:p-8">
+          <div className="mt-8 rounded-card border border-champagne/20 bg-burgundy p-5 text-ivory md:p-6">
             <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
               Contact
             </p>

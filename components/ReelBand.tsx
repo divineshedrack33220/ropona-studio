@@ -12,20 +12,22 @@ export function ReelBand() {
   const duration = useVideoDuration(site.showreel.src, site.showreel.duration);
 
   return (
-    <section className="shell py-4 md:py-8">
-      <Reveal className="rounded-feature border border-burgundy/20 bg-burgundy p-4 text-ivory md:p-7">
-        <div className="grid gap-6 md:grid-cols-12 md:items-center md:gap-8">
-          <div className="media-frame aspect-[16/10] border-champagne/25 md:col-span-7 md:aspect-[16/9]">
-            <Image
-              src={site.showreel.poster}
-              alt="Frame from Ropona Bernard's showreel"
-              fill
-              sizes="(max-width: 768px) 100vw, 58vw"
-              className="object-cover"
-            />
+    <section className="shell py-3 md:py-6">
+      <Reveal className="rounded-panel border border-burgundy/20 bg-burgundy p-3 text-ivory md:p-5">
+        <div className="grid gap-5 md:grid-cols-12 md:items-center md:gap-7">
+          <div className="mx-auto w-full max-w-[18rem] md:col-span-4">
+            <div className="media-frame aspect-ig-reel border-champagne/25">
+              <Image
+                src={site.showreel.poster}
+                alt="Frame from Ropona Bernard's showreel"
+                fill
+                sizes="(max-width: 768px) 90vw, 18rem"
+                className="object-cover"
+              />
+            </div>
           </div>
 
-          <div className="flex flex-col p-2 md:col-span-5 md:p-4">
+          <div className="flex flex-col p-1 md:col-span-8 md:p-3">
             <div className="flex items-center justify-between gap-4 border-b border-champagne/20 pb-4">
               <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
                 {site.showreel.title}
@@ -35,14 +37,14 @@ export function ReelBand() {
               </span>
             </div>
 
-            <p className="mt-6 font-sans text-[0.56rem] font-semibold uppercase tracking-[0.18em] text-champagne">
+            <p className="mt-5 font-sans text-[0.54rem] font-semibold uppercase tracking-[0.16em] text-champagne">
               {site.showreel.tagline}
             </p>
-            <h2 className="serif mt-3 max-w-[16ch] text-[clamp(2rem,4vw,4rem)] leading-[1] text-ivory">
+            <h2 className="serif mt-2 max-w-[18ch] text-[clamp(1.8rem,3.2vw,3rem)] leading-[1.05] text-ivory">
               A cross-section of my{" "}
               <em className="text-champagne">creative work.</em>
             </h2>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-champagne/85">
+            <p className="mt-4 max-w-sm text-[0.85rem] leading-relaxed text-champagne/85">
               From cinematic AI sequences and commercial visuals to technical
               explainers and documentary storytelling, this reel brings together
               the range of my production practice.
@@ -54,12 +56,12 @@ export function ReelBand() {
                 open();
                 track("showreel_play", { location: "reel_band" });
               }}
-              className="group mt-9 flex items-center gap-4 text-left"
+              className="group mt-6 flex items-center gap-3 text-left"
               aria-label={`Play ${site.showreel.title}`}
               data-track="showreel_play"
               data-track-label="reel_band"
             >
-              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-champagne text-burgundy transition-colors duration-300 group-hover:bg-champagneLight md:h-20 md:w-20">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-champagne text-burgundy transition-colors duration-300 group-hover:bg-champagne md:h-16 md:w-16">
                 <svg viewBox="0 0 14 14" className="ml-0.5 h-4 w-4" fill="none" aria-hidden="true">
                   <path d="M2 1L13 7L2 13V1Z" fill="currentColor" />
                 </svg>

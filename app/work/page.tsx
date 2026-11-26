@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <header className="shell pb-10 pt-28 md:pb-14 md:pt-36">
-        <div className="surface-card rounded-feature p-6 md:p-10 lg:p-12">
+      <header className="shell pb-8 pt-24 md:pb-10 md:pt-28">
+        <div className="surface-card rounded-feature p-5 md:p-7 lg:p-8">
           <div className="flex flex-wrap items-center gap-3">
             <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
               Projects
@@ -28,7 +28,7 @@ export default function WorkPage() {
 
           <div className="mt-6 grid gap-6 md:grid-cols-12 md:items-end">
             <Reveal className="md:col-span-8">
-              <h1 className="serif text-[clamp(3rem,8vw,8.4rem)] leading-[0.92] tracking-[-0.04em] text-dark">
+              <h1 className="serif text-[clamp(2.6rem,6vw,6rem)] leading-[0.95] tracking-[-0.035em] text-dark">
                 Selected <em className="text-burgundy">films.</em>
               </h1>
             </Reveal>
@@ -43,19 +43,19 @@ export default function WorkPage() {
         </div>
       </header>
 
-      <section className="shell pb-20 md:pb-28">
+      <section className="shell pb-14 md:pb-20">
         <h2 className="sr-only">Selected projects</h2>
         <WorkGrid projects={portfolioProjects} variant="archive" />
       </section>
 
       <section className="border-t border-burgundy/15">
-        <div className="shell py-14 md:py-20">
-          <div className="flex flex-col items-start justify-between gap-8 rounded-feature bg-burgundy p-7 text-ivory md:flex-row md:items-end md:p-10">
+        <div className="shell py-10 md:py-14">
+          <div className="flex flex-col items-start justify-between gap-6 rounded-panel bg-burgundy p-5 text-ivory md:flex-row md:items-end md:p-7">
             <div>
               <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-champagne">
                 Have an opportunity in mind?
               </p>
-              <h2 className="serif mt-4 max-w-2xl text-[clamp(2.2rem,4.4vw,4.4rem)] leading-[1]">
+              <h2 className="serif mt-3 max-w-2xl text-[clamp(2rem,3.8vw,3.8rem)] leading-[1.05]">
                 Let&apos;s discuss what{" "}
                 <em className="text-champagne">we can create.</em>
               </h2>

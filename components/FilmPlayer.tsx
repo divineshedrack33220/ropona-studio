@@ -17,14 +17,14 @@ export function FilmPlayer({ src, poster, title, caption, note }: FilmPlayerProp
 
   return (
     <figure>
-      <div className="media-frame relative aspect-video w-full">
+      <div className="media-frame relative mx-auto aspect-ig-square w-full max-w-2xl">
         {!playing ? (
           <>
             <Image
               src={poster}
               alt={`${title} — film still`}
               fill
-              sizes="(max-width: 1680px) 100vw, 1600px"
+              sizes="(max-width: 768px) 100vw, 48rem"
               className="object-cover"
             />
             <div aria-hidden="true" className="absolute inset-0 bg-espresso/35" />
@@ -38,7 +38,7 @@ export function FilmPlayer({ src, poster, title, caption, note }: FilmPlayerProp
                 className="group absolute inset-0 flex flex-col items-center justify-center gap-5"
                 aria-label={`Play ${title}`}
               >
-                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-burgundy text-ivory transition-colors duration-300 group-hover:bg-burgundySoft md:h-24 md:w-24">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-burgundy text-ivory transition-colors duration-300 group-hover:bg-burgundySoft md:h-20 md:w-20">
                   <svg viewBox="0 0 14 14" className="ml-1 h-5 w-5" fill="none" aria-hidden="true">
                     <path d="M2 1L13 7L2 13V1Z" fill="currentColor" />
                   </svg>
@@ -66,7 +66,7 @@ export function FilmPlayer({ src, poster, title, caption, note }: FilmPlayerProp
             muted
             playsInline
             preload="metadata"
-            className="h-full w-full object-cover"
+            className="h-full w-full bg-burgundy object-contain"
           >
             Your browser does not support embedded video.
           </video>

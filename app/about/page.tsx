@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <header className="shell pb-10 pt-28 md:pb-12 md:pt-36">
-        <div className="surface-card rounded-feature p-6 md:p-10 lg:p-12">
+      <header className="shell pb-8 pt-24 md:pb-10 md:pt-28">
+        <div className="surface-card rounded-feature p-5 md:p-7 lg:p-8">
           <div className="flex flex-wrap items-center gap-3">
             <span className="eyebrow">About</span>
             <span className="h-px w-10 bg-burgundy/50" />
@@ -25,7 +25,7 @@ export default function AboutPage() {
             </span>
           </div>
 
-          <h1 className="serif mt-6 max-w-4xl text-[clamp(2.8rem,6.6vw,6.6rem)] leading-[0.94] tracking-[-0.035em] text-dark">
+          <h1 className="serif mt-5 max-w-4xl text-[clamp(2.4rem,5vw,5rem)] leading-[0.98] tracking-[-0.03em] text-dark">
             {about.headline}
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-cocoa">
@@ -34,10 +34,10 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <div className="shell grid gap-12 pb-24 md:grid-cols-12 md:gap-8">
+      <div className="shell grid gap-8 pb-16 md:grid-cols-12 md:gap-6">
         <aside className="md:col-span-4">
           <div className="md:sticky md:top-32">
-            <div className="media-frame aspect-[4/5] rounded-feature">
+            <div className="media-frame aspect-ig-post">
               <Image
                 src={about.portrait}
                 alt={about.portraitAlt}
@@ -48,11 +48,11 @@ export default function AboutPage() {
               />
             </div>
 
-            <dl className="surface-light mt-6 flex flex-col gap-4 rounded-[1.5rem] p-5 md:p-6">
+            <dl className="surface-light mt-5 flex flex-col gap-3 p-4 md:p-5">
               {about.credentials.map((item) => (
                 <div
                   key={item.label}
-                  className="grid grid-cols-1 gap-1 border-b border-burgundy/10 pb-4 last:border-0 last:pb-0 sm:grid-cols-[6rem_1fr] sm:gap-3"
+                  className="grid grid-cols-1 gap-1 border-b border-burgundy/10 pb-3 last:border-0 last:pb-0 sm:grid-cols-[6rem_1fr] sm:gap-3"
                 >
                   <dt className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
                     {item.label}
@@ -67,7 +67,7 @@ export default function AboutPage() {
         </aside>
 
         <div className="md:col-span-8">
-          <div className="surface-card rounded-feature p-6 md:p-10">
+          <div className="surface-card rounded-feature p-5 md:p-7">
             <div className="flex items-baseline gap-4 border-b border-burgundy/15 pb-5">
               <span className="font-sans text-[0.55rem] font-semibold tracking-[0.14em] text-burgundy">
                 01
@@ -77,7 +77,7 @@ export default function AboutPage() {
               </h2>
             </div>
 
-            <div className="mt-8 flex flex-col gap-6">
+            <div className="mt-6 flex flex-col gap-5">
               {about.story.map((paragraph, index) => (
                 <Reveal key={index} delay={index * 40}>
                   <p className="text-sm leading-[1.95] text-cocoa md:text-[0.95rem]">
@@ -88,15 +88,15 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
-            <Reveal className="rounded-feature border border-burgundy/15 bg-champagne p-6 md:p-8">
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            <Reveal className="rounded-card border border-burgundy/15 bg-champagne p-5 md:p-6">
               <p className="eyebrow">Philosophy</p>
               <blockquote className="serif mt-5 text-xl leading-relaxed text-dark md:text-2xl">
                 “{about.philosophy}”
               </blockquote>
             </Reveal>
 
-            <Reveal delay={80} className="surface-light rounded-feature p-6 md:p-8">
+            <Reveal delay={80} className="surface-light rounded-card p-5 md:p-6">
               <p className="eyebrow">Expertise</p>
               <ul className="mt-5 grid gap-x-6 sm:grid-cols-2">
                 {about.expertise.map((item) => (
@@ -115,7 +115,7 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4 rounded-feature border border-champagne/20 bg-burgundy p-6 text-ivory md:p-8">
+          <div className="mt-8 flex flex-wrap items-center gap-3 rounded-card border border-champagne/20 bg-burgundy p-5 text-ivory md:p-6">
             <Link
               href="/#experience"
               className="btn btn-outline"
@@ -140,7 +140,7 @@ export default function AboutPage() {
             </Link>
           </div>
 
-          <div className="mt-10 flex items-center gap-4">
+          <div className="mt-8 flex items-center gap-3">
             <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-burgundy/25">
               <Image
                 src={about.profile}

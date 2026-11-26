@@ -21,7 +21,7 @@ export default function HomePage() {
       <CapabilityMarquee />
 
       <section className="section">
-        <div className="shell grid gap-10 md:grid-cols-12 md:gap-8">
+        <div className="shell grid gap-7 md:grid-cols-12 md:gap-6">
           <Reveal className="md:col-span-3">
             <div className="flex items-center gap-3">
               <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
@@ -30,7 +30,7 @@ export default function HomePage() {
               <span className="h-px w-8 bg-burgundy/50" />
               <span className="eyebrow">The practice</span>
             </div>
-            <p className="mt-6 max-w-[17rem] font-sans text-[0.58rem] font-medium uppercase leading-[1.9] tracking-[0.12em] text-espresso">
+            <p className="mt-5 max-w-[17rem] font-sans text-[0.56rem] font-medium uppercase leading-[1.8] tracking-[0.12em] text-espresso">
               Generative production.
               <br />
               Editorial craft.
@@ -41,7 +41,7 @@ export default function HomePage() {
 
           <div className="md:col-span-9">
             <Reveal>
-              <h2 className="serif max-w-5xl text-[clamp(2.2rem,4.5vw,4.6rem)] leading-[1.04] tracking-[-0.025em] text-dark">
+              <h2 className="serif max-w-5xl text-[clamp(2rem,3.8vw,3.8rem)] leading-[1.05] tracking-[-0.025em] text-dark">
                 The technology creates possibilities.
                 <br />
                 <em className="text-burgundy">
@@ -50,8 +50,8 @@ export default function HomePage() {
               </h2>
             </Reveal>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-12">
-              <Reveal delay={80} className="surface-card p-6 md:p-7">
+            <div className="mt-7 grid gap-4 sm:grid-cols-2 md:mt-8">
+              <Reveal delay={80} className="surface-card p-5 md:p-6">
                 <p className="text-[0.95rem] leading-[1.85] text-cocoa">
                   My work sits at the intersection of generative production, video
                   editing and marketing strategy. I understand how audiences think,
@@ -60,7 +60,7 @@ export default function HomePage() {
                   produce, from a short-form commercial to a long-form documentary.
                 </p>
               </Reveal>
-              <Reveal delay={140} className="surface-card p-6 md:p-7">
+              <Reveal delay={140} className="surface-card p-5 md:p-6">
                 <p className="text-[0.95rem] leading-[1.85] text-cocoa">
                   I approach AI as a production medium, not a shortcut around
                   creative judgement. Concept development, shot design, continuity,
@@ -71,14 +71,14 @@ export default function HomePage() {
               </Reveal>
             </div>
 
-            <div className="mt-6 grid grid-cols-1 gap-4 md:mt-8 sm:grid-cols-3">
+            <div className="mt-5 grid grid-cols-1 gap-3 md:mt-6 sm:grid-cols-3">
               {site.stats.map((stat, index) => (
                 <Reveal
                   key={stat.label}
                   delay={index * 60}
-                  className="surface-light p-5 md:p-6"
+                  className="surface-light p-4 md:p-5"
                 >
-                  <p className="serif text-[clamp(2rem,3.2vw,3.2rem)] leading-none text-burgundy">
+                  <p className="serif text-[clamp(1.8rem,2.8vw,2.8rem)] leading-none text-burgundy">
                     {stat.value}
                   </p>
                   <p className="mt-3 font-sans text-[0.65rem] font-medium leading-relaxed text-cocoa">

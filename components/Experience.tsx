@@ -13,10 +13,10 @@ export function Experience() {
           <span className="eyebrow">Experience</span>
         </Reveal>
 
-        <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-12 md:gap-8">
+        <div className="mt-6 grid gap-5 md:mt-8 md:grid-cols-12 md:gap-6">
           <Reveal className="md:col-span-5">
-            <div className="surface-card h-full rounded-feature p-7 md:p-9">
-              <h2 className="serif max-w-[16ch] text-[clamp(2.2rem,4vw,4rem)] leading-[1.02] text-dark">
+            <div className="surface-card h-full rounded-feature p-5 md:p-7">
+              <h2 className="serif max-w-[16ch] text-[clamp(1.9rem,3.4vw,3.4rem)] leading-[1.05] text-dark">
                 Creative production across{" "}
                 <em className="text-burgundy">brands, industries and formats.</em>
               </h2>
@@ -25,7 +25,7 @@ export function Experience() {
                 property promotion and long-form digital storytelling.
               </p>
 
-              <dl className="mt-9 flex flex-col gap-6 border-l border-burgundy/25 pl-6">
+              <dl className="mt-7 flex flex-col gap-5 border-l border-burgundy/25 pl-5">
                 {experience.map((item) => (
                   <div key={`${item.organization}-${item.role}`}>
                     <dt className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
@@ -47,7 +47,7 @@ export function Experience() {
           </Reveal>
 
           <Reveal delay={100} className="md:col-span-7">
-            <div className="surface-light h-full rounded-feature p-7 md:p-9">
+            <div className="surface-light h-full rounded-feature p-5 md:p-7">
               <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-burgundy/15 pb-5">
                 <h3 className="serif text-2xl text-dark md:text-3xl">
                   Capabilities
@@ -64,7 +64,7 @@ export function Experience() {
                 production team.
               </p>
 
-              <div className="mt-9 border-t border-burgundy/15 pt-6">
+              <div className="mt-7 border-t border-burgundy/15 pt-5">
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
                   <h3 className="serif text-2xl text-dark md:text-3xl">
                     Working toolkit

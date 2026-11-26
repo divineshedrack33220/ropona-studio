@@ -100,8 +100,8 @@ export default async function ProjectPage({ params }: PageProps) {
       />
 
       <article>
-        <header className="shell pb-12 pt-28 md:pt-36">
-          <div className="surface-card rounded-feature p-6 md:p-10 lg:p-12">
+        <header className="shell pb-8 pt-24 md:pt-28">
+          <div className="surface-card rounded-feature p-5 md:p-7 lg:p-8">
             <nav
               aria-label="Breadcrumb"
               className="flex flex-wrap items-center gap-3 font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-cocoa"
@@ -126,20 +126,20 @@ export default async function ProjectPage({ params }: PageProps) {
               </span>
             </div>
 
-            <h1 className="serif mt-7 max-w-6xl text-[clamp(3rem,7.4vw,7.6rem)] leading-[0.92] tracking-[-0.035em] text-dark">
+            <h1 className="serif mt-5 max-w-6xl text-[clamp(2.6rem,5.6vw,5.6rem)] leading-[0.96] tracking-[-0.03em] text-dark">
               {project.title}
               <span className="mt-3 block font-sans text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
                 {clientLabel}
               </span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-cocoa md:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-cocoa md:text-lg">
               {project.description}
             </p>
 
-            <dl className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+            <dl className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
               {meta.map((item) => (
-                <div key={item.label} className="surface-light p-4 md:p-5">
+                <div key={item.label} className="surface-light rounded-card p-4">
                   <dt className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
                     {item.label}
                   </dt>
@@ -155,13 +155,13 @@ export default async function ProjectPage({ params }: PageProps) {
         <div className="shell">
           <Reveal>
             <figure>
-              <div className="media-frame relative aspect-[16/10] w-full md:aspect-[21/9]">
+              <div className="media-frame relative mx-auto aspect-ig-square w-full max-w-3xl">
                 <Image
                   src={project.thumbnail}
                   alt={`${project.title} — ${project.category.toLowerCase()} still by Ropona Bernard.`}
                   fill
                   priority
-                  sizes="100vw"
+                  sizes="(max-width: 1024px) 100vw, 56rem"
                   className="object-cover"
                 />
                 <span className="absolute bottom-4 left-4 rounded-full bg-espresso/85 px-3 py-2 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-champagne">
@@ -177,7 +177,7 @@ export default async function ProjectPage({ params }: PageProps) {
         </div>
 
         <section className="section">
-          <div className="shell grid gap-10 md:grid-cols-12 md:gap-8">
+          <div className="shell grid gap-7 md:grid-cols-12 md:gap-6">
             <div className="md:col-span-3">
               <Reveal className="flex items-center gap-3">
                 <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
@@ -188,8 +188,8 @@ export default async function ProjectPage({ params }: PageProps) {
               </Reveal>
             </div>
             <Reveal delay={80} className="md:col-span-8">
-              <div className="surface-card rounded-feature p-7 md:p-9">
-                <p className="serif max-w-3xl text-[clamp(1.5rem,2.6vw,2.6rem)] leading-[1.3] text-dark">
+              <div className="surface-card rounded-feature p-5 md:p-7">
+                <p className="serif max-w-3xl text-[clamp(1.35rem,2.2vw,2.2rem)] leading-[1.35] text-dark">
                   {project.overview}
                 </p>
               </div>
@@ -197,7 +197,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-t border-burgundy/15 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 py-12 md:py-16">
           <div className="shell grid gap-10 md:grid-cols-12 md:gap-8">
             <div className="md:col-span-3">
               <Reveal className="flex items-center gap-3">
@@ -211,7 +211,7 @@ export default async function ProjectPage({ params }: PageProps) {
             <div className="md:col-span-8">
               {paragraphs(project.challenge).map((paragraph, index) => (
                 <Reveal key={index} delay={index * 60}>
-                  <p className="mb-5 max-w-2xl text-[1.02rem] leading-[1.9] text-espresso last:mb-0">
+                  <p className="mb-5 max-w-2xl text-[0.92rem] leading-[1.8] text-espresso last:mb-0">
                     {paragraph}
                   </p>
                 </Reveal>
@@ -220,7 +220,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-t border-burgundy/15 bg-champagne/35 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 bg-champagne/35 py-12 md:py-16">
           <div className="shell">
             <div className="flex items-center gap-3">
               <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
@@ -243,7 +243,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-t border-burgundy/15 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 py-12 md:py-16">
           <div className="shell">
             <div className="grid gap-10 md:grid-cols-12 md:gap-8">
               <div className="md:col-span-3">
@@ -258,7 +258,7 @@ export default async function ProjectPage({ params }: PageProps) {
               <div className="md:col-span-8">
                 {paragraphs(project.approach).map((paragraph, index) => (
                   <Reveal key={index} delay={index * 60}>
-                    <p className="mb-5 max-w-2xl text-[1.02rem] leading-[1.9] text-espresso last:mb-0">
+                    <p className="mb-5 max-w-2xl text-[0.92rem] leading-[1.8] text-espresso last:mb-0">
                       {paragraph}
                     </p>
                   </Reveal>
@@ -267,13 +267,13 @@ export default async function ProjectPage({ params }: PageProps) {
             </div>
 
             <h2 className="sr-only">The direction</h2>
-            <div className="mt-14 grid gap-5 md:mt-20 md:grid-cols-3">
+            <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-3">
               {project.pillars.map((pillar, index) => (
-                <Reveal key={pillar.title} delay={index * 70} className="surface-card p-6 md:p-8">
+                <Reveal key={pillar.title} delay={index * 70} className="surface-card p-5 md:p-6">
                   <span className="font-sans text-[0.55rem] font-semibold tracking-[0.12em] text-espresso">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="serif mt-4 text-2xl leading-tight text-burgundy">
+                  <h3 className="serif mt-3 text-xl leading-tight text-burgundy">
                     {pillar.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-cocoa">
@@ -286,7 +286,7 @@ export default async function ProjectPage({ params }: PageProps) {
         </section>
 
         {project.beforeAfter && (
-          <section className="border-t border-burgundy/15 py-16 md:py-24">
+          <section className="border-t border-burgundy/15 py-12 md:py-16">
             <div className="shell">
               <div className="flex flex-wrap items-end justify-between gap-6">
                 <div>
@@ -297,7 +297,7 @@ export default async function ProjectPage({ params }: PageProps) {
                     <span className="h-px w-6 bg-burgundy/50" />
                     <span className="eyebrow">The grade</span>
                   </div>
-                  <h2 className="serif mt-5 max-w-xl text-[clamp(1.9rem,3.4vw,3.4rem)] leading-tight text-dark">
+                  <h2 className="serif mt-5 max-w-xl text-[clamp(1.7rem,3vw,3rem)] leading-tight text-dark">
                     From flat plate to{" "}
                     <em className="text-burgundy">final frame.</em>
                   </h2>
@@ -320,7 +320,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </section>
         )}
 
-        <section className="border-t border-burgundy/15 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 py-12 md:py-16">
           <div className="shell">
             <div className="flex items-center gap-3">
               <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
@@ -329,16 +329,16 @@ export default async function ProjectPage({ params }: PageProps) {
               <span className="h-px w-6 bg-burgundy/50" />
               <span className="eyebrow">The process</span>
             </div>
-            <h2 className="serif mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,3.4rem)] leading-tight text-dark">
+            <h2 className="serif mt-5 max-w-2xl text-[clamp(1.7rem,3vw,3rem)] leading-tight text-dark">
               How the film was made.
             </h2>
 
-            <div className="mt-10 grid gap-x-10 md:mt-14 md:grid-cols-2">
+            <div className="mt-8 grid gap-x-8 md:mt-10 md:grid-cols-2">
               {project.process.map((step, index) => (
                 <Reveal
                   key={step.step}
                   delay={index * 50}
-                  className="border-t border-burgundy/15 py-6 md:py-8"
+                  className="border-t border-burgundy/15 py-5 md:py-6"
                 >
                   <div className="flex items-baseline gap-4">
                     <span className="font-sans text-[0.55rem] font-semibold tracking-[0.12em] text-espresso">
@@ -357,7 +357,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-t border-burgundy/15 py-16 md:py-24">
+        <section className="border-t border-burgundy/15 py-12 md:py-16">
           <div className="shell">
             <div className="flex items-center gap-3">
               <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
@@ -367,15 +367,15 @@ export default async function ProjectPage({ params }: PageProps) {
               <span className="eyebrow">Frames & process</span>
             </div>
 
-            <div className="mt-8 grid gap-4 md:mt-10">
+            <div className="mt-6 grid gap-4 md:mt-8">
               <Reveal>
-                <figure>
-                  <div className="media-frame relative aspect-[21/10]">
+                <figure className="mx-auto max-w-3xl">
+                  <div className="media-frame relative aspect-ig-square">
                     <Image
                       src={project.gallery[0]?.src ?? project.thumbnail}
                       alt={project.gallery[0]?.caption ?? project.title}
                       fill
-                      sizes="(max-width: 1680px) 100vw, 1600px"
+                      sizes="(max-width: 1024px) 100vw, 56rem"
                       className="object-cover"
                     />
                   </div>
@@ -389,7 +389,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 {project.gallery.slice(1).map((item, index) => (
                   <Reveal key={item.src} delay={index * 70}>
                     <figure>
-                      <div className="media-frame relative aspect-[4/3]">
+                      <div className="media-frame relative aspect-ig-square">
                         <Image
                           src={item.src}
                           alt={item.caption}
@@ -409,7 +409,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-y border-burgundy/15 bg-champagne/55 py-16 md:py-24">
+        <section className="border-y border-burgundy/15 bg-champagne/55 py-12 md:py-16">
           <div className="shell">
             <div className="flex items-center gap-3">
               <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
@@ -419,7 +419,7 @@ export default async function ProjectPage({ params }: PageProps) {
               <span className="eyebrow">Credits & delivery</span>
             </div>
 
-            <div className="mt-10 grid gap-10 border-t border-burgundy/15 pt-10 md:grid-cols-12">
+            <div className="mt-8 grid gap-7 border-t border-burgundy/15 pt-8 md:grid-cols-12">
               <div className="md:col-span-4">
                 <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-burgundy">
                   Credits
@@ -466,7 +466,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="shell py-16 md:py-24">
+        <section className="shell py-12 md:py-16">
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
             <div>
               <p className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-espresso">
@@ -478,10 +478,10 @@ export default async function ProjectPage({ params }: PageProps) {
                 data-track="project_next"
                 data-track-label={next.slug}
               >
-                <span className="serif text-[clamp(2.2rem,4.6vw,4.6rem)] leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft">
+                <span className="serif text-[clamp(1.9rem,3.6vw,3.6rem)] leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft">
                   {next.title}
                 </span>
-                <span className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-cocoa">
+                <span className="font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-espresso">
                   {next.category}
                 </span>
                 <span aria-hidden="true" className="project-arrow ml-2 text-xl text-burgundy">
@@ -501,16 +501,16 @@ export default async function ProjectPage({ params }: PageProps) {
 
           <Link
             href={`/work/${next.slug}`}
-            className="group mt-10 block overflow-hidden rounded-[1.5rem] border border-burgundy/20"
+            className="group mx-auto mt-8 block w-full max-w-sm overflow-hidden rounded-panel border border-burgundy/20"
             aria-label={`Next project: ${next.title}`}
             tabIndex={-1}
           >
-            <div className="relative aspect-[21/8]">
+            <div className="relative aspect-ig-square">
               <Image
                 src={next.thumbnail}
                 alt=""
                 fill
-                sizes="(max-width: 1680px) 100vw, 1600px"
+                sizes="(max-width: 640px) 100vw, 24rem"
                 className="object-cover transition-transform duration-[1400ms] ease-cinema group-hover:scale-[1.03]"
               />
             </div>

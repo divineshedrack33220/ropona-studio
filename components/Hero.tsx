@@ -40,12 +40,12 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pb-10 pt-28 md:pb-16 md:pt-36"
+      className="relative overflow-hidden pb-8 pt-24 md:pb-12 md:pt-28"
     >
       <div className="shell">
-        <div className="grid items-stretch gap-7 lg:grid-cols-12 lg:gap-8">
+        <div className="grid items-stretch gap-6 lg:grid-cols-12 lg:gap-6">
           <div className="relative z-10 lg:col-span-7">
-            <div className="surface-card h-full rounded-feature p-7 md:p-11 lg:p-12">
+            <div className="surface-card h-full rounded-feature p-6 md:p-8 lg:p-9">
               <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
                 <p className="eyebrow max-w-[22rem] leading-relaxed">
                   AI video editing
@@ -59,7 +59,7 @@ export function Hero() {
                 </p>
               </div>
 
-              <h1 className="serif mt-10 max-w-[19ch] text-[clamp(2.5rem,5.6vw,5.6rem)] leading-[0.98] tracking-[-0.03em] text-dark md:mt-12">
+              <h1 className="serif mt-7 max-w-[20ch] text-[clamp(2.2rem,4.8vw,4.4rem)] leading-[1] tracking-[-0.03em] text-dark md:mt-8">
                 <span className="mask-line">
                   <span style={{ "--line-delay": "100ms" } as React.CSSProperties}>
                     I turn ideas
@@ -81,12 +81,12 @@ export function Hero() {
               </h1>
 
               <div
-                className="mt-9"
+                className="mt-6"
                 style={{
-                  animation: "floatIn 0.9s cubic-bezier(0.16,1,0.3,1) 560ms both",
+                  animation: "floatIn 0.75s cubic-bezier(0.16,1,0.3,1) 560ms both",
                 }}
               >
-                <p className="max-w-2xl text-[0.98rem] leading-[1.8] text-cocoa md:text-lg">
+                <p className="max-w-2xl text-[0.92rem] leading-[1.7] text-cocoa md:text-base">
                   I am Ropona Bernard, an AI video editor and creative production
                   specialist combining generative filmmaking, cinematic editing and
                   performance-led marketing. I develop films, product UGC, advertising
@@ -94,7 +94,7 @@ export function Hero() {
                   prompting, production and final delivery.
                 </p>
 
-                <div className="mt-7 flex flex-wrap items-center gap-3">
+                <div className="mt-6 flex flex-wrap items-center gap-2.5">
                   <button
                     type="button"
                     onClick={() => playShowreel("hero_cta", "hero_watch_showreel")}
@@ -120,39 +120,39 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative lg:col-span-5">
-            <div className="media-frame h-full min-h-[360px] md:min-h-[480px] lg:min-h-[620px]">
+          <div className="relative mx-auto w-full max-w-[26rem] self-start lg:col-span-5 lg:max-w-none">
+            <div className="media-frame aspect-ig-post w-full">
               <Image
                 src={about.portrait}
                 alt={about.portraitAlt}
                 fill
                 priority
                 fetchPriority="high"
-                sizes="(min-width: 1024px) 42vw, 100vw"
+                sizes="(min-width: 1024px) 34vw, 100vw"
                 className="object-cover object-center lg:object-[center_25%]"
               />
             </div>
 
-            <div className="absolute -top-4 right-4 rounded-full border border-burgundy/20 bg-champagneLight px-4 py-2 font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy md:right-6">
+            <div className="absolute -top-3 right-3 rounded-full border border-burgundy/20 bg-champagneLight px-3 py-1.5 font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy md:right-5">
               Ropona Bernard
             </div>
 
-            <div className="absolute -bottom-5 left-4 right-4 rounded-[1.5rem] border border-champagne/25 bg-burgundy p-5 text-ivory md:-left-6 md:right-auto md:max-w-[20rem] md:p-6">
-              <span className="font-sans text-[0.52rem] font-semibold uppercase leading-relaxed tracking-[0.14em] text-champagne">
+            <div className="absolute -bottom-4 left-3 right-3 rounded-panel border border-champagne/25 bg-burgundy p-4 text-ivory md:-left-5 md:right-auto md:max-w-[18rem] md:p-5">
+              <span className="font-sans text-[0.5rem] font-semibold uppercase leading-relaxed tracking-[0.12em] text-champagne">
                 {site.role}
               </span>
-              <p className="serif mt-3 text-2xl italic leading-tight text-ivory md:text-3xl">
+              <p className="serif mt-2 text-xl italic leading-tight text-ivory md:text-2xl">
                 Every frame has a purpose.
               </p>
-              <div className="mt-4 h-px w-full bg-champagne/25" />
-              <p className="mt-3 font-sans text-[0.52rem] font-semibold uppercase leading-relaxed tracking-[0.12em] text-champagne/80">
+              <div className="mt-3 h-px w-full bg-champagne/25" />
+              <p className="mt-2 font-sans text-[0.5rem] font-semibold uppercase leading-relaxed tracking-[0.1em] text-champagne/80">
                 {site.availability.status} · {site.availability.note}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-5 rounded-[1.75rem] border border-burgundy/15 bg-champagne/55 px-5 py-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between md:mt-14 md:px-7">
+        <div className="mt-8 flex flex-col gap-4 rounded-panel border border-burgundy/15 bg-champagne/55 px-4 py-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between md:px-6">
           <div className="flex items-center gap-4">
             <span className="hidden h-9 w-px overflow-hidden sm:block">
               <span className="scroll-cue-line block h-full w-px" />
@@ -170,7 +170,7 @@ export function Hero() {
               data-track="showreel_play"
               data-track-label="hero_bar_showreel"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-burgundy/30 bg-champagne text-burgundy transition-colors duration-300 group-hover:bg-burgundy group-hover:text-ivory">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-burgundy/30 bg-champagne text-burgundy transition-colors duration-300 group-hover:bg-burgundy group-hover:text-ivory">
                 <PlayIcon className="h-2.5 w-2.5" />
               </span>
               <span className="flex flex-col">

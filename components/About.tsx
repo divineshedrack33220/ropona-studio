@@ -9,12 +9,12 @@ export function About() {
   return (
     <section id="about" className="section border-t border-burgundy/15">
       <div className="shell">
-        <div className="rounded-feature border border-burgundy/15 bg-champagne p-6 md:p-10 lg:p-12">
-          <div className="grid gap-10 md:grid-cols-12 md:gap-8">
+        <div className="rounded-panel border border-burgundy/15 bg-champagne p-5 md:p-8 lg:p-9">
+          <div className="grid gap-7 md:grid-cols-12 md:gap-6">
             <div className="md:col-span-5">
               <Reveal>
                 <div className="relative">
-                  <div className="media-frame aspect-[4/5] rounded-[2rem]">
+                  <div className="media-frame aspect-ig-post">
                     <Image
                       src={about.portrait}
                       alt={about.portraitAlt}
@@ -22,7 +22,7 @@ export function About() {
                       sizes="(max-width: 768px) 100vw, 40vw"
                       className="object-cover"
                     />
-                    <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 rounded-2xl bg-espresso/85 px-4 py-3 text-ivory md:inset-x-5 md:bottom-5">
+                    <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-3 rounded-card bg-espresso/85 px-3 py-2 text-ivory md:inset-x-4 md:bottom-4">
                       <p className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.16em]">
                         Ropona Bernard
                       </p>
@@ -33,17 +33,17 @@ export function About() {
                   </div>
                   <div
                     aria-hidden="true"
-                    className="absolute -left-3 -top-3 h-24 w-24 rounded-tl-[2rem] border-l border-t border-burgundy/45 md:-left-4 md:-top-4 md:h-32 md:w-32"
+                    className="absolute -left-2.5 -top-2.5 h-20 w-20 rounded-tl-panel border-l border-t border-burgundy/45 md:-left-3 md:-top-3 md:h-24 md:w-24"
                   />
                 </div>
               </Reveal>
 
-              <Reveal delay={120} className="mt-7">
-                <dl className="surface-light flex flex-col gap-4 p-5 md:p-6">
+              <Reveal delay={120} className="mt-5">
+                <dl className="surface-light flex flex-col gap-3 p-4 md:p-5">
                   {about.credentials.map((item) => (
                     <div
                       key={item.label}
-                      className="grid grid-cols-1 gap-1 border-b border-burgundy/10 pb-4 last:border-0 last:pb-0 sm:grid-cols-[7rem_1fr] sm:gap-3"
+                      className="grid grid-cols-1 gap-1 border-b border-burgundy/10 pb-3 last:border-0 last:pb-0 sm:grid-cols-[6.5rem_1fr] sm:gap-3"
                     >
                       <dt className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
                         {item.label}
@@ -67,12 +67,12 @@ export function About() {
               </Reveal>
 
               <Reveal delay={80}>
-                <h2 className="serif mt-6 text-[clamp(2.4rem,4.4vw,4.4rem)] leading-[1] tracking-[-0.025em] text-dark">
+                <h2 className="serif mt-5 text-[clamp(2rem,3.6vw,3.4rem)] leading-[1.05] tracking-[-0.025em] text-dark">
                   {about.headline}
                 </h2>
               </Reveal>
 
-              <div className="mt-7 flex flex-col gap-5">
+              <div className="mt-5 flex flex-col gap-4">
                 <Reveal delay={120}>
                   <p className="max-w-2xl text-[0.95rem] leading-[1.85] text-cocoa">
                     {teaser}
@@ -91,19 +91,19 @@ export function About() {
                 </Reveal>
               </div>
 
-              <Reveal delay={120} className="mt-9 border-l-2 border-burgundy pl-6">
+              <Reveal delay={120} className="mt-7 border-l-2 border-burgundy pl-5">
                 <blockquote className="serif max-w-2xl text-lg leading-relaxed text-dark md:text-xl">
                   “{about.philosophy}”
                 </blockquote>
               </Reveal>
 
-              <Reveal delay={80} className="mt-10">
-                <p className="eyebrow mb-4">Expertise</p>
+              <Reveal delay={80} className="mt-8">
+                <p className="eyebrow mb-3">Expertise</p>
                 <ul className="grid gap-x-8 border-t border-burgundy/15 sm:grid-cols-2">
                   {about.expertise.map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-3 border-b border-burgundy/10 py-3 text-sm text-cocoa"
+                      className="flex items-center gap-2.5 border-b border-burgundy/10 py-2.5 text-[0.82rem] text-cocoa"
                     >
                       <span
                         aria-hidden="true"
@@ -115,7 +115,7 @@ export function About() {
                 </ul>
               </Reveal>
 
-              <Reveal delay={120} className="mt-9 flex flex-wrap items-center gap-4">
+              <Reveal delay={120} className="mt-7 flex flex-wrap items-center gap-3">
                 <Link
                   href="/#contact"
                   className="btn btn-gold"
@@ -134,7 +134,7 @@ export function About() {
                 </Link>
               </Reveal>
 
-              <Reveal delay={160} className="mt-10 flex items-center gap-4">
+              <Reveal delay={160} className="mt-8 flex items-center gap-3">
                 <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-burgundy/25">
                   <Image
                     src={about.profile}

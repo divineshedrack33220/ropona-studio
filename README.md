@@ -59,6 +59,16 @@ and Twitter metadata, security headers, immutable caching for `/media`, and a
 - **Consent-first analytics** — Google Analytics loads only after acceptance;
   CTA, form and video events are tracked via `data-track` attributes.
 
+### Visual system
+
+- **Compact shell** — 1280px max width, 20–28px radius tiers and tighter section
+  rhythm; no oversized editorial gutters.
+- **Instagram-native frames** — exact `4:5` feed posts, `1:1` squares and `9:16`
+  reel/story ratios via Tailwind tokens `aspect-ig-post`, `aspect-ig-square` and
+  `aspect-ig-reel`.
+- **Contextual mix** — portraits and case-study stills use `4:5`, project tiles
+  and players use `1:1`, and the showreel poster uses `9:16`.
+
 Accessibility: skip link, semantic landmarks, visible focus rings, labelled
 controls, `aria-expanded`/`aria-pressed` states, alt text on all imagery,
 `prefers-reduced-motion` support throughout.

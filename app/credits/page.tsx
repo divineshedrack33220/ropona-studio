@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function CreditsPage() {
   return (
     <>
-      <header className="shell pb-10 pt-28 md:pb-12 md:pt-36">
-        <div className="surface-card rounded-feature p-6 md:p-10 lg:p-12">
+      <header className="shell pb-8 pt-24 md:pb-10 md:pt-28">
+        <div className="surface-card rounded-feature p-5 md:p-7 lg:p-8">
           <div className="flex flex-wrap items-center gap-3">
             <span className="eyebrow">Colophon</span>
             <span className="h-px w-10 bg-burgundy/50" />
@@ -21,7 +21,7 @@ export default function CreditsPage() {
             </span>
           </div>
 
-          <h1 className="serif mt-6 max-w-4xl text-[clamp(2.8rem,6.6vw,6.6rem)] leading-[0.94] tracking-[-0.035em] text-dark">
+          <h1 className="serif mt-5 max-w-4xl text-[clamp(2.4rem,5vw,5rem)] leading-[0.98] tracking-[-0.03em] text-dark">
             Credits &amp; <em className="text-burgundy">craft.</em>
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-cocoa">
@@ -32,8 +32,8 @@ export default function CreditsPage() {
         </div>
       </header>
 
-      <div className="shell pb-24">
-        <div className="rounded-feature border border-burgundy/15 bg-champagne p-5 md:p-8">
+      <div className="shell pb-16">
+        <div className="rounded-card border border-burgundy/15 bg-champagne p-5 md:p-6">
           {credits.map((item, index) => (
             <div
               key={`${item.slot}-${item.title}`}

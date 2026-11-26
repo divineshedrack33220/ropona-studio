@@ -38,10 +38,10 @@ export function Process() {
 
   return (
     <section id="process" className="section border-t border-burgundy/15">
-      <div className="shell grid gap-10 md:grid-cols-12 md:gap-8">
+      <div className="shell grid gap-7 md:grid-cols-12 md:gap-6">
         <div className="md:col-span-4">
           <div className="md:sticky md:top-32">
-            <div className="surface-card rounded-feature p-7 md:p-8">
+            <div className="surface-card rounded-feature p-5 md:p-6">
               <Reveal className="flex items-center gap-3">
                 <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-burgundy">
                   06
@@ -50,7 +50,7 @@ export function Process() {
                 <span className="eyebrow">Process</span>
               </Reveal>
               <Reveal delay={80}>
-                <h2 className="serif mt-6 text-[clamp(2.2rem,4vw,4rem)] leading-[1.02] text-dark">
+                <h2 className="serif mt-5 text-[clamp(1.9rem,3.4vw,3.4rem)] leading-[1.05] text-dark">
                   A structured workflow.{" "}
                   <em className="text-burgundy">A purposeful final frame.</em>
                 </h2>
@@ -62,7 +62,7 @@ export function Process() {
                   adapt the workflow to the brief, team and delivery requirements.
                 </p>
               </Reveal>
-              <Reveal delay={180} className="mt-8">
+              <Reveal delay={180} className="mt-6">
                 <Link
                   href="/#contact"
                   className="link-line w-fit font-sans text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-burgundy"
@@ -79,7 +79,7 @@ export function Process() {
         <div className="relative md:col-span-8" ref={trackRef}>
           <div
             aria-hidden="true"
-            className="absolute bottom-0 left-[1.45rem] top-0 w-px bg-burgundy/20"
+            className="absolute bottom-0 left-[1.3rem] top-0 w-px bg-burgundy/20"
           >
             <div
               className="w-px bg-burgundy transition-[height] duration-200 ease-out"
@@ -87,14 +87,14 @@ export function Process() {
             />
           </div>
 
-          <ol className="flex flex-col gap-4">
+          <ol className="flex flex-col gap-3">
             {processSteps.map((step, index) => {
               const active = index <= activeIndex;
               return (
-                <li key={step.number} className="relative pl-16">
+                <li key={step.number} className="relative pl-14">
                   <span
                     className={cn(
-                      "absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-full border font-sans text-[0.6rem] font-semibold tracking-[0.08em] transition-colors duration-500",
+                      "absolute left-0 top-0 flex h-11 w-11 items-center justify-center rounded-full border font-sans text-[0.58rem] font-semibold tracking-[0.08em] transition-colors duration-500",
                       active
                         ? "border-burgundy bg-burgundy text-ivory"
                         : "border-burgundy/25 bg-champagne text-cocoa"
@@ -102,9 +102,9 @@ export function Process() {
                   >
                     {step.number}
                   </span>
-                  <Reveal delay={40} className="surface-light rounded-[1.5rem] p-5 md:p-6">
+                  <Reveal delay={40} className="surface-light rounded-card p-4 md:p-5">
                     <div className="border-b border-burgundy/15 pb-3">
-                      <h3 className="serif text-[clamp(1.5rem,2.2vw,2.2rem)] leading-none text-dark">
+                      <h3 className="serif text-[clamp(1.35rem,2vw,2rem)] leading-none text-dark">
                         {step.title}
                       </h3>
                     </div>

@@ -2,19 +2,19 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="shell flex min-h-[80svh] items-center pb-16 pt-32 md:pt-40">
-      <div className="grid w-full gap-8 md:grid-cols-12 md:items-center md:gap-10">
+    <section className="shell flex min-h-[76svh] items-center pb-12 pt-24 md:pt-28">
+      <div className="grid w-full gap-6 md:grid-cols-12 md:items-center md:gap-6">
         <div className="relative md:col-span-7">
-          <div className="surface-card rounded-feature p-7 md:p-11">
+          <div className="surface-card rounded-feature p-5 md:p-8">
             <p className="eyebrow">Error 404</p>
-            <h1 className="serif mt-6 max-w-3xl text-[clamp(3rem,8vw,8rem)] leading-[0.9] tracking-[-0.04em] text-dark">
+            <h1 className="serif mt-5 max-w-3xl text-[clamp(2.6rem,6vw,6rem)] leading-[0.95] tracking-[-0.035em] text-dark">
               This frame <em className="text-burgundy">didn&apos;t make</em> the cut.
             </h1>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-cocoa">
               The page you were looking for has moved, been renamed, or never existed.
               The work, however, is very much still here.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
+            <div className="mt-7 flex flex-wrap items-center gap-3">
               <Link href="/work" className="btn btn-gold">
                 View the work <span aria-hidden="true">↗</span>
               </Link>

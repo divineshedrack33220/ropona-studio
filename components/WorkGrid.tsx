@@ -6,26 +6,12 @@ import { ProjectCard } from "@/components/ProjectCard";
 import type { Project } from "@/lib/types";
 import { categories } from "@/lib/content";
 import { track } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
 
 type WorkGridProps = {
   projects: Project[];
   variant?: "home" | "archive";
   showFilters?: boolean;
 };
-
-const homeSpans = [
-  "lg:col-span-7",
-  "lg:col-span-5",
-  "lg:col-span-5",
-  "lg:col-span-7",
-  "lg:col-span-6",
-  "lg:col-span-6",
-  "lg:col-span-7",
-  "lg:col-span-5",
-  "lg:col-span-6",
-  "lg:col-span-6",
-];
 
 export function WorkGrid({
   projects,
@@ -57,7 +43,7 @@ export function WorkGrid({
   return (
     <div>
       {showFilters && (
-        <div className="mt-10 flex flex-wrap items-center gap-2 md:mt-14">
+        <div className="mt-6 flex flex-wrap items-center gap-2 md:mt-8">
           {availableCategories.map((category) => {
             const count = counts[category];
             return (
@@ -85,39 +71,26 @@ export function WorkGrid({
 
       <div
         key={active}
-        className={cn(
-          "mt-10 grid grid-cols-1 gap-x-6 gap-y-14 md:mt-14 md:gap-y-20 lg:grid-cols-12",
-          variant === "archive" && "lg:gap-y-24"
-        )}
+        className="mt-6 grid grid-cols-1 gap-x-5 gap-y-7 sm:grid-cols-2 md:mt-8 lg:grid-cols-3"
       >
-        {filtered.map((project, index) => {
-          const span =
-            variant === "archive"
-              ? index % 4 === 0 || index % 4 === 3
-                ? "lg:col-span-7"
-                : "lg:col-span-5"
-              : homeSpans[index % homeSpans.length];
-
-          return (
-            <div
-              key={project.slug}
-              className={span}
-              style={{
-                animation: `floatIn 0.85s cubic-bezier(0.16,1,0.3,1) ${index * 60}ms both`,
-              }}
-            >
-              <ProjectCard
-                project={project}
-                index={index}
-                priority={index === 0}
-              />
-            </div>
-          );
-        })}
+        {filtered.map((project, index) => (
+          <div
+            key={project.slug}
+            style={{
+              animation: `floatIn 0.75s cubic-bezier(0.16,1,0.3,1) ${index * 60}ms both`,
+            }}
+          >
+            <ProjectCard
+              project={project}
+              index={index}
+              priority={index === 0}
+            />
+          </div>
+        ))}
       </div>
 
       {filtered.length === 0 && (
-        <p className="mt-16 border-t border-burgundy/15 pt-10 text-sm text-espresso">
+        <p className="mt-10 border-t border-burgundy/15 pt-6 text-sm text-espresso">
           No projects in this category yet.{" "}
           <button
             type="button"
@@ -131,7 +104,7 @@ export function WorkGrid({
       )}
 
       {variant === "home" && (
-        <div className="mt-16 flex flex-col gap-3 border-t border-burgundy/15 pt-6 sm:flex-row sm:items-center sm:justify-between md:mt-20">
+        <div className="mt-10 flex flex-col gap-3 border-t border-burgundy/15 pt-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-espresso">
             A selection of approved projects
           </p>

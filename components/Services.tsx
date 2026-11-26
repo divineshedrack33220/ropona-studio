@@ -32,7 +32,7 @@ export function Services() {
   return (
     <section id="services" className="section border-t border-burgundy/15">
       <div className="shell">
-        <div className="rounded-feature border border-burgundy/15 bg-champagne/55 p-6 md:p-10 lg:p-12">
+        <div className="rounded-panel border border-burgundy/15 bg-champagne/55 p-5 md:p-7 lg:p-8">
           <div className="flex items-center gap-3">
             <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-burgundy">
               05
@@ -43,7 +43,7 @@ export function Services() {
 
           <div className="mt-6 grid gap-8 md:mt-8 md:grid-cols-12 md:items-end">
             <Reveal className="md:col-span-7">
-              <h2 className="serif text-[clamp(2.3rem,4.7vw,4.7rem)] leading-[1.02] tracking-[-0.025em] text-dark">
+              <h2 className="serif text-[clamp(2rem,3.8vw,3.8rem)] leading-[1.05] tracking-[-0.025em] text-dark">
                 From creative concept to{" "}
                 <em className="text-burgundy">finished production.</em>
               </h2>
@@ -58,7 +58,7 @@ export function Services() {
             </Reveal>
           </div>
 
-          <div className="mt-12 md:mt-16">
+          <div className="mt-8 md:mt-10">
             {services.map((service, index) => {
               const isOpen = openIndex === index;
               return (
@@ -77,12 +77,12 @@ export function Services() {
                     }}
                     aria-expanded={isOpen}
                     aria-controls={`service-${service.id}`}
-                    className="group grid w-full grid-cols-[2.5rem_1fr_auto] items-center gap-4 py-7 text-left md:grid-cols-[4rem_1.2fr_1fr_auto] md:gap-8 md:py-9"
+                    className="group grid w-full grid-cols-[2.5rem_1fr_auto] items-center gap-3 py-5 text-left md:grid-cols-[4rem_1.2fr_1fr_auto] md:gap-6 md:py-6"
                   >
                     <span className="font-sans text-[0.6rem] font-semibold tracking-[0.12em] text-espresso">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="serif text-[clamp(1.55rem,2.6vw,2.6rem)] leading-none text-burgundy transition-colors duration-300 group-hover:text-burgundySoft">
+                    <span className="serif text-[clamp(1.35rem,2.2vw,2.2rem)] leading-none text-burgundy transition-colors duration-300 group-hover:text-burgundySoft">
                       {service.title}
                     </span>
                     <span className="hidden text-sm leading-relaxed text-espresso md:block">
@@ -99,7 +99,7 @@ export function Services() {
                     style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                   >
                     <div className="overflow-hidden">
-                      <div className="grid gap-7 rounded-[1.5rem] bg-champagneLight/70 p-6 md:grid-cols-12 md:gap-8 md:p-8 md:ml-16">
+                      <div className="grid gap-5 rounded-panel bg-champagneLight/70 p-5 md:grid-cols-12 md:gap-6 md:p-6 md:ml-14">
                         <p className="max-w-md text-sm leading-[1.85] text-espresso md:col-span-5">
                           {service.body}
                         </p>

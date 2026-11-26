@@ -22,8 +22,8 @@ const capabilityLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-champagne/15 bg-espresso text-ivory">
-      <div className="shell pb-10 pt-16 md:pt-20">
-        <div className="grid gap-12 md:grid-cols-12">
+      <div className="shell pb-8 pt-12 md:pt-14">
+        <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link
               href="/"
@@ -125,17 +125,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 overflow-hidden">
+        <div className="mt-10 overflow-hidden">
           <Link
             href="/"
             aria-label="Ropona Bernard — home"
-            className="text-outline serif block whitespace-nowrap text-[clamp(2.5rem,17.5vw,18rem)] leading-[0.78] tracking-[-0.04em]"
+            className="text-outline serif block whitespace-nowrap text-[clamp(2.25rem,11vw,9rem)] leading-[0.82] tracking-[-0.04em]"
           >
             Ropona Bernard
           </Link>
         </div>
 
-        <div className="mt-10 flex flex-col gap-5 border-t border-champagne/15 pt-6 md:flex-row md:items-center md:justify-between">
+        <div className="mt-8 flex flex-col gap-4 border-t border-champagne/15 pt-5 md:flex-row md:items-center md:justify-between">
           <p className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-champagne/70">
             © 2026 Ropona Bernard. All rights reserved.
           </p>

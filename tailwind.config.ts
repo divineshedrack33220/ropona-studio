@@ -47,12 +47,17 @@ const config: Config = {
         widest: "0.35em",
       },
       borderRadius: {
-        card: "1.5rem",
-        panel: "2rem",
-        feature: "2.5rem",
+        card: "1.25rem",
+        panel: "1.5rem",
+        feature: "1.75rem",
+      },
+      aspectRatio: {
+        "ig-post": "4 / 5",
+        "ig-square": "1 / 1",
+        "ig-reel": "9 / 16",
       },
       maxWidth: {
-        shell: "1680px",
+        shell: "1280px",
       },
       transitionTimingFunction: {
         cinema: "cubic-bezier(0.16, 1, 0.3, 1)",
