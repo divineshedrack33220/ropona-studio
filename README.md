@@ -25,7 +25,8 @@ Node 20+ recommended.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Single-page experience: hero, selected work, about, experience, capabilities, process, director mode, prompt direction, opportunities, contact |
+| `/` | Single-page experience: hero, selected work, about teaser, experience, capabilities, process, director mode, prompt direction, opportunities, contact |
+| `/about` | Full creative journey, philosophy, expertise and credentials |
 | `/work` | Filterable archive of approved projects |
 | `/work/[slug]` | Case study: overview, challenge, film player, direction, grade comparison, process and credits |
 | `/privacy` | GDPR / NDPR policy, cookie and analytics disclosure |
@@ -46,6 +47,8 @@ and Twitter metadata, security headers, immutable caching for `/media`, and a
   hover/focus and removes it when not hovered.
 - **Route transitions** — each page settles in with a subtle vertical drift via
   `app/template.tsx`; removed entirely under `prefers-reduced-motion`.
+- **About teaser** — shortened story with an ellipsis and a Read more link to
+  `/about` for the full journey.
 - **Filterable work** — category filters with counts, animated entry, empty state.
 - **Before / after grade slider** — keyboard-accessible range input comparing the
   ungraded plate to the final grade.

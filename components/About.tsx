@@ -4,6 +4,8 @@ import { about, site } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 
 export function About() {
+  const teaser = about.story[0].replace(/[.!?]$/, "");
+
   return (
     <section id="about" className="section border-t border-burgundy/15">
       <div className="shell">
@@ -71,13 +73,22 @@ export function About() {
               </Reveal>
 
               <div className="mt-7 flex flex-col gap-5">
-                {about.story.map((paragraph, index) => (
-                  <Reveal key={index} delay={120 + index * 60}>
-                    <p className="max-w-2xl text-[0.95rem] leading-[1.85] text-cocoa">
-                      {paragraph}
-                    </p>
-                  </Reveal>
-                ))}
+                <Reveal delay={120}>
+                  <p className="max-w-2xl text-[0.95rem] leading-[1.85] text-cocoa">
+                    {teaser}
+                    <span aria-hidden="true">…</span>
+                  </p>
+                </Reveal>
+                <Reveal delay={180}>
+                  <Link
+                    href="/about"
+                    className="link-line font-sans text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-burgundy hover:text-dark"
+                    data-track="cta_click"
+                    data-track-label="about_read_more"
+                  >
+                    Read more <span aria-hidden="true">↗</span>
+                  </Link>
+                </Reveal>
               </div>
 
               <Reveal delay={120} className="mt-9 border-l-2 border-burgundy pl-6">

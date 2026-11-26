@@ -79,6 +79,7 @@ export function Header() {
   const isActive = (href: string) => {
     const target = href.split("#")[1] ?? "";
     if (pathname.startsWith("/work")) return href === "/#work";
+    if (pathname === "/about") return href === "/#about";
     if (pathname !== "/") return false;
     if (!target || target === "top") {
       return hash === "" || hash === "#top";
