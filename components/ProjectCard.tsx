@@ -11,6 +11,7 @@ type ProjectCardProps = {
   index: number;
   className?: string;
   priority?: boolean;
+  featured?: boolean;
 };
 
 function PlayGlyph({ className = "" }: { className?: string }) {
@@ -31,6 +32,7 @@ export function ProjectCard({
   index,
   className = "",
   priority = false,
+  featured = false,
 }: ProjectCardProps) {
   const { openFilm } = useShowreel();
   const [hovered, setHovered] = useState(false);
@@ -52,19 +54,33 @@ export function ProjectCard({
 
   return (
     <div
-      className={`project-card group relative block w-full rounded-card border border-burgundy/15 bg-champagne p-3 transition-colors duration-500 hover:border-burgundy/35 md:p-4 ${className}`}
+      className={`project-card group relative block w-full rounded-card border border-burgundy/15 bg-champagne p-3 transition-colors duration-500 hover:border-burgundy/35 md:p-4 ${
+        featured
+          ? "md:grid md:grid-cols-[minmax(0,22rem)_1fr] md:items-center md:gap-5 md:p-5"
+          : ""
+      } ${className}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
     >
-      <div className="relative aspect-ig-square overflow-hidden rounded-panel border border-burgundy/15 bg-champagneLight">
+      <div
+        className={`relative overflow-hidden rounded-panel border border-burgundy/15 bg-champagneLight ${
+          featured
+            ? "mx-auto aspect-ig-post w-full max-w-[26rem] md:max-w-none"
+            : "aspect-ig-square"
+        }`}
+      >
         <Image
           src={project.thumbnail}
           alt={`${project.title} — ${project.category.toLowerCase()} still by Ropona Bernard`}
           fill
           priority={priority}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes={
+            featured
+              ? "(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 60vw"
+              : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          }
           className={`object-cover ${
             hasPreview
               ? ""
@@ -140,10 +156,20 @@ export function ProjectCard({
         )}
       </div>
 
-      <div className="mt-4 grid grid-cols-12 items-start gap-3 px-1 pb-1">
+      <div
+        className={`grid grid-cols-12 items-start gap-3 px-1 pb-1 ${
+          featured ? "mt-4 md:mt-0" : "mt-4"
+        }`}
+      >
         <div className="col-span-9">
           <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-            <h3 className="serif text-[clamp(1.35rem,2vw,1.8rem)] leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft">
+            <h3
+              className={`serif leading-none text-burgundy transition-colors duration-500 group-hover:text-burgundySoft ${
+                featured
+                  ? "text-[clamp(1.6rem,2.6vw,2.4rem)]"
+                  : "text-[clamp(1.35rem,2vw,1.8rem)]"
+              }`}
+            >
               <Link
                 href={`/work/${project.slug}`}
                 className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
@@ -155,7 +181,7 @@ export function ProjectCard({
               {project.year}
             </span>
           </div>
-          <p className="mt-1.5 max-w-md text-[0.82rem] leading-relaxed text-cocoa">
+          <p className="mt-1.5 max-w-md text-[0.95rem] leading-relaxed text-cocoa">
             {project.description}
           </p>
 

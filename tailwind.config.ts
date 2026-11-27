@@ -47,9 +47,9 @@ const config: Config = {
         widest: "0.35em",
       },
       borderRadius: {
-        card: "1.25rem",
+        card: "1rem",
         panel: "1.5rem",
-        feature: "1.75rem",
+        feature: "2rem",
       },
       aspectRatio: {
         "ig-post": "4 / 5",

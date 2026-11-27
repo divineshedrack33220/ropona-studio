@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { Reveal } from "@/components/Reveal";
 
 type SectionHeadingProps = {
-  index: string;
+  index?: string;
   label: string;
   title: ReactNode;
   description?: ReactNode;
@@ -22,10 +22,14 @@ export function SectionHeading({
   return (
     <div className={className}>
       <Reveal className="flex items-center gap-3">
-        <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-burgundy">
-          {index}
-        </span>
-        <span className="h-px w-8 bg-burgundy/50" />
+        {index && (
+          <>
+            <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-burgundy">
+              {index}
+            </span>
+            <span className="h-px w-8 bg-burgundy/50" />
+          </>
+        )}
         <span className="eyebrow">{label}</span>
       </Reveal>
 
@@ -41,7 +45,7 @@ export function SectionHeading({
             className="flex flex-col items-start gap-4 md:col-span-4 md:col-start-9 md:items-end md:text-right"
           >
             {description && (
-              <div className="max-w-sm text-[0.85rem] leading-relaxed text-espresso">
+              <div className="max-w-sm text-[0.95rem] leading-relaxed text-espresso">
                 {description}
               </div>
             )}

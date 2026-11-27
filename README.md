@@ -25,7 +25,7 @@ Node 20+ recommended.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Single-page experience: hero, selected work, about teaser, experience, capabilities, process, director mode, prompt direction, opportunities, contact |
+| `/` | Single-page experience: hero, selected work, about teaser, experience, capabilities, process, direction & opportunities, contact |
 | `/about` | Full creative journey, philosophy, expertise and credentials |
 | `/work` | Filterable archive of approved projects |
 | `/work/[slug]` | Case study: overview, challenge, film player, direction, grade comparison, process and credits |
@@ -61,13 +61,17 @@ and Twitter metadata, security headers, immutable caching for `/media`, and a
 
 ### Visual system
 
-- **Compact shell** — 1280px max width, 20–28px radius tiers and tighter section
-  rhythm; no oversized editorial gutters.
+- **Compact shell** — 1280px max width, distinct 16/24/32px radius tiers and
+  tighter section rhythm; no oversized editorial gutters.
+- **Clear hierarchy** — only the four primary nav sections are numbered;
+  director mode, prompt direction and opportunities share one compact band.
 - **Instagram-native frames** — exact `4:5` feed posts, `1:1` squares and `9:16`
   reel/story ratios via Tailwind tokens `aspect-ig-post`, `aspect-ig-square` and
   `aspect-ig-reel`.
-- **Contextual mix** — portraits and case-study stills use `4:5`, project tiles
-  and players use `1:1`, and the showreel poster uses `9:16`.
+- **Contextual mix** — portraits and the lead project use `4:5`, secondary
+  project tiles and players use `1:1`, and the showreel poster uses `9:16`.
+- **Honest contact state** — the form only shows the success message when the
+  email provider confirms delivery; otherwise it shows the direct email fallback.
 
 Accessibility: skip link, semantic landmarks, visible focus rings, labelled
 controls, `aria-expanded`/`aria-pressed` states, alt text on all imagery,

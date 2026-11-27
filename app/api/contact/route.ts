@@ -148,15 +148,23 @@ export async function POST(request: Request) {
   try {
     const delivered = await sendWithResend(clean);
     if (!delivered) {
-      // No mail provider configured yet — keep the enquiry visible in logs.
-      console.info("[contact] enquiry received (no provider configured)", {
+      // No working mail provider — never tell the visitor it was submitted.
+      console.info("[contact] enquiry received but not delivered", {
         ...clean,
         email: "[redacted]",
         ip,
         at: new Date().toISOString(),
       });
+      return NextResponse.json(
+        {
+          ok: false,
+          delivered: false,
+          error: `Email delivery is unavailable right now. Please email ${site.email} directly.`,
+        },
+        { status: 503 }
+      );
     }
-    return NextResponse.json({ ok: true, delivered });
+    return NextResponse.json({ ok: true, delivered: true });
   } catch (error) {
     console.error("[contact] delivery failed", error);
     return NextResponse.json(

@@ -117,7 +117,7 @@ export function Header() {
                     onClick={() => setHash(`#${item.href.split("#")[1] ?? ""}`)}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "flex items-center gap-1.5 rounded-full px-2.5 py-1.5 font-sans text-[0.58rem] font-semibold uppercase tracking-[0.12em] transition-colors duration-300",
+                      "flex items-center gap-1.5 rounded-full px-2.5 py-1.5 font-sans text-[0.62rem] font-semibold uppercase tracking-[0.1em] transition-colors duration-300",
                       active
                         ? "bg-champagne text-burgundy"
                         : "text-ivory/80 hover:bg-champagne/10 hover:text-ivory"
@@ -137,7 +137,7 @@ export function Header() {
             </nav>
 
             <div className="flex shrink-0 items-center gap-2 md:gap-3">
-              <div className="hidden items-center gap-2 rounded-full border border-champagne/25 px-3 py-1.5 xl:flex">
+              <div className="hidden items-center gap-2 rounded-full border border-champagne/25 px-3 py-1.5 2xl:flex">
                 <span className="availability-dot h-1.5 w-1.5 rounded-full bg-champagne" />
                 <span className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-champagne">
                   {site.availability.status}

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { services } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
@@ -30,26 +29,22 @@ export function Services() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="services" className="section border-t border-burgundy/15">
+    <section id="services" className="section-compact border-t border-burgundy/15">
       <div className="shell">
         <div className="rounded-panel border border-burgundy/15 bg-champagne/55 p-5 md:p-7 lg:p-8">
-          <div className="flex items-center gap-3">
-            <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-burgundy">
-              05
-            </span>
-            <span className="h-px w-8 bg-burgundy/50" />
+          <Reveal className="flex items-center gap-3">
             <span className="eyebrow">Capabilities</span>
-          </div>
+          </Reveal>
 
-          <div className="mt-6 grid gap-8 md:mt-8 md:grid-cols-12 md:items-end">
+          <div className="mt-5 grid gap-6 md:mt-6 md:grid-cols-12 md:items-end">
             <Reveal className="md:col-span-7">
               <h2 className="serif text-[clamp(2rem,3.8vw,3.8rem)] leading-[1.05] tracking-[-0.025em] text-dark">
                 From creative concept to{" "}
-                <em className="text-burgundy">finished production.</em>
+                <span className="text-burgundy">finished production.</span>
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9">
-              <p className="max-w-sm text-sm leading-relaxed text-espresso md:ml-auto md:text-right">
+              <p className="max-w-sm text-[0.95rem] leading-relaxed text-espresso md:ml-auto md:text-right">
                 A connected production skill set combining generative technology,
                 editorial craft and audience-focused creative thinking. I can
                 contribute across the full workflow or integrate into an established
@@ -58,7 +53,7 @@ export function Services() {
             </Reveal>
           </div>
 
-          <div className="mt-8 md:mt-10">
+          <div className="mt-6 md:mt-7">
             {services.map((service, index) => {
               const isOpen = openIndex === index;
               return (
@@ -85,7 +80,7 @@ export function Services() {
                     <span className="serif text-[clamp(1.35rem,2.2vw,2.2rem)] leading-none text-burgundy transition-colors duration-300 group-hover:text-burgundySoft">
                       {service.title}
                     </span>
-                    <span className="hidden text-sm leading-relaxed text-espresso md:block">
+                    <span className="hidden text-[0.95rem] leading-relaxed text-espresso md:block">
                       {service.summary}
                     </span>
                     <span className="justify-self-end text-burgundy">
@@ -100,7 +95,7 @@ export function Services() {
                   >
                     <div className="overflow-hidden">
                       <div className="grid gap-5 rounded-panel bg-champagneLight/70 p-5 md:grid-cols-12 md:gap-6 md:p-6 md:ml-14">
-                        <p className="max-w-md text-sm leading-[1.85] text-espresso md:col-span-5">
+                        <p className="max-w-md text-[0.95rem] leading-[1.8] text-espresso md:col-span-5">
                           {service.body}
                         </p>
                         <div className="md:col-span-3">
@@ -144,21 +139,6 @@ export function Services() {
               );
             })}
           </div>
-
-          <Reveal className="mt-10 flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
-            <p className="max-w-md text-sm leading-relaxed text-espresso">
-              For AI video production roles, creative collaborations or project
-              opportunities, share the brief or tell me about your team.
-            </p>
-            <Link
-              href="/#contact"
-              className="btn btn-gold shrink-0"
-              data-track="cta_click"
-              data-track-label="services_get_in_touch"
-            >
-              Get in touch <span aria-hidden="true">↗</span>
-            </Link>
-          </Reveal>
         </div>
       </div>
     </section>

@@ -22,7 +22,7 @@ export default function CreditsPage() {
           </div>
 
           <h1 className="serif mt-5 max-w-4xl text-[clamp(2.4rem,5vw,5rem)] leading-[0.98] tracking-[-0.03em] text-dark">
-            Credits &amp; <em className="text-burgundy">craft.</em>
+            Credits &amp; <span className="text-burgundy">craft.</span>
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-cocoa">
             The imagery and films shown here are Ropona Bernard's own work or

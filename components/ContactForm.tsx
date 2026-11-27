@@ -63,21 +63,30 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      if (!response.ok) throw new Error("request failed");
+      const result = (await response.json().catch(() => ({}))) as {
+        error?: string;
+      };
+      if (!response.ok) {
+        throw new Error(
+          typeof result.error === "string" ? result.error : "request failed"
+        );
+      }
       setState("success");
       form.reset();
       track("form_submit", { opportunity_type: payload.opportunityType });
-    } catch {
+    } catch (error) {
       setState("error");
       setError(
-        `Something went wrong sending your enquiry. Please email ${site.email} directly.`
+        error instanceof Error && error.message && error.message !== "request failed"
+          ? error.message
+          : `Something went wrong sending your enquiry. Please email ${site.email} directly.`
       );
     }
   }
 
   if (state === "success") {
     return (
-      <div className="mt-8 rounded-[1.5rem] border border-burgundy/20 bg-champagneLight p-6">
+      <div className="mt-8 rounded-panel border border-burgundy/20 bg-champagneLight p-6">
         <span className="flex h-10 w-10 items-center justify-center rounded-full border border-burgundy/40 text-burgundy">
           ✓
         </span>

@@ -7,6 +7,7 @@ export function useVideoDuration(src: string | undefined, fallback = "") {
   const [duration, setDuration] = useState(fallback);
 
   useEffect(() => {
+    setDuration(fallback);
     if (!src) return;
     const video = document.createElement("video");
     video.preload = "metadata";
@@ -30,7 +31,7 @@ export function useVideoDuration(src: string | undefined, fallback = "") {
       video.removeAttribute("src");
       video.load();
     };
-  }, [src]);
+  }, [src, fallback]);
 
   return duration;
 }

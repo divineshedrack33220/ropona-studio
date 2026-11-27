@@ -19,7 +19,7 @@ export function Contact() {
         <div className="rounded-panel border border-champagne/20 bg-burgundy p-5 text-ivory md:p-7 lg:p-8">
           <div className="flex items-center gap-3">
             <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-champagne">
-              10
+              04
             </span>
             <span className="h-px w-8 bg-champagne/50" />
             <span className="font-sans text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-champagne">
@@ -35,7 +35,7 @@ export function Contact() {
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:pb-3">
-              <p className="max-w-sm text-sm leading-relaxed text-champagne md:ml-auto md:text-right">
+              <p className="max-w-sm text-[0.95rem] leading-relaxed text-champagne md:ml-auto md:text-right">
                 For AI video production roles, creative collaborations or project
                 opportunities, share your brief or tell me about your team. I would
                 welcome a conversation about how my experience can contribute to your

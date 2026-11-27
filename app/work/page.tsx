@@ -29,7 +29,7 @@ export default function WorkPage() {
           <div className="mt-6 grid gap-6 md:grid-cols-12 md:items-end">
             <Reveal className="md:col-span-8">
               <h1 className="serif text-[clamp(2.6rem,6vw,6rem)] leading-[0.95] tracking-[-0.035em] text-dark">
-                Selected <em className="text-burgundy">films.</em>
+                Selected <span className="text-burgundy">films.</span>
               </h1>
             </Reveal>
             <Reveal delay={100} className="md:col-span-4 md:pb-3">

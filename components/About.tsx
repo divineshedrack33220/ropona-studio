@@ -48,7 +48,7 @@ export function About() {
                       <dt className="font-sans text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-burgundy">
                         {item.label}
                       </dt>
-                      <dd className="text-xs leading-relaxed text-cocoa">
+                      <dd className="text-[0.95rem] leading-relaxed text-cocoa">
                         {item.value}
                       </dd>
                     </div>
@@ -60,7 +60,7 @@ export function About() {
             <div className="md:col-span-7">
               <Reveal className="flex items-center gap-3">
                 <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-burgundy">
-                  03
+                  02
                 </span>
                 <span className="h-px w-8 bg-burgundy/50" />
                 <span className="eyebrow">About</span>

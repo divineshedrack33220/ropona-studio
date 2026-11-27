@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/ProjectCard";
 import type { Project } from "@/lib/types";
@@ -73,20 +72,25 @@ export function WorkGrid({
         key={active}
         className="mt-6 grid grid-cols-1 gap-x-5 gap-y-7 sm:grid-cols-2 md:mt-8 lg:grid-cols-3"
       >
-        {filtered.map((project, index) => (
-          <div
-            key={project.slug}
-            style={{
-              animation: `floatIn 0.75s cubic-bezier(0.16,1,0.3,1) ${index * 60}ms both`,
-            }}
-          >
-            <ProjectCard
-              project={project}
-              index={index}
-              priority={index === 0}
-            />
-          </div>
-        ))}
+        {filtered.map((project, index) => {
+          const featured = variant === "home" && active === "All" && index === 0;
+          return (
+            <div
+              key={project.slug}
+              className={featured ? "sm:col-span-2 lg:col-span-2" : ""}
+              style={{
+                animation: `floatIn 0.75s cubic-bezier(0.16,1,0.3,1) ${index * 60}ms both`,
+              }}
+            >
+              <ProjectCard
+                project={project}
+                index={index}
+                priority={index === 0}
+                featured={featured}
+              />
+            </div>
+          );
+        })}
       </div>
 
       {filtered.length === 0 && (
@@ -101,22 +105,6 @@ export function WorkGrid({
           </button>
           .
         </p>
-      )}
-
-      {variant === "home" && (
-        <div className="mt-10 flex flex-col gap-3 border-t border-burgundy/15 pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-sans text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-espresso">
-            A selection of approved projects
-          </p>
-          <Link
-            href="/work"
-            className="link-line font-sans text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-espresso"
-            data-track="cta_click"
-            data-track-label="view_all_work"
-          >
-            View all work <span aria-hidden="true">↗</span>
-          </Link>
-        </div>
       )}
     </div>
   );

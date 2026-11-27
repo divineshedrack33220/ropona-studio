@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { CapabilityMarquee } from "@/components/CapabilityMarquee";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -7,12 +8,16 @@ import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
-import { DirectorMode } from "@/components/DirectorMode";
-import { PromptDirection } from "@/components/PromptDirection";
-import { Engagements } from "@/components/Engagements";
+import { Direction } from "@/components/Direction";
 import { Contact } from "@/components/Contact";
 import { Reveal } from "@/components/Reveal";
 import { portfolioProjects, site } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Ropona Bernard | AI Video Editor & Generative AI Filmmaker",
+  description: site.description,
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
@@ -20,17 +25,13 @@ export default function HomePage() {
       <Hero />
       <CapabilityMarquee />
 
-      <section className="section">
-        <div className="shell grid gap-7 md:grid-cols-12 md:gap-6">
+      <section className="section-compact">
+        <div className="shell grid gap-6 md:grid-cols-12 md:gap-6">
           <Reveal className="md:col-span-3">
             <div className="flex items-center gap-3">
-              <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
-                01
-              </span>
-              <span className="h-px w-8 bg-burgundy/50" />
               <span className="eyebrow">The practice</span>
             </div>
-            <p className="mt-5 max-w-[17rem] font-sans text-[0.56rem] font-medium uppercase leading-[1.8] tracking-[0.12em] text-espresso">
+            <p className="mt-4 max-w-[17rem] font-sans text-[0.58rem] font-medium uppercase leading-[1.8] tracking-[0.12em] text-espresso">
               Generative production.
               <br />
               Editorial craft.
@@ -44,13 +45,13 @@ export default function HomePage() {
               <h2 className="serif max-w-5xl text-[clamp(2rem,3.8vw,3.8rem)] leading-[1.05] tracking-[-0.025em] text-dark">
                 The technology creates possibilities.
                 <br />
-                <em className="text-burgundy">
+                <span className="text-burgundy">
                   The story gives them purpose.
-                </em>
+                </span>
               </h2>
             </Reveal>
 
-            <div className="mt-7 grid gap-4 sm:grid-cols-2 md:mt-8">
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 md:mt-6">
               <Reveal delay={80} className="surface-card p-5 md:p-6">
                 <p className="text-[0.95rem] leading-[1.85] text-cocoa">
                   My work sits at the intersection of generative production, video
@@ -71,7 +72,7 @@ export default function HomePage() {
               </Reveal>
             </div>
 
-            <div className="mt-5 grid grid-cols-1 gap-3 md:mt-6 sm:grid-cols-3">
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
               {site.stats.map((stat, index) => (
                 <Reveal
                   key={stat.label}
@@ -97,12 +98,12 @@ export default function HomePage() {
       >
         <div className="shell">
           <SectionHeading
-            index="02"
+            index="01"
             label="Selected work"
             title={
               <>
                 Selected films. Distinct briefs.{" "}
-                <em className="text-burgundy">Deliberate creative choices.</em>
+                <span className="text-burgundy">Deliberate creative choices.</span>
               </>
             }
             description="Explore a selection of commercial, technical and narrative productions. Each project demonstrates a different application of AI-assisted filmmaking, visual storytelling and post-production."
@@ -117,9 +118,7 @@ export default function HomePage() {
       <Experience />
       <Services />
       <Process />
-      <DirectorMode />
-      <PromptDirection />
-      <Engagements />
+      <Direction />
       <Contact />
     </>
   );

@@ -49,7 +49,6 @@ export const metadata: Metadata = {
   authors: [{ name: site.name, url: siteUrl }],
   creator: site.name,
   publisher: site.name,
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -59,9 +58,9 @@ export const metadata: Metadata = {
     description: site.description,
     images: [
       {
-        url: "/media/og.jpg",
-        width: 1200,
-        height: 630,
+        url: "/media/hero.jpg",
+        width: 2200,
+        height: 1238,
         alt: "Ropona Bernard — AI Video Editor & Generative AI Filmmaker",
       },
     ],
@@ -70,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: site.description,
-    images: ["/media/og.jpg"],
+    images: ["/media/hero.jpg"],
   },
   robots: {
     index: true,
@@ -142,7 +141,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <head>
+      <body className="font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -150,8 +149,6 @@ export default function RootLayout({
         <noscript>
           <style>{`.reveal{opacity:1 !important;transform:none !important}.mask-line>span{transform:none !important}`}</style>
         </noscript>
-      </head>
-      <body className="font-sans">
         <a
           href="#main"
           className="fixed left-4 top-4 z-[120] -translate-y-24 rounded-full border border-burgundy/20 bg-champagne px-5 py-3 font-sans text-2xs font-semibold uppercase tracking-label text-burgundy transition-transform focus:translate-y-0"

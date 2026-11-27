@@ -7,7 +7,7 @@ export function Experience() {
       <div className="shell">
         <Reveal className="flex items-center gap-3">
           <span className="font-sans text-[0.58rem] font-semibold tracking-[0.16em] text-espresso">
-            04
+            03
           </span>
           <span className="h-px w-8 bg-burgundy/50" />
           <span className="eyebrow">Experience</span>
@@ -18,9 +18,9 @@ export function Experience() {
             <div className="surface-card h-full rounded-feature p-5 md:p-7">
               <h2 className="serif max-w-[16ch] text-[clamp(1.9rem,3.4vw,3.4rem)] leading-[1.05] text-dark">
                 Creative production across{" "}
-                <em className="text-burgundy">brands, industries and formats.</em>
+                <span className="text-burgundy">brands, industries and formats.</span>
               </h2>
-              <p className="mt-5 max-w-md text-sm leading-[1.85] text-cocoa">
+              <p className="mt-5 max-w-md text-[0.95rem] leading-[1.8] text-cocoa">
                 My experience spans commercial marketing, technical communication,
                 property promotion and long-form digital storytelling.
               </p>
@@ -31,7 +31,7 @@ export function Experience() {
                     <dt className="font-sans text-[0.55rem] font-semibold uppercase tracking-[0.16em] text-burgundy">
                       {item.organization}
                     </dt>
-                    <dd className="mt-1.5 text-sm leading-relaxed text-cocoa">
+                    <dd className="mt-1.5 text-[0.95rem] leading-relaxed text-cocoa">
                       <span className="font-medium text-espresso">{item.role}</span>
                       {item.meta && (
                         <span className="mt-1 block font-sans text-[0.52rem] uppercase tracking-[0.1em] text-cocoa">
@@ -57,7 +57,7 @@ export function Experience() {
                 </span>
               </div>
 
-              <p className="mt-5 max-w-xl text-sm leading-[1.85] text-cocoa">
+              <p className="mt-5 max-w-xl text-[0.95rem] leading-[1.8] text-cocoa">
                 A connected production skill set combining generative technology,
                 editorial craft and audience-focused creative thinking. I can
                 contribute across the full workflow or integrate into an established

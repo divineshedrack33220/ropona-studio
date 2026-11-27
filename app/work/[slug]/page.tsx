@@ -299,7 +299,7 @@ export default async function ProjectPage({ params }: PageProps) {
                   </div>
                   <h2 className="serif mt-5 max-w-xl text-[clamp(1.7rem,3vw,3rem)] leading-tight text-dark">
                     From flat plate to{" "}
-                    <em className="text-burgundy">final frame.</em>
+                    <span className="text-burgundy">final frame.</span>
                   </h2>
                 </div>
                 <p className="max-w-xs font-sans text-[0.52rem] font-semibold uppercase leading-[1.8] tracking-[0.12em] text-espresso">

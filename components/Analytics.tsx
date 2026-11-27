@@ -72,7 +72,7 @@ export function Analytics() {
           role="dialog"
           aria-label="Cookie preferences"
           aria-live="polite"
-          className="fixed bottom-4 left-4 z-[95] w-[calc(100%-2rem)] max-w-sm rounded-[1.5rem] border border-burgundy/20 bg-champagne p-5"
+          className="fixed bottom-4 left-4 z-[95] w-[calc(100%-2rem)] max-w-sm rounded-panel border border-burgundy/20 bg-champagne p-5"
           style={{ animation: "floatIn 0.8s cubic-bezier(0.16,1,0.3,1) both" }}
         >
           <div className="flex items-center gap-2">

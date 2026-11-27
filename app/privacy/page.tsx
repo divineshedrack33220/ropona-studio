@@ -69,7 +69,7 @@ export default function PrivacyPage() {
           </div>
 
           <h1 className="serif mt-5 max-w-4xl text-[clamp(2.4rem,5vw,5rem)] leading-[0.98] tracking-[-0.03em] text-dark">
-            Privacy &amp; <em className="text-burgundy">cookies.</em>
+            Privacy &amp; <span className="text-burgundy">cookies.</span>
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-cocoa">
             Short version: your brief is used to reply to you, analytics only runs
