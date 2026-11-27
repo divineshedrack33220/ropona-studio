@@ -39,6 +39,14 @@ export function WorkGrid({
     [counts]
   );
 
+  const hasFeatured = variant === "home" && active === "All";
+  const featured = hasFeatured ? filtered[0] : undefined;
+  const remaining = hasFeatured ? filtered.slice(1) : filtered;
+
+  const animation = (index: number) => ({
+    animation: `floatIn 0.75s cubic-bezier(0.16,1,0.3,1) ${index * 60}ms both`,
+  });
+
   return (
     <div>
       {showFilters && (
@@ -68,29 +76,26 @@ export function WorkGrid({
         </div>
       )}
 
+      {featured && (
+        <div className="mt-6 md:mt-8" style={animation(0)}>
+          <ProjectCard project={featured} index={0} priority featured />
+        </div>
+      )}
+
       <div
-        key={active}
-        className="mt-6 grid grid-cols-1 gap-x-5 gap-y-7 sm:grid-cols-2 md:mt-8 lg:grid-cols-3"
+        className={`grid grid-cols-1 gap-x-5 gap-y-7 sm:grid-cols-2 ${
+          featured ? "mt-5" : "mt-6 md:mt-8"
+        } ${featured ? "" : "lg:grid-cols-3"}`}
       >
-        {filtered.map((project, index) => {
-          const featured = variant === "home" && active === "All" && index === 0;
-          return (
-            <div
-              key={project.slug}
-              className={featured ? "sm:col-span-2 lg:col-span-2" : ""}
-              style={{
-                animation: `floatIn 0.75s cubic-bezier(0.16,1,0.3,1) ${index * 60}ms both`,
-              }}
-            >
-              <ProjectCard
-                project={project}
-                index={index}
-                priority={index === 0}
-                featured={featured}
-              />
-            </div>
-          );
-        })}
+        {remaining.map((project, index) => (
+          <div key={project.slug} style={animation(featured ? index + 1 : index)}>
+            <ProjectCard
+              project={project}
+              index={featured ? index + 1 : index}
+              priority={!featured && index === 0}
+            />
+          </div>
+        ))}
       </div>
 
       {filtered.length === 0 && (

@@ -56,7 +56,7 @@ export function ProjectCard({
     <div
       className={`project-card group relative block w-full rounded-card border border-burgundy/15 bg-champagne p-3 transition-colors duration-500 hover:border-burgundy/35 md:p-4 ${
         featured
-          ? "md:grid md:grid-cols-[minmax(0,22rem)_1fr] md:items-center md:gap-5 md:p-5"
+          ? "md:grid md:grid-cols-[minmax(0,26rem)_1fr] md:items-center md:gap-8 md:p-6"
           : ""
       } ${className}`}
       onMouseEnter={() => setHovered(true)}
@@ -181,7 +181,11 @@ export function ProjectCard({
               {project.year}
             </span>
           </div>
-          <p className="mt-1.5 max-w-md text-[0.95rem] leading-relaxed text-cocoa">
+          <p
+            className={`mt-1.5 text-[0.95rem] leading-relaxed text-cocoa ${
+              featured ? "max-w-xl" : "max-w-md"
+            }`}
+          >
             {project.description}
           </p>
 
